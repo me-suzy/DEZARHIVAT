@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>Forum Adminstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- The Web Wiz Guide Login Script is written by Bruce Corkhill ©2001
+     	If you want your own  Login Script then goto http://www.webwizguide.com -->
+
+<!-- Check the from is filled in correctly before submitting -->
+<script  language="JavaScript">
+<!-- Hide from older browsers...
+
+//Function to check form is filled in correctly before submitting
+function CheckForm () {
+
+	var errorMsg = "";
+
+	//Check for a Username
+	if (document.frmLogin.name.value==""){
+		errorMsg += "\n\tUsername \t- Enter the Administrator Forum Username"; 	
+	}
+	
+	//Check for a Password
+	if (document.frmLogin.password.value==""){
+		errorMsg += "\n\tPassword \t- Enter the Administrator Forum Password";
+	}
+	
+	//If there is aproblem with the form then display an error
+	if (errorMsg != ""){
+		msg = "_____________________________________________________________________\n\n";
+		msg += "Your Login to the Forum Admin has failed because there are problem(s) with the form.\n";
+		msg += "Please correct the problem(s) and re-submit the form.\n";
+		msg += "_____________________________________________________________________\n\n";
+		msg += "The following field(s) need to be corrected: -\n";
+		
+		errorMsg += alert(msg + errorMsg + "\n\n");
+		return false;
+	}
+	
+	return true;
+}
+// -->
+</script>
+
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="518" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td align="center"> 
+      <h1>Forum Adminstration Login</h1>
+    </td>
+  </tr>
+</table>
+<div align="center"><br>
+  If you have already logged into the main forum as the Administrator then just 
+  <a href="admin_menu.asp" target="_self">Click Here</a><br>
+</div>
+<form name="frmLogin" method="post" action="admin_menu.asp" onSubmit="return CheckForm();">
+  <table width="273" border="0" cellspacing="0" cellpadding="1" align="CENTER" bgcolor="#000000">
+    <tr>
+      <td>
+        <table width="273" border="0" align="center" cellspacing="0" cellpadding="0" bgcolor="#CCCCCC">
+          <tr> 
+            <td align="right" height="47" valign="bottom" width="94">User name: 
+            </td>
+            <td height="47" valign="bottom" width="172"> 
+              <input type="text" name="name">
+            </td>
+          </tr>
+          <tr> 
+            <td align="right" width="94">Password: </td>
+            <td width="172"> 
+              <input type="password" name="password">
+            </td>
+          </tr>
+          <tr> 
+            <td align="right" height="44" width="94">&nbsp;</td>
+            <td height="44" width="172"> 
+              <input type="submit" name="Submit" value="Enter">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+              <input type="reset" name="Submit2" value="Reset">
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>
+<br>
+<center>
+  Use the same Adminstration username and password as you use to login to the 
+  main forum<br>
+  <br>
+  If you have forgotten your password then use the forgotten passsword form in 
+  the main forum to <br>
+  e-mail it to yourself as long as you have the e-mail notification function turned 
+  on<br>
+  <br>
+  <a href="http://www.webwizguide.com" target="_blank"><img src="../../database_login/web_wiz_guide.gif" width="100" height="30" border="0" alt="Web Wiz Guide!"></a> 
+</center>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<?php
+
+if(getData()) {
+	switch($what) {
+		case 'REFRESH':
+			$res = &$supra['connect']->QueryData ('SELECT * FROM banners WHERE id = '. $data['iID']);
+			sendData($res);
+			
+		case 'UPD':
+			$data['res'] = &$supra['connect']->Query ('UPDATE banners set alt = "'. addslashes($data['ALT']). '", url = "'. addslashes($data['URL']). '", banner_desc="'. addslashes($data['DESC']). '", image="'. addslashes($data['IMAGE']). '", active="'. $data['ACTIVE']. '", lang="'. $GLOBALS['supra']['request']['lang']. '", in_new = "'. $data['IN_NEW']. '" where id = '. $data['ID']);
+			sendData($data);
+			
+		case 'INS':
+			$data['res'] = &$supra['connect']->Query ('INSERT banners set alt = "'. addslashes($data['ALT']). '", url = "'. addslashes($data['URL']). '", banner_desc="'. addslashes($data['DESC']). '", image="'. addslashes($data['IMAGE']). '", active="'. $data['ACTIVE']. '", lang="'. $GLOBALS['supra']['request']['lang']. '", in_new = "'. $data['IN_NEW']. '"');
+			sendData($data);
+	}
+	exit;
+}
+?>
+<html>
+<head>
+<title>Settings</title>
+<link rel="STYLESHEET" href="/supra/supra.css">
+<script src="<?=$GLOBALS['supra']['request']['supraBack']?>/dialog.html"></script>
+<script>
+
+var pic_url;
+var blockName;
+
+function init() {
+	uid = dialogArguments[1];
+	NewItem = dialogArguments[2];
+	blockName = supra.doc.blocks[dialogArguments[3]].block;
+	fillFields(uid, NewItem);
+}
+
+
+function Ok() {
+	action = "UPD";
+	if (NewItem) action = "INS";
+
+	z = sendData(action, {ID:ID.value,DESC:DESC.value,ALT:ALT.value,IMAGE:pic_url,URL:URL.value,ACTIVE:ACTIVE.checked?1:0,IN_NEW:IN_NEW.checked?1:0});
+
+//	window.close();
+}
+
+
+function fillFields(uid, NewItem) {
+	if (NewItem) return;	
+	
+	z = (sendData('REFRESH',{iID:uid,iItem:NewItem}));
+
+	ID.value = z[0].id;
+	DESC.value = z[0].banner_desc;
+	ALT.value = z[0].alt;
+
+	pic_url = z[0].image;
+	IMAGE.src = '<?=$GLOBALS['supra']['request']['siteBase']?>' + pic_url;
+
+	URL.value = z[0].url;
+
+	if((z[0].in_new) == 1)
+		IN_NEW.checked = z[0].in_new;
+
+
+	if((z[0].active) == 1)
+		ACTIVE.checked=z[0].active;
+
+}
+
+function browse(name) {
+	var newImage=showModalDialog("<?=$GLOBALS['supra']['request']['supraBack']?>/ped_file.html?"+Math.random(),[supra, 'image', name.src, '/pic/'+supra.doc.lang+'/banners', 'gif|jpg|jpeg|png', 1],"scroll:no;dialogWidth:500px;dialogHeight:400px;center:yes;help:no;resizable:yes;status:no;")
+	if(!newImage)
+		return
+
+	pic_url = newImage.src; 
+	name.src = '<?=$GLOBALS['supra']['request']['siteBase']?>' + pic_url;
+}
+
+</script>
+
+<body>
+<table id="myDialog" cellpadding="0" cellspacing="4" border="0" width="100%" height="100%" style="visibility:hidden">
+<tr><td valign="top">
+
+<fieldset name="Banner">
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+<tr>
+	<td align="right">Id:</td>
+	<td><input name="ID" type="text" disabled="true" style="background:buttonface; width:100;"></td>
+</tr>
+
+<tr><td align="right">Desc:</td><td><input name="DESC" type="text" style="width:200"></td></tr>
+
+<tr><td align="right">ALT:</td><td><input name="ALT" type="text" style="width:200"></td></tr>
+
+<!--  <tr><td align="right">Image:</td><td><input name="IMAGE" type="text" style="width:200"></td></tr>  -->
+
+<tr>
+	<td colspan="2" align="center">
+	<img id="IMAGE" onclick="browse(this)" border="2" src="<?=$GLOBALS['supra']['request']['siteBase']?>/pic/managers.gif"  alt="Choose picture">
+	</td>
+</tr>
+
+
+
+
+<tr><td align='right'>Url:</td><td><input name="URL" type=text style='width:200'></td></tr>
+
+
+<tr><td align='right'>Open in new<br>window:</td>
+<td><input name="IN_NEW" type="checkbox"></td></tr>
+<tr><td align='right'>Active:</td><td><input name="ACTIVE" type="checkbox"></td></tr>
+
+</table>
+</fieldset>
+</td></tr>
+
+
+<tr valign="top"><td align="right"><button onclick="dialogOk()">Ok</button>&nbsp;<button onclick="dialogCancel()">Cancel</button></td></tr>
+</table>
+</body>
+</html>

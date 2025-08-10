@@ -1,0 +1,20 @@
+clickbank
+Clickbank|heading|
+After turning on Clickbank support here, edit the Clickbank product URL list under <a href="admin.cgi?action=scripts">Script Settings</a> for each script you would like to use Clickbank with. In your Clickbank account, don't forget to set your thank-you page to notify_clickbank.cgi.<br><br>Would you like to use Clickbank to process credit cards?|clickbank|2&Yes&1~No&0
+
+2checkout
+2checkout|heading|
+Once you've turned on 2checkout support here, it can be selected for any registered script under <a href="admin.cgi?action=scripts">Script Settings</a> and a minimum charge amount can be set as well.<br><br>IMPORTANT: You will also need to change your 2checkout return URL to the location of notify_2checkout.cgi on your site. (Log in to your account at 2checkout, click on "Shopping Cart" then "Cart Details", then enter the URL and save.)<br><br>Would you like to use 2checkout to process credit cards? (Selecting "No" makes all other settings on this page invalid)|2checkout|2&Yes&1~No&0
+Enter your 2checkout affiliate ID:|2checkout_id|1&10
+Would you like to run 2checkout in demo mode (for testing purposes no credit cards will be charged)?|2checkout_demo|2&Yes&1~No&0
+
+authnet
+Authorize.net|heading
+Would you like to use Authorize.net to process credit cards?<br><br>After turning on Authorize.net support here, you can select it for any registered script, and each script can have its own customized settings for Authorize.net's payment form. Turning off the support invalidates all other settings on this page|authnet|2&Yes&1~No&0
+Please enter your Authorize.net log-in:|authnet_login|1&15
+Because Authorize.net requires a POST form, the R3N3 Payment Gateway must create a form and submit it. For users with JavaScript enabled (at least 99% of all viewers), this form can be automatically submitted.  But for those who have JavaScript disabled, the following text will be displayed on the button they must click to view the payment form.<br><br>e.g. "Click here for secure payment"|authnet_button|1&30
+
+paypal
+PayPal <small>(<a href="https://www.paypal.com/affil/pal=webmaster%40smartcgis.com">more information</a></small>)|heading|
+Do you want to accept on-line payments via PayPal? (Selecting "No" invalidates other settings on this page)|paypal|2&Yes&1~No&0
+What is the e-mail address that PayPal payments should be sent to?|paypal_email|1|40

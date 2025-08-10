@@ -1,0 +1,20 @@
+<?php
+
+$query = 'SELECT * FROM banners WHERE active = "1" and lang="'.$site['lang'].'" ORDER BY id';
+
+if ($data_string = &$supra['connect']->QueryData ($query)) {
+
+	$rand_num = (count($data_string)==1) ? 0 : (mt_rand (1, sizeof ($data_string))-1);
+	$targ_str = ($data_string[$rand_num]['in_new']) ? 'target="new"' : '';
+	$banner_block = '<a ' . $targ_str . ' href="' . $data_string[($rand_num)]['url'] . '"><img alt="' . $data_string[($rand_num)]['alt'] . '" border="0" src="' . $data_string[($rand_num)]['image'] . '"></a>';
+
+} else
+	$banner_block = '<img border="0" height="60" src="'.suFILES.'/pic/.gif" width="10">';
+
+$html  = '<table border="0" cellpadding="10" cellspacing="0" width="100%"><tr>';
+$html .= '<td align="center" valign="top">' . $banner_block . '</td>';
+$html .= '</tr></table>';
+
+echo $html;
+
+?>

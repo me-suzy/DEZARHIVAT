@@ -1,0 +1,71 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<style type="text/css">
+BODY, TABLE, P {
+	font-family: Tahoma;
+	font-size: 10pt;
+	color: #000000; 
+}
+A:LINK, A:VISITED, A:ACTIVE {
+	font-family : Tahoma;
+	font-size : 12px;
+	color : #0080C0;
+}
+A:HOVER {
+	font-family : Tahoma;
+	font-size : 12px;
+	color : #000000;
+	text-decoration : none;
+}
+</style>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>New Page 1</title>
+</head>
+
+<body>
+
+<p>paFileDB now has a feature to allow you to show top lists anywhere on your 
+site. On your homepage, you can have the X newest files, or X most popular 
+files, with X being whatever number you want. The file that handles the top 
+lists is toplist.php.</p>
+<p><b>Configuration<br>
+</b>There are only 2 things to configure:</p>
+<p><blockquote>$show = &quot;10&quot;; //How many files do you want to show on the list<br>
+$template = &quot;&lt;b&gt;{number}.&lt;/b&gt; &lt;a href=\&quot;{filelink}\&quot;&gt;{filename} ({info})&lt;/a&gt;&lt;br&gt;&quot;; 
+//Template for each line.</blockquote>The variable $show is how many files to 
+show on the list (the X number mentioned before the config section) So if you 
+set this to 5, paFileDB will show the top 5 newest/popular files.<br>
+$template lets you customize the actual list. You can use the following 
+variables to change the look:<blockquote>{number} - This is the file's position 
+  in the list (If it's the newest or most popular file it's 1. If out of 10 
+  shown files it's the 5th newest or popular, the number is 5)<br>
+  {filelink} - This is the URL to paFileDB's View File page. You will have to 
+  put the &lt;a href=&quot;&quot;&gt; tag around it.<br>
+  {filename} - This is the name of the file that will be shown.<br>
+  {info} - This is info about the file. For the newest files, it's the date 
+  added. For the most popular files, it's either the rating or total number of 
+  downloads.</blockquote>
+<p><b>Usage<br>
+</b>If you are using .php files for your site, you can use this code to show the 
+list:<blockquote>&lt;?php<br>
+  $list = &quot;<b>TYPE&quot;</b>;<br>
+  include(&quot;<b>/full/path/to/</b>toplist.php&quot;);<br>
+  ?&gt;</blockquote>
+<p><b>TYPE:</b> Set this to one of the following options to set the type of 
+list:<blockquote>newest - This will show the top X newest files.<br>
+  downloads - This will show the top X popular files based on the amount of 
+  downloads each file has had<br>
+  rating - This will show the top X popular files based on the rating visitors 
+  to your site have given them.</p>
+
+</blockquote>
+<p><b>/full/path/to/ </b>- This is the full path to toplist.php. If you do not 
+know the path to your files, you will have to ask your host. *NIX server paths 
+are &quot;/full/path/to/toplist.php&quot; and Windows server paths are 
+&quot;C:/full/path/to/toplist.php&quot;</p>
+
+</body></html>

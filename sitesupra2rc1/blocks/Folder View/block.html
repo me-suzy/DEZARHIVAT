@@ -1,0 +1,36 @@
+<?php
+if(1>($folder=intval($folder)))$folder=1;
+if($title)$title='<tr><td class="rightHeadline">'.$title.'</td></tr>';
+if(!$limit=intval($limit))$limit=10;
+$query='SELECT path,title FROM '.suPAGES.' WHERE parent='.$folder.' AND active=1 ORDER BY sort LIMIT '.$limit;
+if($data=$suSQL->queryData($query))
+{
+	$listT='
+		<tr>
+			<td>
+				<table border="0" cellpadding="0" cellspacing="4">
+					{list}
+				</table>
+			</td>
+		</tr>';
+
+	$itemT='
+		<tr>
+			<td valign="top"><img src="'.suFILES.'/pic/pin.gif" height="4" width="4" hspace="5" vspace="5" /></td>
+			<td><a href="'.suBASE.'{path}">{title}</a></td>
+		</tr>';
+
+	$itemT=suTemplate($itemT,1);
+	$itemT->set($data);
+	$listT=suTemplate($listT);
+	$listT->set('list',$itemT);
+}
+else
+	$listT='';
+
+$mainT='<table border="0" cellpadding="0" cellspacing="8" width="100%">{title}{list}</table>';
+$html=suTemplate($mainT);
+$html->set('title',$title);
+$html->set('list',$listT);
+echo $html->finish();
+?>

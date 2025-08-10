@@ -1,0 +1,199 @@
+<?php
+	
+	if(getData())
+	{
+		switch($what)
+		{
+			case "REFRESH":
+				$query = "SELECT id, name, login, date, email, status, info, password FROM users WHERE id = ".$data['ID'];
+				$data = $GLOBALS['supra']['connect']->QueryRow($query);
+				sendData($data);
+				
+			case "SAVE":
+				$fields = "";
+				$values = "";
+				if($data['mode'])
+				{
+					// new item
+					foreach($data as $key => $value)
+						if($key != "mode" && $key != "ID")
+						{
+							$fields .= $key.",";
+							$values .= "'".addslashes($value)."',";
+						}
+					$fields = substr($fields, 0, strlen($fields) - 1);
+					$values = substr($values, 0, strlen($values) - 1);
+					$query = "INSERT INTO users (".$fields.") VALUES (".$values.")";
+				}
+				else
+				{
+					// update record
+					foreach($data as $key => $value)
+						if($key != "mode" && $key != "ID")
+							$fields .= $key."='".addslashes($value)."',";
+					$fields = substr($fields, 0, strlen($fields) - 1);
+					$query = "UPDATE users SET ".$fields." WHERE id = ".$data['ID'];
+				}
+				$GLOBALS['supra']['connect']->Query($query);
+				break;
+		}
+	}
+?>
+<html>
+<head>
+	<title>New item</title>
+	<link rel = stylesheet href="/supra/supra.css">
+	<script src="<?=$GLOBALS['supra']['request']['supraBack']?>/dialog.html"></script>
+</head>
+<script lanaguage="javascript">
+// definining global variables
+var supra, currSelection, mode, fEdit;
+
+fEdit = false;
+
+function init()
+{
+	// pointer to $site array
+	supra = dialogArguments[0];
+	// block property 
+	mode = dialogArguments[1];
+	currSelection = dialogArguments[2];
+
+	setElements();
+	fillForm();
+	return;
+}
+
+function fillForm()
+{
+	if (!mode)
+	{
+		data = sendData("REFRESH", {ID: currSelection});
+		if (!data) return;
+		
+		uName.value = data.name;
+		uEmail.value = data.email;
+		uLogin.value = data.login;
+		uDate.value = data.date;
+		uStatus.selectedIndex = data.status;
+		uInfo.value = data.info;
+		uPassword.value = data.password;
+	}
+	else
+		uDate.value = '2002-03-24';
+
+	return;
+}
+
+function setInfo()
+{
+	supra.tmpHtml = uInfo.value;
+	if(showModalDialog("<?=$GLOBALS['supra']['request']['supraBack']?>/ped_html.html?" + Math.random(), [supra], "scroll:no;dialogWidth:500px;dialogHeight:450px;center:yes;help:no;resizable:yes;status:no;"))
+	{
+		uInfo.value = supra.filterHTML(supra.tmpHtml);
+		setEdit();
+	}
+
+	return;
+}
+
+function setDate()
+{
+	newDate = showModalDialog("<?=$GLOBALS['supra']['request']['supraBack']?>/ped_date.html?" + Math.random(),[supra,uDate.value], "scroll:no;dialogWidth:300px;dialogHeight:250px;center:yes;help:no;resizable:yes;status:no;");
+	if(newDate != uDate.value && newDate)
+	{
+		uDate.value = newDate;
+		setEdit();
+	}
+
+	return;
+}
+
+function setPassword()
+{
+	newPassword = showModalDialog("<?=$GLOBALS['supra']['request']['supraBack']?>/editor.html?editor="+escape("User manager/setpassword.html")+'&r=' + Math.random(), [supra], "scroll:no;dialogWidth:300px;dialogHeight:250px;center:yes;help:no;resizable:yes;status:no;")
+	if(newPassword)
+	{
+		uPassword.value = newPassword;
+		setEdit();
+	}
+		
+	return;
+}
+
+function setElements()
+{
+	btnSave.disabled = !fEdit;
+	return;
+}
+
+function setEdit()
+{
+	fEdit = true;
+	setElements();
+	return;
+}
+
+function saveItem(sMode)
+{
+	if(sMode)
+		sendData("SAVE", {mode: mode, ID: currSelection, name: uName.value, email: uEmail.value, login: uLogin.value, date: uDate.value, status: uStatus.value, info: uInfo.value, password: uPassword.value});
+
+	returnValue = sMode;
+	window.close();
+
+	return;
+}
+</script>
+<body>
+<input type="hidden" id="uInfo">
+<input type="hidden" id="uPassword">
+<table width="100%" id="myDialog" border="0" cellpadding="0" cellspacing="5">
+	<tr> 
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="5">
+				<tr>
+					<td>Name</td>
+					<td><input type="text" id="uName" onKeyUp="setEdit();"></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="text" id="uEmail" onKeyUp="setEdit();"></td>
+				</tr>
+				<tr>
+					<td>Login</td>
+					<td><input type="text" id="uLogin" onKeyUp="setEdit();"></td>
+				</tr>
+				<tr>
+					<td>Date</td>
+					<td><input type="text" id="uDate" readonly>&nbsp;<button id="btnDate" onClick="setDate();" style="width: 30">...</button></td>
+				</tr>
+				<tr>
+					<td>Status</td>
+					<td>
+						<select id="uStatus" onChange="setEdit();">
+							<option value="0">Inactive</option>
+							<option value="1">Active</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Info</td>
+					<td><button id="btnInfo" onClick="setInfo();">Info</button></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><button id="btnPassword" onClick="setPassword();" style="width: 100">Set password</button></td>
+				</tr>
+				<tr>
+					<td align="right" colspan="2">
+						<button id="btnSave" onClick="saveItem(1);">Save</button>&nbsp;
+						<button id="btnCancel" onClick="saveItem(0);">Cancel</button>&nbsp;
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

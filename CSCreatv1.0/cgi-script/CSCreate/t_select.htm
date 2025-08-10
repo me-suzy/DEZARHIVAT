@@ -1,0 +1,230 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>CSCreate</title>
+<style fprolloverstyle>A:hover {color: red}
+</style>
+
+</head>
+
+<body style="font-family: verdana, arial, helvetica; font-size: 10pt" bgcolor="#FFFFFF" text="#000080" link="#0000FF" vlink="#800000" alink="#FF0000" topmargin="0" leftmargin="0">
+<form name=form1 method=post action="in(cgiurl)">
+<input type=hidden name=command value=browse>
+
+<TABLE border=1 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD align=center background="../images/top-filler.gif" vAlign="middle">
+      <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0">
+        <tr>
+          <td width="100%">
+            <table border="0" width="100%" cellspacing="0" cellpadding="3">
+              <tr>
+                <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                    <tr>
+                      <td width="100%" valign="middle" align="center"><b><font color="#000000" face="Verdana" size="5">csCreate
+                        by CGI Script.net</font></b></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                    <tr>
+                      <td width="100%">
+                        <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                          <tr>
+                            <td width="100%">
+
+<p>
+  <b>
+  <font face="Verdana" size="2" color="#000000">Index of the current directory:
+  in(disdir)</font></b></p>
+
+<font face="Verdana" size="2" color="#000000">Browse to the directory where the
+file you want to import or create exists (or would exist).</font>
+
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="100%">
+
+<div align="center">
+  <center>
+  <table border="0" cellspacing="0" cellpadding="0" height="23">
+    <tr>
+      <td><b><font face="Verdana" size="2" color="#000000">Actions:</font></b></td>
+      <td><b><font size="2" face="Verdana"><select size="1" name="MyAction" onChange="DoForm(this[this.selectedIndex].value);this.selectedIndex=0;">
+          <option value="cancel">Select Action</option>
+          <option value="import">Import a Page</option>
+          <option value="createfile">Create a Page</option>
+          <option value="createdirectory">Create a Directory</option>
+        </select></font></b></td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="100%">
+
+                                  <table cellspacing="0" cellpadding="3" width=100% bordercolor="#000000" border="1">
+
+          <tr align="middle">
+            <td align="center" valign="middle"><b><font face="Verdana" size="2" color="#000000">Select</font></b></td>
+            <td align=left>&nbsp;</td>
+            <td align=left><b><font face="Verdana" size="2" color="#000000">Name</font></b></td>
+            <td align=left><b><font face="Verdana" size="2" color="#000000">Size</font></b></td>
+            <td align=left><b><font face="Verdana" size="2" color="#000000">Created</font></b></td>
+            <td align="left"><b><font face="Verdana" size="2" color="#000000">Mode</font></b></td>
+          </tr>
+          <font color="#000000" size="2" face="Verdana">
+          in(line)</font>
+      </table>
+
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="100%">
+
+<div align="center">
+  <center>
+  <table border="0" cellspacing="0" cellpadding="0" height="23">
+    <tr>
+      <td><b><font face="Verdana" size="2" color="#000000">Actions:</font></b></td>
+      <td><b><font size="2" face="Verdana"><select size="1" name="MyAction2" onChange="DoForm(this[this.selectedIndex].value);this.selectedIndex=0;">
+          <option value="cancel">Select Action</option>
+          <option value="import">Import a Page</option>
+          <option value="createfile">Create a Page</option>
+          <option value="createdirectory">Create a Directory</option>
+        </select></font></b></td>
+    </tr>
+  </table>
+  </center>
+</div>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                    <tr>
+                      <td width="100%">
+                        <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                          <tr>
+                            <td width="100%">
+    <p><font face="Verdana" size="2" color="#000000"><b>Action Instructions<br>
+    </b>Here is a list of actions
+    and details of what the action does.</font></p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="100%">
+
+                                <table cellspacing="0" cellpadding="3" bordercolor="#000000" border="1">
+
+          <tr>
+            <td align="left" valign="top"><font face="Verdana" size="2" color="#000000"><b>Import
+              a Page<br>
+              </b>Import
+              an existing page into csCreate. Select file from Index above and
+              select 'Import' from the dropdown menu.</font></td>
+          </tr>
+          <tr>
+            <td align="left" valign="top"><font face="Verdana" size="2" color="#000000"><b>Create
+              a Page<br>
+              </b>Create and begin editing a new
+              page. Navigate to the directory where you want the new file and
+              then select the 'Create a new Page' option from the dropdown menu.</font></td>
+          </tr>
+      </table>
+
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                    <tr>
+                      <td width="100%" align="center">
+                        <font face="verdana,arial,helvetica" size="2" color="#000000">in(cinfo)</font></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+</td></tr></table>
+
+
+<input type=hidden name=dir value="in(dir)">
+<input type=hidden name=Rad value="">
+     </form>
+</body>
+<script language=javascript>
+
+function DoForm(i){
+
+if(i=="import"){
+Import();
+}
+
+if(i=="createfile"){
+ShowCreateFile();
+}
+
+if(i=="createdirectory"){
+ShowCreateDir();
+}
+
+if(i=="cancel"){
+return;
+}
+
+}
+
+function SetRad(Val){
+document.form1.Rad.value=Val;
+return true;
+}
+
+
+function ShowCreateFile(){
+var windowURL = "in(cgiurl)?command=sa&dir="+escape(document.form1.dir.value);
+window.location = windowURL;
+return true;
+}
+
+function ShowCreateDir(){
+var windowURL = "in(cgiurl)?command=cd&dir="+escape(document.form1.dir.value);
+window.location = windowURL;
+return true;
+}
+
+function Import(){
+var File=document.form1.Rad.value;
+if(!File){
+alert("Error. Please select a file to import.");
+return false;
+}
+var windowURL = "in(cgiurl)?command=i&dir="+escape(document.form1.dir.value)+"&file="+File;
+window.location = windowURL;
+return true;
+}
+</script>
+</html>

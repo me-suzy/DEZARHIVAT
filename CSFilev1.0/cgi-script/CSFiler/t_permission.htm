@@ -1,0 +1,180 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Change Permissions</title>
+
+<style type="text/css"><!--
+body,p,div,span,th,td{font-family:verdana,arial,sans-serif;font-size:10pt}
+
+a{color:maroon;text-decoration:underline}
+a:active{color:red}
+a:hover{color:#3366FF;text-decoration:underline}
+INPUT.button { background-color:#eeeeee;font:verdana;font-weight:bold;color:#000080;font-size:10pt; }
+
+--></style>
+
+</head>
+<body bgcolor="#FFFFFF">
+<FORM action=in(cgiurl) method=post name=form1>
+<input type=hidden name=command value=permissions>
+<input type=hidden name=dir value="in(dir)">
+<input type=hidden name=file value="in(file)">
+<div align="center">
+  <table border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="100%" valign="middle" align="center">
+      
+      
+      
+
+      <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0">
+
+        <tr>
+          <td width="100%">
+            <table border="0" width="100%" cellspacing="0" cellpadding="3">
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+
+                    <tr>
+                      <td width="100%" nowrap valign="middle" align="center"><b><font face="Verdana" size="5">Change
+                        Permissions</font></b></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+
+                    <tr>
+                      <td width="100%" valign="middle" align="center">
+                        <table border="0" width="100%" cellspacing="0" cellpadding="3">
+                          <tr>
+                            <td width="100%" valign="middle" align="center"><font face="Verdana" size="1">Select the new permissions for the file&nbsp; <b><br>
+                              in(file)</b>
+      to and then click 'Change'. </font></td>
+                          </tr>
+                          <tr>
+                            <td width="100%" valign="middle" align="center">
+                              <table border="1" width="100%" bordercolor="#000000" cellspacing="0" cellpadding="2">
+                                <tr>
+                                  <td width="100%">
+                                    <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                                      <tr>
+                                        <td width="100%" valign="middle" align="center"><font size="2" face="Verdana"><b>Owner</b></font></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="100%" valign="middle" align="center">
+                                          <table border="0" cellspacing="0" cellpadding="2">
+                                            <tr>
+                                              <td><font size="1"><input type="checkbox" name="or" value="4" in(orsel)></font></td>
+                                              <td><font face="Verdana" size="1">Read</font></td>
+                                              <td><font size="1"><input type="checkbox" name="ow" value="2" in(owsel)></font></td>
+                                              <td><font face="Verdana" size="1">Write</font></td>
+                                              <td><font size="1"><input type="checkbox" name="oe" value="1" in(oesel)></font></td>
+                                              <td><font face="Verdana" size="1">Execute</font></td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="100%">
+                                    <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                                      <tr>
+                                        <td width="100%" valign="middle" align="center"><font face="Verdana" size="2"><b>Group</b></font></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="100%" valign="middle" align="center">
+                                          <table border="0" cellspacing="0" cellpadding="2">
+                                            <tr>
+                                              <td><font size="1"><input type="checkbox" name="gr" value="4" in(grsel)></font></td>
+                                              <td><font face="Verdana" size="1">Read</font></td>
+                                              <td><font size="1"><input type="checkbox" name="gw" value="2" in(gwsel)></font></td>
+                                              <td><font face="Verdana" size="1">Write</font></td>
+                                              <td><font size="1"><input type="checkbox" name="ge" value="1" in(gesel)></font></td>
+                                              <td><font face="Verdana" size="1">Execute</font></td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="100%">
+                                    <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                                      <tr>
+                                        <td width="100%" valign="middle" align="center"><font face="Verdana" size="2"><b>Public</b></font></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="100%" valign="middle" align="center">
+                                          <table border="0" cellspacing="0" cellpadding="2">
+                                            <tr>
+                                              <td><font size="1"><input type="checkbox" name="pr" value="4" in(prsel)></font></td>
+                                              <td><font face="Verdana" size="1">Read</font></td>
+                                              <td><font size="1"><input type="checkbox" name="pw" value="2" in(pwsel)></font></td>
+                                              <td><font face="Verdana" size="1">Write</font></td>
+                                              <td><font size="1"><input type="checkbox" name="pe" value="1" in(pesel)></font></td>
+                                              <td><font face="Verdana" size="1">Execute</font></td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+
+                    <tr>
+                      <td width="100%" valign="middle" align="center"><input class="button" type="submit" value="-=Change=-">
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+
+                    <tr>
+                      <td width="100%" valign="middle" align="center"><font face="Verdana" size="2">in(cinfo)</font>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      
+      
+
+      
+      </td>
+    </tr>
+  </table>
+  <center>
+</div>
+</form>
+</body>
+
+</html>

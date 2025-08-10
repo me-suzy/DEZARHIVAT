@@ -1,0 +1,70 @@
+<?php
+
+$tmp_arr = Array();
+$query = 'SELECT id, parent, title, map FROM pages_' . $supra['lang'] . $supra['edit'] . ' WHERE active = 1 AND map&1 AND path NOT LIKE "'.suDIR_SYS.'/%" ORDER BY parent, sort' ;
+
+if($data = &$supra['connect']->QueryData($query))
+	suDUMP($data);
+
+	for($i = 0, $max = count($data); $i < $max; $i++) {
+		$tmp_arr[$data[$i]['id']]['id'] = (int)$data[$i]['id'];
+		$tmp_arr[$data[$i]['id']]['parent'] = (int)$data[$i]['parent'];
+		$tmp_arr[$data[$i]['id']]['title'] = $data[$i]['title'];
+		$tmp_arr[$data[$i]['id']]['map'] = (int)$data[$i]['map'];
+		$tmp_arr[$data[$i]['id']]['child'] = Array();
+	}
+	foreach($tmp_arr as $k=>$v) {
+		$tmp_arr[$v['parent']]['child'][] = &$tmp_arr[$k];
+		unset($tmp_arr[$k]['parent']);
+}
+
+unset($data);
+$root = &$tmp_arr[1];
+$close=0;
+if(!function_exists('buildingSiteMap')) {
+	function buildingSiteMap($data, $path, $t) {
+		global $tmp_l, $close;
+		if($t)
+		{
+			if (!$close)
+				$close = $data['map'] ? 0 : $tmp_l;
+			else if ($data['map'] && ($tmp_l <= $close))
+				$close = 0;
+		}
+		$tmp_html = '';
+		if (!$close) {
+			$tmp_html .= '<tr><td><table border="0" cellpadding="0" cellspacing="0"><tr>';
+			if($tmp_l != 0) {
+				if($t == 1) {
+					$tmp_html .= $path . '<td><img border="0" height="16" src="'.suFILES.'/pic/map/' . ($data['child'] ? 'l.gif' : 'l.gif') . '" width="19"></td><td><img border="0" height="16" src="'.suFILES.'/pic/map/' . ($data['child'] ? 'f.gif' : 'p.gif') . '" width="19"></td><td><a class="red" href="?id=' . $data['id'] . '">' . $data['title'] . '</a></td>';
+					$path.='<td><img border="0" height="16" src=".gif" width="19"></td>';
+				}
+				else {
+					$tmp_html .= $path . '<td><img border="0" height="16" src="'.suFILES.'/pic/map/' . ($data['child'] ? 't.gif' : 't.gif') . '" width="19"></td><td><img border="0" height="16" src="'.suFILES.'/pic/map/' . ($data['child'] ? 'f.gif' : 'p.gif') . '" width="19"></td><td><a class="red" href="?id=' . $data['id'] . '">' . $data['title'] . '</a></td>';
+					$path .= '<td><img border="0" height="16" src="'.suFILES.'/pic/map/i.gif" width="19"></td>';
+				}
+			}
+			else
+				$tmp_html .= '<td><img src="'.suFILES.'/pic/map/g.gif"></td><td><a class="red" href="?id=1">Home Page</a></td>';
+			$tmp_html .= '</tr></table></td></tr>';
+			$tmp_l++;
+			for($a = 0, $b = count($data['child']); $a < $b; $a++) {
+				$c = $a;
+				$c++;
+				$tmp_t = $c == $b ? 1 : 0;
+				$tmp_html .= buildingSiteMap($data['child'][$a], $path, $tmp_t);
+			}
+			$tmp_l--;
+		}
+		return $tmp_html;
+	}
+}
+
+$html = '';
+$html .= '<table cellpadding="0" cellspacing="5"><tr><td><table border="0" cellpadding="0" cellspacing="0">';
+$html .= buildingSiteMap($root, '', 0);
+$html .= '</table></td></tr></table>';
+
+echo $html;
+
+?>

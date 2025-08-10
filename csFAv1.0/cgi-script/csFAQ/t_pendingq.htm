@@ -1,0 +1,144 @@
+<html>
+
+<head>
+<title>FAQ Pending Questions</title>
+<style type="text/css"><!--
+body,p,div,span,th,td{font-family:verdana,arial,sans-serif;font-size:10pt}
+
+a{color:#3366FF;text-decoration:none}
+a:active{color:red}
+a:hover{color:maroon;text-decoration:underline}
+INPUT.button { background-color:#eeeeee;font:verdana;font-weight:bold;color:#000080;font-size:10pt; }
+
+--></style>
+</head>
+<body>
+<form name="form1" action="in(cgiurl)">
+<input type=hidden name=command value=manage>
+
+<div align="center">
+  <center>
+<table border="0" width="100%" cellpadding="0" height="100%" cellspacing="0">
+  <tr>
+    <td width="100%" valign="top" align="center">
+      <div align="center">
+        <center>
+      <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0">
+        <tr>
+          <td width="100%">
+            <table border="0" width="100%" cellspacing="0" cellpadding="3">
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                    <tr>
+                      <td width="100%">
+                        <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                          <tr>
+                            <td nowrap align="left"><font face="Verdana" size="5"><b>csFAQ Management</b></font></td>
+                          </center></center>
+                        <td align="right">
+                          <p align="right"><input class="button" type="button" value="-=Close=-" onClick="window.location='in(cgiurl)?command=manage&database=in(database)';"></td>
+                      </tr>
+                    </table>
+                  </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+          <center><center>
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                    <tr>
+                      <td width="100%">
+                        <!-- database placeholder -->
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                    <tr>
+                      <td width="100%">
+                        <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                          <tr>
+                            <td valign="middle" align="center">
+                              <table border="1" width="100%" bordercolor="#000000" cellspacing="0" cellpadding="5">
+                                <tr>
+                                  <td width="100%" valign="middle" align="center">
+                                    <p align="center"><b><font size="3">FAQ
+                                    Pending Questions</font></b>
+
+
+
+                                    </p>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+          <center><center>
+              </center></center>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+          <center><center>
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+						in(line)
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                    <tr>
+                      <td width="100%">
+                        <p align="center">in(cinfo)</p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+              </center></center>
+          </td>
+        </tr>
+      </table>
+
+      </div>
+    </td>
+  </tr>
+</table>
+</div>
+
+<input type=hidden name=database value="in(database)"><input type=hidden name=command value="reorder">
+</form>
+<a name="lowform">
+
+
+</body>
+<script language=javascript>
+
+function Delete(id){
+if(confirm("Are you sure you want to delete this FAQ item?")){
+var rndURL = (1000*Math.random());
+window.location = "in(cgiurl)?database=in(database)&command=deletepq&id="+id+"&rnd="+rndURL;
+}
+return true;
+}
+
+function Move(id,database){
+var rndURL = (1000*Math.random());
+window.location = "in(cgiurl)?command=move&database="+database+"&id="+id+"&rnd="+rndURL;
+
+}
+</script>
+</html>

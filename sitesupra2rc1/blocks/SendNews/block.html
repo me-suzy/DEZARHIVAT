@@ -1,0 +1,49 @@
+<?php
+
+$Post = isset($GLOBALS['HTTP_POST_VARS']) ? $GLOBALS['HTTP_POST_VARS'] : array();
+
+if (isset ($Post['action']) && ($Post['action'] == 'access')) {
+	$d = &$supra['connect']->QueryData ('SELECT email AS m FROM subscribe WHERE ' . $supra['doc']['userbit'] . '&prop');
+	$os=null;
+	if (isset($GLOBALS['OS']))
+		$os = strpos($GLOBALS['OS'], 'Windows') === false ? 'other' : 'win32';
+	if (isset($GLOBALS['OSTYPE']))
+		$os = strpos($GLOBALS['OSTYPE'], 'linux') === false ? 'other' : 'linux';
+
+	if ($d) {
+		$message = strtr ($block['Text1'], Array ('{link}'=>'http://' . $GLOBALS['HTTP_HOST'] . '/' . $supra['lang'] . '/?id=' . $supra['doc']['id']));
+
+		if ($os == 'linux') {
+//			CUBE DEMO site used charset UTF-8
+			$charset = 'utf-8';
+//			$code = Array ('en'=>2, 'lv'=>7, 'ru'=>1);
+//			$charset = 'windows-125' . $code[$supra['lang']];
+			$mailFrom = $block['emailTitle'] . '<' . $block['emailHome'] . '>';
+			$mailHeader = "MIME-Version: 1.0\nContent-Type: text/plain; charset={$charset}\nContent-Transfer-Encoding: 8bit\nFrom:{$mailFrom}\nX-Mailer: PHP/" . phpversion();
+			foreach ($d as $data) {
+				$mailTo = $data['m'] . '<' . $data['m'] . '>';
+				mail ($mailTo, $block['Subject1'] , $message, $mailHeader);
+			}
+		}
+		else if ($os == 'win32') {
+			$tmp = new COM ('CDONTS.NewMail') or die ('Could not create object');
+			$tmp->from = $block['emailHome'];
+			$tmp->subject = $block['Subject1'];
+			$tmp->body = $message;
+			foreach ($d as $data) {
+				$tmp->to = $data['m'];
+				$tmp->send();
+			}
+		}
+	}
+}
+
+if ($supra['edit'])
+	echo '
+		<table cellpadding="0" cellspacing="0">
+		<tr><form action="?id=' . $supra['doc']['id'] . '" method="post"><td class="buttonText">' . $block['Title'] . '</td><tr>
+		<tr><td><input type="hidden" name="action" value="access"><input class="buttonText" style="background:#FFFFFF; border: 1px solid #E7C28B" type="submit" value="Send"></td></form></tr>
+		</table>
+		';
+
+?>

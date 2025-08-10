@@ -1,0 +1,106 @@
+<%
+'****************************************************************************************
+'**  Copyright Notice    
+'**
+'**  Web Wiz Guide Guestbook
+'**                                                              
+'**  Copyright 2001 Bruce Corkhill All Rights Reserved.                                
+'**
+'**  This program is free software; you can redistribute it and/or modify
+'**  it under the terms of the GNU General Public License as published by
+'**  the Free Software Foundation; either version 2 of the License, or
+'**  any later version.
+'**
+'**  All copyright notices must remain intacked in the scripts and the 
+'**  outputted HTML.
+'**
+'**  You may not pass the whole or any part of this application off as your own work.
+'**   
+'**  All links to Web Wiz Guide must remain in place and the powered by
+'**  logo with link back to Web Wiz Guide must remain visiable when the pages
+'**  are viewed.
+'**
+'**  This program is distributed in the hope that it will be useful,
+'**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+'**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'**  GNU General Public License for more details.
+'**    
+'**  You should have received a copy of the GNU General Public License
+'**  along with this program; if not, write to the Free Software
+'**  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA	
+'** 
+'**
+'**  No official support is available for this program but you may post support questions at: -
+'**  http://www.webwizguide.com/forum
+'**
+'**  Support questions are NOT answered by e-mail ever!
+'**
+'**  For correspondence or non support questions contact: -
+'**  asp@webwizguide.com
+'**
+'****************************************************************************************
+%>
+<html>
+<head>
+<title>Internet Search Engine Admin Login</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<!-- The Web Wiz Guide ASP Guestbook is written by Bruce Corkhill ©2001
+     	If you want your Guestbook then goto http://www.webwizguide.com --> 
+
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="518" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td align="center"> 
+      <h1>Guestbook Admin Login</h1>
+    </td>
+  </tr>
+</table>
+<br>
+<table width="347" border="0" cellspacing="0" cellpadding="1" align="center">
+  <tr>
+    <td align="center">Enter your username and password (case sensitive)</td>
+  </tr>
+</table>
+<br>
+
+<form name="Login" method="post" action="check_user.asp">
+  <table width="273" border="0" cellspacing="0" cellpadding="1" bgcolor="#000000" align="center">
+    <tr> 
+      <td> 
+        <table width="273" border="0" align="center" cellspacing="0" cellpadding="0" bgcolor="#CCCCCC">
+          <tr> 
+            <td align="right" height="46" valign="bottom" width="94">User name: 
+            </td>
+            <td height="46" valign="bottom" width="172"> 
+              <input type="text" name="txtUserName">
+            </td>
+          </tr>
+          <tr> 
+            <td align="right" width="94">Password: </td>
+            <td width="172"> 
+              <input type="password" name="txtUserPass">
+            </td>
+          </tr>
+          <tr><a href="http://www.webwizguide.com"></a>
+            <td align="right" height="44" width="94">&nbsp;</td>
+            <td height="44" width="172"> &nbsp;
+              <input type="submit" name="Submit" value="Enter">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+              <input type="reset" name="Submit2" value="Reset">
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  </form>
+<br>
+<center>
+  Session Cookies must be enabled<br>
+  <br>
+  <a href="http://www.webwizguide.com" target="_blank"><img src="guestbook_images/web_wiz_guide.gif" width="100" height="30" border="0" alt="Web Wiz Guide!"></a> 
+</center>
+</body>
+</html>

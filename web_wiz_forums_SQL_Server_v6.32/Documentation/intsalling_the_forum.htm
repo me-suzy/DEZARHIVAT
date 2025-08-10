@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Web Wiz Forum's Insatalling the Forum</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+.text {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-style: normal; font-weight: normal; color: #000000}
+.heading {  font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-weight: bold; color: #000000}
+.title {  font-family: Arial, Helvetica, sans-serif; font-size: 33px; font-style: normal; font-weight: bold; color: #000000}
+a {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #0000CC; text-decoration: underline}
+a:hover {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #FF0000; text-decoration: underline; font-style: normal}
+a:visited {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-style: normal; font-weight: normal; color: #0000FF; text-decoration: underline}
+a:visited:hover {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #FF0000; text-decoration: underline; font-style: normal}
+.smtitle {  font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-style: normal; font-weight: bold; color: #000000}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+ <tr>
+  <td align="center" class="title">Web Wiz Forums Documentation<span class="smtitle"><br>
+   Installing Web Wiz Forums (SQL Server Version)<br>
+   <a href="menu.htm" target="_self">Return to the main menu</a></span></td>
+ </tr>
+</table>
+<br>
+<table width="96%" border="0" cellspacing="0" cellpadding="2" align="center">
+ <tr> 
+  <td class="text"> <ol>
+    <li>Check with your web host that your web space is running on Windows NT4 or 2000 operating system, and is ASP enabled. There is no grantee the forum will run on a Unix web server even if it supports 
+     ASP.</li>
+    <li>Make sure that you have access to an SQL Server Database.</li>
+    <li>Unzip the Forum zip file onto your hard drive keeping the files and images in there original directories.</li>
+    <li>Upload the files and images through FTP to your webspace, again keeping the files and images in there directories. With ASP you <b>don't</b> need to place the files in a CGI bin.</li>
+    <li>Create a database on the SQL Server or use an excising one.</li>
+    <li>Edit the file <em>'SQL_server_connection.asp'</em> found in the admin directory entering your SQL Server name, your SQL Server Authentication details, and the name of the empty database you have 
+     created for the Forum on the SQL Server.</li>
+    <li>Run the file <em>'SQL_server_setup.asp'</em> found in the main folder of the Forum. This file will create all the tables, relations, and default values in the empty database you have created on 
+     the SQL Server. It is highly recommend for security purposes that you delete this file from the Web Server once the database is fully created.</li>
+    <li>The Forum database should now be created and you can now use the Forum.</li>
+    <li>Once all the files are uploaded and the database created on the SQL Server point your web browser to the location on your web space where you uploaded the forum to.</li>
+    <li>Now that your forum is uploaded and running see, <a href="administering_the_forum.htm" target="_self">Setting up and Administering the Discussion Forum</a>, to find out how to set up forums and 
+     administer your forum.</li>
+    <li>To login into the forum the default admin username and password is: - 
+     <ul>
+      <li><b>Username: - </b>Administrator</li>
+      <li><b>Password: -</b> letmein</li>
+     </ul>
+    </li>
+   </ol>
+  </td>
+ </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="10" align="center">
+ <tr> 
+  <td align="center" class="text" height="17"><a href="http://www.webwizguide.info" target="_blank"><img src="web_wiz_guide.gif" width="116" height="38" border="0" alt="Web Wiz Guide!"></a><br>
+   <br>
+   Copyright 2000-2002 Bruce Corkhill<br>
+   Web Wiz Guide, PO Box 4982, Bournemouth, BH8 8XP, United Kingdom</td>
+ </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>Link Submission Form.</title>
+<style TYPE="text/css">
+
+  A {text-decoration: none}
+
+</style>
+<style>
+
+a:hover{color:"#ff0000"}
+
+a:hover{text-decoration:underline}
+
+</style>
+
+</head>
+
+<body LEFTMARGIN="0" TOPMARGIN="0" BOTTOMMARGIN="0" RIGHTMARGIN="0" MARGINHEIGHT="0"
+MARGINWIDTH="0" link="#ff8040" vlink="#ff8040" alink="#ff8040" bgcolor="#FFFFFF" onload="moomin()">
+<script>
+function moomin() {
+var thetime=new Date();
+
+var nday=thetime.getDay();
+var nmonth=thetime.getMonth();
+var ntoday=thetime.getDate();
+var nyear=thetime.getYear();
+var AorP=" ";
+
+nmonth+=1;
+if (nmonth==1)
+  nmonth="01";
+if (nmonth==2)
+  nmonth="02";
+if (nmonth==3)
+  nmonth="03";
+if (nmonth==4)
+  nmonth="04";
+if (nmonth==5)
+  nmonth="05";
+if (nmonth==6)
+  nmonth="06";
+if (nmonth==7)
+  nmonth="07";
+if (nmonth==8)
+  nmonth="08";
+if (nmonth==9)
+  nmonth="09";
+if (nmonth==10)
+  nmonth="10";
+if (nmonth==11)
+  nmonth="11";
+if (nmonth==12)
+  nmonth="12";
+
+ntoday+=0;
+if (ntoday==1)
+  ntoday="01";
+if (nmonth==2)
+  ntoday="02";
+if (ntoday==3)
+  ntoday="03";
+if (ntoday==4)
+  ntoday="04";
+if (ntoday==5)
+  ntoday="05";
+if (ntoday==6)
+  ntoday="06";
+if (ntoday==7)
+  ntoday="07";
+if (ntoday==8)
+  ntoday="08";
+if (ntoday==9)
+  ntoday="09";
+
+if (nyear<=99)
+  nyear= "19"+nyear;
+
+if ((nyear>99) && (nyear<2000))
+ nyear+=1900;
+
+document.forms[0].elements['Date_Added'].value=(nyear+""+nmonth+""+ntoday);
+
+} 
+</script>
+<table width=100%><tr bgcolor="#008000"><td><CENTER><FONT face="verdana, ms sans serif" size="2"><FONT color="#DDDDDD"><b>Add Your Link</b></FONT></FONT></CENTER></td></tr></table>
+<FORM ACTION="http://www.upoint.net/cgi-bin/my_freelink/freelink.cgi" METHOD="POST">
+<table> <FONT face="verdana, ms sans serif" size="2">All fields are required.</font>
+<tr valign=top><td><FONT face="verdana, ms sans serif" size="2">Site Title:</FONT></td><td><input type=text name="Site_Title" size="35"></td></tr>
+<tr valign=top><td><FONT face="verdana, ms sans serif" size="2">URL:</FONT></td><td><input type=text name="Url" size="35"><br><FONT face="verdana, ms sans serif" color="#777777" size="1">Please start with http://</font></td></tr>
+<tr valign=top><td><FONT face="verdana, ms sans serif" size="2">Description:</FONT></td><td><textarea name="Description" cols=38 rows=10></textarea></td></tr>
+<tr valign=top><td><FONT face="verdana, ms sans serif" size="2">Category:</FONT></td><td><select name="Category"><option>Select<option>
+Thai music only
+<option>Non-Thai music only
+<option>Both Thai and Non-Thai Music
+</select></td></tr>
+<tr valign=top><td><FONT face="verdana, ms sans serif" size="2">Language:</FONT></td><td><select name="Language"><option>Select<option>
+English only
+<option>Thai only
+<option>Both English and Thai
+</select></td></tr>
+<tr valign=top><td><FONT face="verdana, ms sans serif" size="2">Webmaster Name:</FONT></td><td><input type=text name="Webmaster"></td></tr>
+<tr valign=top><td><FONT face="verdana, ms sans serif" size="2">Country Staying:</FONT></td><td><input type=text name="Country"></td></tr>
+<tr valign=top><td><FONT face="verdana, ms sans serif" size="2">Email:</FONT></td><td><input type=text name="Email"></td></tr>
+<tr valign=top><td><FONT face="verdana, ms sans serif" color="#777777" size="2">Date Added:</FONT></td><td><input type=text name="Date_Added" onFocus="this.blur()"></td></tr>
+</table><input type=hidden name=actiontotake value="Addtemp"><FONT face="verdana, ms sans serif" color=red size="2">Upoin submission, you will be instructed on how to submit your logo.</font><br><br><input type=submit value="Add Record"></form>
+
+</body>
+</html>

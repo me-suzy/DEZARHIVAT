@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>CSMailto Management Form</TITLE>
+<META content="text/html; charset=windows-1252" http-equiv=Content-Type>
+</HEAD>
+<BODY bgColor=#ffffff 
+style="FONT-FAMILY: verdana, helvitica, arial; FONT-SIZE: 10pt">
+<FORM action=in(cgiurl) method=post>
+<input type=hidden name=command value=in(tcommand)> 
+<div align="center">
+  <center> 
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <table border="0" width="100%" cellspacing="0" cellpadding="3">
+        <tr>
+          <td width="100%">
+            <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+              <tr>
+                <td width="100%" nowrap>
+                  <p align="center"><b><font face="Verdana" size="5">csMailto
+                  Management</font></b></p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">
+            <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+              <tr>
+                <td width="100%">
+                  <p align="center"><input type="button" value="  Create New Form  " onClick="javascript:window.location='in(cgiurl)?command=showadd';"></p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">
+            <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+              <tr>
+                <td width="100%">
+                
+                <TABLE border=1 cellPadding=3 cellSpacing=0 width=100% bordercolor="#000000">
+  <TBODY>
+  <TR>
+    <TD align=left bgColor=#e4dfd6 noWrap><font size="2"><b>Action&nbsp;</b></font></TD>
+    <TD align=left bgColor=#e4dfd6 noWrap><font size="2"><b>Form Name</b></font></TD>
+    <TD align=left bgColor=#e4dfd6 noWrap><font size="2"><b>Form
+      Heading</b></font></TD>
+    <TD align=left bgColor=#e4dfd6 noWrap><font size="2"><b>Links</b></font></TD>
+  </TR>
+  in(line)
+  <TR>
+    <TD align=left bgColor=#E4DFD6 noWrap colspan="4">&nbsp; 
+    </TD>
+  </TR>
+  </TBODY></TABLE>
+                
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+  </center>
+</div>
+</FORM></BODY>
+<script language=javascript>
+function ShowForm(page){
+var rndURL = (1000*Math.random());
+var windowURL = "in(formurl)/"+page+"?rnd="+rndURL;
+newWindow = window.open(windowURL,null,'width=500,height=400,location=0,directories=0,status=0,menuBar=0,scrollBars=yes,resizable=yes');
+newWindow.focus();
+}
+function Delete(page){
+var rndURL = (1000*Math.random());
+var windowURL = "in(cgiurl)?command=delete&page="+page+"&rnd="+rndURL;
+if(confirm("Are you sure you want to delete "+page+"?")){
+window.location = windowURL;
+}
+}
+function Modify(page){
+var rndURL = (1000*Math.random());
+var windowURL = "in(cgiurl)?command=modify&page="+page+"&rnd="+rndURL;
+window.location = windowURL;
+}
+
+function ShowLinks(d){
+var rndURL = (1000*Math.random());
+var windowURL = "in(cgiurl)?form="+d+"&command=showlinks&rnd="+rndURL;
+var height=350;
+var width=700;
+newWindow = window.open(windowURL,null,'width='+width+',height='+height+',location=0,directories=0,status=0,menuBar=0,scrollBars=yes,resizable=yes');
+newWindow.focus();
+return true;
+}
+
+</script>
+</HTML>

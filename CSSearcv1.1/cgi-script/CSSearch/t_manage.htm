@@ -1,0 +1,225 @@
+
+<html>
+
+<head>
+
+<title>csSearch by CGI Script.net</title>
+
+<style type="text/css"><!--
+a{color:#41779E;text-decoration:none;font-weight:bold}
+a:active{color:red;font-weight:bold}
+a:hover{color:#7A007B;text-decoration:underline;font-weight:bold}
+
+INPUT.button { background-color:#eeeeee;font:verdana;font-weight:bold;color:#000080;font-size:10pt; }
+--></style>
+
+</head>
+
+<body>
+
+<form method=POST action="in(cgiurl)">
+<input type=hidden name="cdir" value="in(cdir)">
+<input type=hidden name="command" value="agi">
+
+
+<center>
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0">
+<tr>
+<th>
+  <table border="0" cellspacing="0" cellpadding="3">
+    <tr>
+      <td width="100%" valign="middle" align="center">
+        <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+          <tr>
+            <td width="100%">
+
+  <p align="center"><font face="Verdana" size="5"><b>csSearch - Management -  v1.1</b></font></p>
+
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td width="100%" valign="middle" align="center">
+        <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+          <tr>
+            <td width="100%">
+
+  <div align="center">
+    <b><font face="Verdana" size="2">Select/View the search window.</font></b>
+    <table border="0" cellspacing="0">
+      <tr>
+        <td><font face="Verdana" size="1">[&nbsp;</font></td><td><font face="Verdana" size="1"><input type="radio" name="style" in(S1) value="1"></font></td><td><font face="Verdana" size="1"><a href="CSSearch.cgi?style=1" onclick="NewWindow(this.href,'search_style','500','300','no','center');return false" onfocus="this.blur()">Style 1</a> </font></td><td><font face="Verdana" size="1">&nbsp;|&nbsp;</font></td><td><font face="Verdana" size="1"><input type="radio" name="style" in(S2) value="2"></font></td><td><font face="Verdana" size="1"><a href="CSSearch.cgi?style=2" onclick="NewWindow(this.href,'search_style','500','300','no','center');return false" onfocus="this.blur()"> Style 2</a> </font></td><td><font face="Verdana" size="1">&nbsp;|&nbsp;</font></td><td><p align="center"><font face="Verdana" size="1"><input type="radio" name="style" in(S3) value="3"></font></p></td><td><font face="Verdana" size="1"> <a href="CSSearch.cgi?style=3" onclick="NewWindow(this.href,'search_style','500','300','no','center');return false" onfocus="this.blur()"> Style 3</a></font></td><td><font face="Verdana" size="1">&nbsp;]</font>
+        <td>&nbsp;&nbsp;&nbsp;<font face="Verdana" size="2"><input class="button" type="submit" value="-=Update=-" name="action"></font></td>
+        </td>
+      </tr>
+      <tr>
+      <td colspan=11><font face="Verdana" size="1">
+      <b>Direct Link:</b><br>
+      in(directlinks)<br>
+      <b>SSL Link:</b><br>
+      in(ssllinks)
+      </td>
+      </tr>
+    </table>
+  </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td width="100%" valign="middle" align="center">
+        <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+          <tr>
+            <td valign="middle" align="center">
+
+                    <table border="0" cellspacing="0" cellpadding="3">
+          <tr>
+            <td>
+              <p align="center"><b><font face="Verdana" size="3">Global Bypass Settings</font></b></td>
+          </tr>
+          <tr>
+            <td><font face="Verdana" size="2">File extensions shown here are not listed in the index below and are not searched.</font></td>
+          </tr>
+          <tr>
+            <td align="right">
+              <div align="center">
+                <center>
+                <table border="0" cellspacing="0" cellpadding="2">
+                  <tr>
+                    <td><b><font face="Verdana" size="2">File Extensions:</font></b></td>
+                    <td><font face="Verdana" size="1"><input type="text" name="efileext" size="35" value="in(efileext)"></font></td>
+                    <td><font face="Verdana" size="2"><input class="button" type="submit" value="-=Submit=-" name="B13"></font></td>
+                  </tr>
+                </table>
+                </center>
+              </div>
+            </td>
+          </tr>
+         <!-- <tr>
+            <td align="right"><b><font face="Verdana" size="2">Directory Names:</font></b></td>
+            <td><font face="Verdana" size="1"><input type="text" name="edirname" size="50" value="in(edirname)"><br>
+              (ex: cgi-bin,images,private,_vti_cnf,_vti_pvt)</font></td>
+            <td><font face="Verdana" size="2"><input type="submit" value="-=Submit=-" name="B14"></font></td>
+          </tr> -->
+        </table>
+
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </center>
+    <tr>
+      <td width="100%">
+        <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+          <tr>
+            <td width="100%">
+              <table border="1" width="100%" bordercolor="#000000" cellspacing="0" cellpadding="5">
+                <tr>
+                  <td width="100%" colspan="4" bgcolor="#CCCCCC">
+              <p align="left"><font face="Verdana" size="1"><b>Skip</b> applies to only
+                  this instance of the file or directory. If a directory is
+                  marked as 'Skipped' all the files and sub-directories within
+                  that directory are 'Skipped' as well. Click 'Skip' button a
+              second time to un-skip the file/directory.</font>
+              <p align="left"><font face="Verdana" size="1"><b>Ignore</b>
+              applies to all instances of that
+                  file/directory. If a directory is
+                  marked as 'Ignored' all the files and sub-directories within
+                  that directory are 'Ignored' as well. However, only that
+                  directory is ignored globally. Click 'Ignore' button a second
+              time to un-ignore the file/directory.</font>
+                  </td>
+                </tr>
+       <tr><td colspan="4">
+
+
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+  <tr>
+    <td width="100%">
+      <p align="center">
+<b><font face="Verdana" size="2">Index of the current directory: in(currentdir)</font></b>
+    </td>
+  </tr>
+</table>
+
+</td></tr>
+                  <tr align="middle">
+                    <td align="left">&nbsp;</td>
+                    <td align="left"><b><font size="2" face="Verdana">Name</font></b></td>
+                    <td align="center"><b><font size="2" face="Verdana">Status</font></b></td>
+                    <td align="left"><b><font size="2" face="Verdana">Action </font></b></td>
+                  </tr>
+                  <tr>
+                    <td align="left"><a href="javascript: GoUp();"><font face="Verdana" size="2"><img src="images/up.gif" border="0" width="18" height="16"></font></a></td>
+                    <td align="left"><a href="javascript: GoUp();"><font color="#0000ff" size="2" face="Verdana">Previous
+                      Directory</font></a></td>
+                    <td align="center">&nbsp;</td>
+                    <td align="left">&nbsp;</td>
+                  </tr>
+                  in(directory)
+                  in(files)
+                  in(skipdir)
+			      in(skipfiles)
+			      in(ignoredir)
+			      in(ignorefiles)
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+ </th>
+</tr>
+</table></form>
+<script language=javascript>
+
+var cdir = "in(cdir)";
+function GoUp()
+{
+var rndURL = (1000*Math.random());
+window.location = "in(cgiurl)?command=gu&cdir="+escape(cdir)+"&rndURL="+rndURL;
+}
+
+function GoTo(dir){
+var rndURL = (1000*Math.random());
+window.location = "in(cgiurl)?command=manage&cdir="+escape(cdir)+"&nd="+escape(dir)+"&rndURL="+rndURL;
+}
+
+function JumpTo(dir){
+var rndURL = (1000*Math.random());
+window.location = "in(cgiurl)?command=manage&nd="+escape(dir)+"&rndURL="+rndURL;
+}
+
+function Skip(f){
+var rndURL = (1000*Math.random());
+window.location = "in(cgiurl)?command=as&cdir="+escape(cdir)+"&f="+escape(f)+"&rndURL="+rndURL;
+}
+function Ignore(f){
+var rndURL = (1000*Math.random());
+window.location = "in(cgiurl)?command=ae&cdir="+escape(cdir)+"&f="+escape(f)+"&rndURL="+rndURL;
+}
+
+function NoGo(){
+alert("In order to view the contents of this directory, you must make it searchable");
+}
+
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+var win=null;
+function NewWindow(mypage,myname,w,h,scroll,pos){
+if(pos=="random"){LeftPosition=(screen.width)?Math.floor(Math.random()*(screen.width-w)):100;TopPosition=(screen.height)?Math.floor(Math.random()*((screen.height-h)-75)):100;}
+if(pos=="center"){LeftPosition=(screen.width)?(screen.width-w)/2:100;TopPosition=(screen.height)?(screen.height-h)/2:100;}
+else if((pos!="center" && pos!="random") || pos==null){LeftPosition=0;TopPosition=20}
+settings='width='+w+',height='+h+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',location=yes,directories=no,status=no,menubar=no,toolbar=no,resizable=no';
+win=window.open(mypage,myname,settings);}
+// -->
+</script>
+<p align="center"><font face="Tahoma" size="1">Powered by: <a href="http://www.cgiscript.net" target="_blank">CGI Script.net</a></font></p>
+</body>
+</html>

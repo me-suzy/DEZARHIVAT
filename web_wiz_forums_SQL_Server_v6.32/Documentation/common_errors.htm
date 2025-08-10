@@ -1,0 +1,127 @@
+<html>
+<head>
+<title>Troubleshooting and Common Errors</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+.text {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-style: normal; font-weight: normal; color: #000000}
+.heading {  font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-weight: bold; color: #000000}
+.title {  font-family: Arial, Helvetica, sans-serif; font-size: 33px; font-style: normal; font-weight: bold; color: #000000}
+a {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #0000CC; text-decoration: underline}
+a:hover {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #FF0000; text-decoration: underline; font-style: normal}
+a:visited {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-style: normal; font-weight: normal; color: #0000FF; text-decoration: underline}
+a:visited:hover {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #FF0000; text-decoration: underline; font-style: normal}
+.smtitle {  font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-style: normal; font-weight: bold; color: #000000}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+ <tr>
+  <td align="center" class="title">Web Wiz Forums Documentation<span class="smtitle"><br>
+   Troubleshooting and Common Errors<br>
+   <a href="menu.htm" target="_self">Return to the main menu</a></span></td>
+ </tr>
+</table>
+<br>
+<table width="96%" border="0" cellspacing="0" cellpadding="2" align="center">
+ <tr> 
+  <td class="text"> <p>Installing Web Wiz Forums should be relative staright forward, but due to a wide variations of web servers and configuarations problems may occur.</p>
+   <p>This page tries to anwser many of the questions that are asked almost everyday on Web Wiz Guide.</p>
+   <ul>
+    <li><a href="#FAQ1" target="_self">ASP Scripts won't run!</a> - most common problem</li>
+    <li><a href="#FAQ2" target="_self">How can I tell if my web space supports ASP?</a></li>
+    <li><a href="#FAQ3">The page cannot be displayed. HTTP500 error</a> - often confused with 404 page not found</li>
+    <li><a href="#FAQ6">CDate error</a></li>
+   </ul>
+   <p>For other common FAQ's see the following artcles on Web Wiz Guide; <a href="http://www.webwizguide.info/asp/faq/default.asp" target="_blank">ASP Frequently Asked Questions</a>, or for database errors 
+    see <a href="http://www.webwizguide.info/asp/faq/access_database_faq.asp" target="_blank">Database Errors FAQ's</a>.</p>
+   <table width="98%" border="0" cellspacing="0" cellpadding="0" bgcolor="#000000" align="center">
+    <tr> 
+     <td> <table width="100%" border="0" cellspacing="1" cellpadding="2" align="center">
+       <tr> 
+        <td valign="bottom" bgcolor="#CCCCCC"><span class="heading">ASP Scripts won't run!</span><span class="text"> - most common problem<a name="FAQ1"></a></span></td>
+       </tr>
+       <tr valign="top"> 
+        <td class="text" bgcolor="#FFFFFF">This seems to be the most common problem that people have. <br> <br>
+         ASP need's to be run through a web server, hence the name Active Server Pages, no Server, no Active Pages. If you are not familiar with ASP please read through the article on Web Wiz Guide on, 
+         <a href="http://www.webwizguide.info/asp/tutorials/what_is_asp.asp" target="_blank">What is Active Server Pages (ASP)?</a><br> <br>
+         If you are finding that you can't get an ASP script to run on your web space provided by your web space provider then check with them that they fully support ASP.<br> <br>
+         ASP is completely different to CGI and Pearl, so having support for CGI does not mean that you have support on your web space for ASP.</td>
+       </tr>
+      </table></td>
+    </tr>
+   </table>
+   <br> <table width="98%" border="0" cellspacing="0" cellpadding="0" bgcolor="#000000" align="center">
+    <tr> 
+     <td> <table width="100%" border="0" cellspacing="1" cellpadding="2" align="center">
+       <tr> 
+        <td valign="bottom" bgcolor="#CCCCCC" class="heading">How can I tell if my web space supports ASP?<span class="text"><a name="FAQ2"></a></span></td>
+       </tr>
+       <tr valign="top"> 
+        <td class="text" bgcolor="#FFFFFF" height="33">To be able to tell if your web space provider supports ASP, the easiest way is to look at any FAQ or support pages that the provider may have, or contact 
+         them by e-mail or phone and ask them.</td>
+       </tr>
+      </table></td>
+    </tr>
+   </table>
+   <br>
+   <table width="98%" border="0" cellspacing="0" cellpadding="0" bgcolor="#000000" align="center">
+    <tr> 
+     <td> <table width="100%" border="0" cellspacing="1" cellpadding="2" align="center">
+       <tr> 
+        <td valign="bottom" bgcolor="#CCCCCC" class="heading">The page cannot be displayed. HTTP 500 - Internal server error<span class="text"> (often confused with 404 page not found)<a name="FAQ3" id="FAQ3"></a></span></td>
+       </tr>
+       <tr valign="top"> 
+        <td class="text" bgcolor="#FFFFFF" height="33">This is a very general error. Many people often say, <em>when I click on a link in the forum I get a page can not be found error</em>, 99.99% of the 
+         time this is actually incorrect, if you look closer at the error message it will be a 500 Internal server error.<br>
+         <br>
+         If you receive this error when trying to run an ASP script with no error message or line number then you need to turn off Friendly HTTP Error Massages in Internet Explorer so you can get details 
+         on what is coursing the error.<br> <br>
+         If you are not sure how then read article on Web Wiz Guide on how to <a href="http://www.webwizguide.info/asp/faq/friendly_HTTP_error_messages.asp" target="_blank">Turn Off Friendly HTTP Error 
+         Messages in IE</a>.</td>
+       </tr>
+      </table></td>
+    </tr>
+   </table>
+         
+   <br>
+   <table width="98%" border="0" cellspacing="0" cellpadding="0" bgcolor="#000000" align="center">
+    <tr> 
+     <td> <table width="100%" border="0" cellspacing="1" cellpadding="2" align="center">
+       <tr> 
+        <td valign="bottom" bgcolor="#CCCCCC" class="heading">CDate Error<span class="text"> <a name="FAQ6" id="FAQ6"></a></span></td>
+       </tr>
+       <tr valign="top"> 
+        <td class="text" bgcolor="#FFFFFF" height="33"><p>This error happens when the locale langauge settings on the web server you are using are incorrectly set up. You can over come this problem by following the instructions below: -</p>
+         <ol>
+          <li>Open the file common.asp and find the line near the top that reads: -<br>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Session.LCID = 1033</li>
+          <li>Remove the sigle ' quote mark from infront of this line.</li>
+          <li>Then replace the number 1033 with your local ID number a full list can be found at: -<br>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.webwizguide.info/asp/faq/date_time_settings.asp" target="_blank">Changing Date, Time, and Currency Format</a> </li>
+          <li>Clean out your cookie cache on your web browser.</li>
+         </ol>
+         </td>
+       </tr>
+      </table></td>
+    </tr>
+   </table> </td>
+ </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="10" align="center">
+ <tr> 
+  <td align="center" class="text" height="17">For other common FAQ's see the following artcles on Web Wiz Guide: -<br>
+   <a href="http://www.webwizguide.info/asp/faq/default.asp" target="_blank">ASP Frequently Asked Questions</a>, or for database errors see <a href="http://www.webwizguide.info/asp/faq/access_database_faq.asp" target="_blank">Database 
+   Errors FAQ's</a>.<br>
+   <br>
+   <a href="http://www.webwizguide.info" target="_blank"><br>
+   <img src="web_wiz_guide.gif" width="116" height="38" border="0" alt="Web Wiz Guide!"></a><br>
+   <br>
+   Copyright 2000-2002 Bruce Corkhill<br>
+   Web Wiz Guide, PO Box 4982, Bournemouth, BH8 8XP, United Kingdom</td>
+ </tr>
+</table>
+</body>
+</html>

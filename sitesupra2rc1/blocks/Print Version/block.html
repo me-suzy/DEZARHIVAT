@@ -1,0 +1,26 @@
+<?
+$html = '';
+
+if isset($GLOBALS['HTTP_GET_VARS']['page'])) {
+	$page = 0 + $GLOBALS['HTTP_GET_VARS']['page'];
+	if($page) {
+		if($temp = $site['connect']->QueryRow('SELECT blocks, title, date FROM pages_' . $site['lang'] . $site['edit'] . ' WHERE id = ' . $page)) {
+			$pb = gzUnserialize($temp['blocks']);
+			$max=count($pb);
+			for($x=0; $x < $max; $x++)
+				if($pb[$x]['block'] == 'Free Text') {
+					$text = $pb[$x]['text'];
+					break;
+				}
+		}
+		$tmp = new Template($block['PrintTemplate']);
+		$tmp->set('date', prepareDate($temp['date']));
+		$tmp->set('title', $temp['title']);
+		$tmp->set('text', $text);
+		echo $tmp->finish();
+	}
+}
+else
+	if ($site['edit'])
+		echo $GLOBALS['HTTP_GET_VARS']['page'];
+?>

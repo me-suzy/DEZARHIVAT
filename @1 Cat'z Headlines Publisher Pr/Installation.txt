@@ -1,0 +1,70 @@
+INSTALLATION
+============
+- DO NOT rename the scripts or other files if you are new to the installation. You may only do so once you know exactly what you need to configure if you were to rename files.
+
+- To give you an easy start, following the instruction below and upload the sample data file, category icons and images too. Once the installation is successful, you may then delete them through the online admin interface.
+
+- Follow the folder names and structure below unless your hosting ISP does not allow you to run scripts inside a sub-folder of the cgi bin. In this case, you may install the headlines.cgi script directly under the cgi bin. But you have to be more careful on other related customization.
+=================================================================
+
+1) Open the script headlines.cgi
+- One the first line, make sure that it is the path to Perl on your server. If not, change it.
+- Near the top part of the script, modify the PATH to the file news.config. This is the only variable to configure in this script.
+
+2) Open the file news.config
+- Seach for "absScriptFile" and modify the URL. This is the absolute URL (starts with http:// and ends with headlines.cgi) to the script headlines.cgi.
+- Search for "calledBy" and modify the URL. This is the absolute URL (starts with http:// and ends with headlines.shtml) to your SHTML news page.
+
+3) Search for "scriptDir" and modify the PATH. This is the full PATH to the folder where the script headlines.cgi is sitting.
+
+4) Change "useScriptDirWithImages" from "0" to "1" only if images do not show up properly. For this moment, leave it as the default "0".
+
+5) Create the following four folders and chmod accordingly. Also upload the files:
+
+Folder A: http://www.yourdomain.com/cgi-bin/headlines/ (777)
+		- headlines.cgi (755)
+		- news.config (777)
+		- news.config.bak (777)
+		- news.dat (777)
+		- news.template (777)		
+Folder B: http://www.yourdomain.com/headlines/ (777)
+		- headlines.shtml
+Folder C: http://www.yourdomain.com/headlines/categories/ (777)
+		- upload all images in the "categories" folder of the zip file including the new
+		- news indicator newindicator.gif.
+Folder D: http://www.yourdomain.com/headlines/pics/ (777)
+		- upload all images in the "pics" folder of the zip file.
+
+6) Call the admin control interface by:
+		- http://www.yourdomain.com/cgi-bin/headlines/headlines.cgi?mode=admin
+		- The default password is "upoint". You may change it later.
+
+7) If you manage to get into the admin control interface, select the "View The News" radio button and hit "Submit". If you can see the sample news and icons OK, most probably your installation is successful. Then proceed testing other features.
+
+OTHER IMPORTANT INFORMATION
+===========================
+1) To call your script via SSI, use the tag:
+<!--#include virtual="../cgi-bin/headlines/headlines.cgi" -->
+Remember to rename your web page to *.shtml extension.
+
+2) You may use the limiters "limcat" or "maxnews"", for exaples:
+<!--#include virtual="../cgi-bin/headlines/headlines.cgi?limcat=Note" -->
+<!--#include virtual="../cgi-bin/headlines/headlines.cgi?maxnews=5" -->
+<!--#include virtual="../cgi-bin/headlines/headlines.cgi?limcat=Note&maxnews=3" -->
+where limtcat is the name of your category icon (case-sensitive).
+
+PROBLEMS?
+========
+Please sent an email to help@upoint.net describing
+- the problems
+- error message generated
+- URL to the script and/or result page
+- other things that you think might be helpful
+* We usually response in less than 12 hours (average is about 4 hours). But before that, you will receive an auto-responded email describing the most common CGI installation mistakes.
+
+The Management,
+UPDN Network Sdn Bhd
+www.upoint.net
+General: mail@upoint.net
+Technical help: help@upoint.net
+

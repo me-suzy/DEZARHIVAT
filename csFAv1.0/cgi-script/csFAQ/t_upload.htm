@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>csFAQ</TITLE>
+<META http-equiv=Content-Language content=en-us>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="Microsoft FrontPage 4.0" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId>
+<STYLE>INPUT.button {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000080; BACKGROUND-COLOR: #eeeeee
+}
+</STYLE>
+</HEAD>
+<BODY>
+<a name="page1">
+<form method="POST" action="in(cgiurl)" name=form1 onSubmit="return CheckCD();" enctype="multipart/form-data">
+<input type=hidden name=command value="upload">
+<input type=hidden name=database value="in(database)">
+<input type=hidden name=type value="in(type)">
+
+<DIV align=center>
+<CENTER>
+<TABLE height="100%" width="100%">
+  <TBODY>
+  <TR>
+    <TD vAlign=center align=middle>
+      <TABLE cellSpacing=0 borderColorDark=#ffffff cellPadding=5 bgColor=#c0c0c0
+      borderColorLight=#000000 border=1>
+        <TBODY>
+        <TR>
+          <TD>
+            <DIV align=center>
+            <TABLE cellSpacing=0 borderColorDark=#ffffff cellPadding=3
+            width="100%" borderColorLight=#000000 border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <DIV align=center>
+                  <TABLE cellSpacing=0 borderColorDark=#ffffff cellPadding=5
+                  width="100%" bgColor=#c0c0c0 borderColorLight=#000000
+border=1>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <DIV align=left>
+                        <TABLE cellSpacing=0 cellPadding=0 width="100%"
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <p align="center"><B><FONT face=verdana,arial,helvetica
+                              color=#000000 size=5>Upload File</FONT></B></p>
+                            </TD>
+                          </TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE></DIV></TD></TR>
+              <CENTER></CENTER>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 borderColorDark=#ffffff cellPadding=5
+                  width="100%" bgColor=#c0c0c0 borderColorLight=#000000
+border=1>
+                    <TBODY>
+                    <TR>
+                      <TD width="100%">
+                        <TABLE cellSpacing=0 cellPadding=2 border=0>
+                          <TBODY>
+                          <TR>
+                            <TD align=right width="50%"><FONT
+                              face=verdana,arial,helvetica
+                              size=2><B>File:</FONT></B></TD>
+                            <TD width="50%"><INPUT class=button type=file
+                              size=30 name=file></TD></TR>
+                          <TR>
+                            <TD align=right width="50%"></TD></TR>
+                          <TR>
+                            <TD width="100%" colSpan=2></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 borderColorDark=#ffffff cellPadding=5
+                  width="100%" bgColor=#c0c0c0 borderColorLight=#000000
+border=1>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=center align=middle width="100%">
+                        <P align=center><INPUT onClick="CheckCD();" class=button type=button value=-=Upload=- name=B1></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></FORM>
+</CENTER>
+<a name="page2">
+<TABLE height="100%" width="100%">
+  <TBODY>
+  <TR>
+    <TD vAlign=center align=middle>
+      <TABLE cellSpacing=0 borderColorDark=#ffffff cellPadding=5 bgColor=#c0c0c0
+      borderColorLight=#000000 border=1>
+        <TBODY>
+        <TR>
+          <TD>
+            <DIV align=center>
+            <TABLE cellSpacing=0 borderColorDark=#ffffff cellPadding=3
+            width="100%" borderColorLight=#000000 border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <DIV align=center>
+                  <TABLE cellSpacing=0 borderColorDark=#ffffff cellPadding=5
+                  width="100%" bgColor=#c0c0c0 borderColorLight=#000000
+border=1>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <DIV align=left>
+                        <TABLE cellSpacing=0 cellPadding=0 width="100%"
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <p align="center"><B><FONT face=verdana,arial,helvetica
+                              color=#000000 size=2>Uploading file...please wait.</FONT></B></p>
+                            </TD>
+                          </TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE></DIV></TD></TR>
+              <CENTER></CENTER>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 borderColorDark=#ffffff cellPadding=5
+                  width="100%" bgColor=#c0c0c0 borderColorLight=#000000
+border=1>
+                    <TBODY>
+                    <TR>
+                      <TD width="100%">
+                        <p align="center"><img src="animated-hourglass.gif" width="80" height="80"></TD></TR></TBODY></TABLE></TD></TR>
+              </TBODY></TABLE></DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM>
+
+</a></BODY>
+<script language=javascript>
+window.location="#page1";
+document.form1.file.focus();
+
+
+function CheckCD(){
+
+if(!document.form1.file.value){
+alert("Please select a file");
+return false;
+}
+
+window.location="#page2";
+setTimeout("DoSubmit()", 250);
+}
+
+function DoSubmit(){
+document.form1.submit();
+}
+
+</script>
+
+</HTML>

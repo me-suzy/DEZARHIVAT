@@ -1,0 +1,648 @@
+Web Wiz Discussion Forums Changes
+===========================================================================================
+
+
+Changes from 5.21 to 5.22
+
+1. date_time_functions.inc - fix db connection closing bug
+2. display_forum_topics.asp - fix db connection closing bug and reply anchor
+3. forum_members.asp - replace the ADO filter with a SQL query
+4. search.asp - moved creating rsTopic recordset
+5. post_message.asp  - added the ability to send e-mail notification so users can be notified 
+of any replies to there replies
+6. message_form.inc - same as above
+7. IE_message_form.inc - same as above
+8. registration_rules.asp - Fixed bug where the page to return in the forum after registering
+is not remembered.
+
+
+
+
+Changes from 5.22 to 6 beta 1
+
+The entire admin section has been re-written from the ground up and you will need to delete
+the old admin directory and replace it with the new one.
+
+Nearly all files in the entire forum changed to support the new skin file
+
+1. default.asp - decresed server load by less opening and closing objects
+2. common.asp - change some of the db connections and added script timeout and added ability
+to get the moderator for an individual forum
+3. delete_topic.asp - removed script timeout
+4. amend_forum_details.asp - fixed bug when entering a password for a forum
+5. admin_menu.asp - reformated the page so it is simpler to use
+6. SQL_server_setup.asp - all new database configuartion details added
+7. login_user.asp - added auto login at login page
+8. pofile_edit.asp - removed the db reference to the login_cookie field
+9. register_new_user.asp - removed the db reference to the login_cookie field
+10. change_admin_username.asp - same as above
+12. display_forum_topics.asp - changed to add ability to lock topics
+13. display_forum_topics.asp - same as above
+14. lock_topic.asp - added page to lock and un-lock topics
+15. post_message.asp - altered to get moderators for each individual forum
+16. default.asp - changed to allow forum categories
+17. display_forum_topics.asp - changed to allow categories
+18. search.asp - changed to allow categoires
+19. search_form.asp changed to allow categories
+20. forum_jump.inc - file added to move the forum jump code to one location
+21. profile.inc - file added to move the profile code to one location
+22. pop_up_profile.asp - changed to allow admin and moderators to change the status of members
+23. profile.asp - same as above
+24. profile_edit.asp - more security added
+25. display_topic_threads.asp - changed to use the new forum jump include
+26. New star images added
+27. New no entry icon image added
+28. New un-lock pad lock image added
+29. default.asp - page altered to add link to forum lock and un-lock page for admin
+30. lock_forum.asp - page added to allow the forums to be locked and un-locked from main page
+31. display_topic_threads.asp - changed layout of threads
+32. register_form.asp - changed to allow e-mail activation of forum membership
+33. register_new_user.asp - same as above
+34. actvation.asp - added to allow users to activate there accounts via e-mail
+35. register_mail_confirm.asp - added to notify user they are being sent an e-mail to activate membership
+36. select_countries_list.inc - added to move the drop down list of countires used in the regiter_form.asp
+page and the profile_edit.asp pages to this file for simpler translation to other langauges
+37. login_user.asp - changed to allow the user to set auto login when logging in
+39. register_new_user.asp - changed to allow better use of ADO objects
+40. display_topic_threads.asp - changed to add icons for topics eg. hot topic
+41. search.asp - changed to add icons for topics eg. hot topic
+42. added new post icons
+43. common.asp - changed to support the icons for the topics
+44. post_message.asp - improved performance, mail preview of post, set priority of post
+45. message_form.asp - changed to add more formating options and for post priority
+46. IE_message_form.asp - same as above
+47. edit_post.asp - changed so you can now edit the topic title
+48. format_post.inc - changed the way forum codes are formatted into HTML
+49. edit_post.inc - changed the way HTML is formatted back into HTML
+50. post_message.asp - changed the way IE posts are formatted
+51. display_printer_threads.asp - changed the way threads are converted into printable text versions
+52. display_topic_threads.asp - changed so you edit topic details when editing first post
+53. IE_textbox.asp - changed to support changing the topic details
+54. convert_post_to_text.inc - file added to convert post back to text so that it can be used on multiple pages
+55. send_mail_functions.inc - changed to send mail in HTML format as well as text
+56. e-mail_topic.asp - changed to support change above
+57. forum_password_form.asp - same as above
+58. register_new_user.asp - same as above
+59. forum_codes.asp - new page added to display the forum codes
+60. delete_topic.asp - improved performance
+61. delete_member.asp - added to delete a member from the forum
+
+
+The following pages are added or changed for the private messenger
+1. pm_inbox.asp - added to show private message inbox
+2. pm_show_message.asp - added to show a private message
+3. pm_new_message_form.asp - added to be able to write a private message
+4. IE_message_form.inc - file changed to add support for private messages
+5. message_form.inc - same as above
+6. IE_textbox.asp - changed to support private message
+7. post_message_form.asp - changed to add new veriables
+8. edit_post.asp - same as above
+9. pm_post_message.asp - added to check and send private message
+10. pm_buddy_list.asp - added to hold the users buddy list
+11. pm_delete_buddy.asp - added to delete buddy from buddy list
+12. pm_add_buddy.asp - added to add a new buddy to the buddy list
+13. pm_welcome.asp - added to welcome and explain the private message system to users
+14. pm_delete_message.asp - added to delete private message
+15. pm_check.inc - file added to check for new private msg
+16. display_forum_topics.asp - changed to link to private messenger
+17. display_forum_threads.asp - same as above
+18. default.asp - same as above
+
+
+The following pages are changed for the new layout
+1. New buttons and images added or swapped over
+2. default.asp
+3. display_topic_threads.asp
+4. display_forum_topics.asp
+5. search.asp
+6. skin_file.inc - added for the new skin
+
+
+The following pages and images have been added to allow avatars
+1. avatars folder created containing avatar images
+2. register_form.asp - changed to allow user to select avatar
+3. register_new_user.asp - changed to save new avatar to database
+4. profile_edit.asp - changed to allow user to change avatar and save new avatar to db
+5. select_avatar.inc - file added containing a selction list of avatars (placed in 1 file so
+it's easier for someone to change if they would like to use different avatars)
+
+
+The following changes and pages have been changed to allow Guests to post in the forum
+
+1. common.asp - added login for guest account identification
+2. forum_members.asp - changed to not accidently modify guest account
+3. delete_forum_members.asp - changed to not accidently delete guest account
+4. default.asp - changed so can't change the profile for the guest account
+5. display_forum_topics.asp - same as above
+6. display_topic_threads.asp - same as above
+7. edit_post.asp - stop guest account being able to edit post
+8. delete_post.asp - stop guest account deleting posts
+
+
+The following changes and pages have been added to allow different user levels within the forum
+
+1. common.asp - gets the member level of the user from the database
+2. forum_permissions.inc - added file to get what permissions the user has on the forum
+3. insufficient_pemission.asp - added page to display if the user doesn't have permission level
+to use the forum they are trying to enter
+4. default.asp - displays the forum as locked or no entry sign if user can't use forum
+5. display_forum_topics.asp - locks forum if the user only has read permissions
+6. display_topic_threads.asp - same as above
+7. edit_post.asp - same as above
+8. delete_post.asp - same as above
+9. search_form.asp - remove choice to search forums that the user can't use
+10. saerch.asp - changed so the member only searches forums they have access to
+11. forum_members.asp - changed to show member status in the forum
+12. display_topic_threads.asp - changed to show member status
+13. default.asp - letest forum posts only show those forums the user can use
+
+
+The following pages and files have been changed and added to allow threads to be split over multiple pages
+1. display_topic_threads.asp - changed to support thread pages
+2. delete_post.asp - same as above
+3. forum_members.asp - same as above
+4. edit_post.asp - same as above
+5. post_message_form.asp - same as above
+6. serach_form.asp - same as above
+7. log_off_user.asp - same as above
+8. login_user.asp - same as above
+9. edit_profile.asp - same as above
+10. profile.asp - same as above
+11. register_form.asp - same as above
+12. register_new_user.asp - same as above
+13. IE_message_form.inc - same as above
+14. message_form.inc - same as above
+15. post_message.asp - same as above
+16. display_topic_threads.asp - same as above
+17. defualt.asp - same as above
+
+
+The following files have been changed to fix a bug in the date_time_functions.inc where by
+the access driver reports the following error - Too many client tasks.
+
+1. date_time_functions.inc
+2. default.asp
+3. display_forum_topics.asp
+4. display_topic_threads.asp
+5. post_preview.asp
+6. forum_members.asp
+7. profile.asp
+8. pop_up_profile.asp
+9. search.asp
+10. display_printer_threads.asp
+11. IE_textbox.asp
+12. post_message_form.asp
+
+Changes to the database
+1. tblConfiguration - added Guest_post, true/false datatype
+2. tblAuthor at position 2 has had a Guest account created
+3. tblModrators - New table added to the database
+4. tblAuthor - removed moderator field
+5. tblAuthor - removed login_cookie field
+6. tblTopic - added Locked field, true/false datatype
+7. tblAuthor - added Status field, interger datatype, default value 1
+8. tblForum - added Guest field, integer datatype, default value 1
+9. tblForum - added Standard field, integer datatype, default value 1
+10. tblForum - added Super field, integer datatype, default value 1
+11. tblForum - added Power field, integer datatype, default value 1
+12. tblCategory - added table to the database
+13. tblForum - added Cat_ID field, inetger, foreign key to tblCategory primary key
+14. tblAuthor - added a text field called Avatar
+15. tblConfiguration - added Avatar, true/false datatype
+16. tblConfiguration - added Email_activate, true/false datatype
+17. tblTopic - added Priority field, integer datatype, default value 0
+18. tblConfiguration - added Hot_replies field, inetger datatype
+19. tblConfiguration - added Hot_replies field, integer datatype
+20. tblConfiguration - added Email_post field, true/false datatype
+21. tblPMMessage - table added to hold private messages
+22. tblBuddyList - table added to hold address book for private messages
+
+
+
+
+Changes from version 6 beta 1 to version 6 beta 2
+
+1. forum_details.asp - fixed bug with setting permissions for Gold members
+
+
+
+
+Changes from version 6 beta 2 to version 6 beta 3
+
+1. activate.asp - fixed bug that stoped the page from being displayed.
+2. delete_forum.asp - fixed to make compatible with the cheap nasty accounts you get on Brinkster
+3. delete_category.asp - same as above
+4. pm_delete_message.asp - changed to fix bug with the delete button on the page you read
+private messages on.
+5. skin_file.inc - add way to change colour of IE Text box
+6. IE_textbox.asp - changed to support above skin modification
+7. defualt.asp - fixed out of place dot when new visitors comes to the site.
+8. pm_welcome.asp - fixed the forum jump bug
+9. default.asp - improved the security gropus so that guests still have optiunity to login
+10. display_topic_threads.asp - same as above
+11. display_forum_topics.asp - same as above
+12. edit_post.asp - same as above
+13. post_message_form.asp - same as above
+14. login_user.asp - table background was displaying the wrong colour
+15. forum_codes.asp - fixed error with displaying blue as blue
+16. display_topic_threads.asp - fixed bug that shown other members as forum moderators in
+topics where the forum modrator had posted a msg
+17. search_form.asp - fixed bug of forums not being in correct order
+
+
+The following pages have been changed to allow the setting of a moderator on all forums
+1. default.asp
+2. common.asp
+3. profile.inc
+4. display_topic_threads.asp
+5. forum_members.asp
+6. member_profile.asp
+
+
+The following pages have been cahnged and added to add a side bar, header, and footer, include
+files so that you can integrate the forum into you own site easier.
+
+1. All pages in the main forum changed
+2. side_bar.inc - page added to hold whatever you want displayed in the side of the forum
+like navigation for the rest of your site.
+3. footer.inc - page added to hold anything that you want displayed at the bottom of the forum
+
+
+
+The following pages have been added or changed to allow toipcs to be moved to another forum
+
+1. display_topic_threads.asp - link to move topic page added
+2. move_topic_form.asp - page added to display a drop down list of forums to move topic to
+3. move_topic.asp - page added to move the topic
+4. langauge_file.inc
+
+
+
+Changes from version 6 beta 3 to version 6 beta 4
+
+1. profile.inc - changed so that the Admin and Guest accounts can't be shown as unactive in the profile
+2. member_profile.asp - changed so you can't make the Adin and Guest accounts look like they are un active
+3. member_profile.asp - fixed javascript bug and case sesitive field name bug
+4. forum_details.asp - fixed case sesitive field name bug
+5. member_profile.asp - same as above
+6. pm_inbox.asp - fixed javascript error when there are no pm's to delete
+7. common.asp - fixed CDate bug on some servers and made the time of last visit more accurate
+8. default.asp - decreased the number of recordset to increae the performance
+9. langauge_file.inc - changed to add the words used in the new pages
+
+
+The following files and pages have been changed so that the original private message can be seeen
+when you reply to a private message
+1. pm_show_message.asp
+2. pm_new_message_form.asp
+3. IE_textbox.asp
+4. langauge_file.inc
+
+
+The following pages hae been changed or added for the active users counter and a database table added
+1. tblAvtiveUser - Table added to the database
+2. active_users.inc - file added to caluclate the active users on the forum
+3. default.asp - page added to display the active users on the forum
+4. active_users.asp - page added to show active users and some statistics on them
+5. register_new_user.asp - changed so that a user can be annoymous in the active usres list
+6. register_form.asp - same as above
+6. login_user.asp - same as above
+
+
+
+Changes from version 6 beta 4 to version 6 beta 5
+
+1. e-mail_topic.asp - changed the size of the e-mail fields
+2. register_new_user.asp - sorted bug when entering a link in a signature
+3. post_message.asp - corrected problem where by a moderaor of all forums wasn't geting
+notified of a new post.
+4. pm_post_message.asp - fixed bug where a msg is replied to that contains an image
+5. move_topic_form.asp - fixed whereby moderators couldn't move the topic
+6. move_topic.asp - same as above
+7. not_posted.asp - page to display if a post is not posted
+8. post_message.asp - changed to stop people from spamming the forum with 100's of posts
+9. search.asp - changed to fix bug when posting a new topic when searching all forums
+10. langauge_file.inc - changed to add the words of the new pages
+11. default.asp - changed to link to pages to delete cookies and mark posts as read
+12. mark_posts_as_read.asp - new file that marks all posts as read
+13. remove_cookies.asp - new file to delete cookies set by the forum
+14. spam_configure.asp - page added to set up anti-spam settings
+15. admin_menu.asp - page updated to link to the new anti-spam settings page
+16. date_time_configure.asp - changed to allow more flexibility of time changes
+17. pm_inbox.asp - fixed error were it doesn't go to the previous page if you delete all the
+pm's on a page higher than page 1
+18. active_users.inc - changed to better support access which can be a little slow in updating
+and to check the user isn't listed twice if they return within 10 minutes with a new IP address
+19. Spam_seconds and Spam_minutes - fields have been added to the tblConfiguration table in the database
+20. Smilies moved to smileys folder
+
+The database name has now been changed for extra security
+1. database name has changed from froum.mdb to wwForum.mdb
+2. common.asp - both files have been altered to make changing the path to the forum database
+and the name of the database itself simpler.
+
+
+The following pages have been changed for the active topics page
+1. active_topics.asp - pages added to display active topics
+2. defualt.asp - changed to link to this new page
+3. display_topic_threads.asp - changed to link back to the active topics page
+
+Updated Skins
+The skins have been redone and as such almost every page in the main forum is changed to support
+the new functions in the skin_file.inc
+
+
+Changes from version 6 beta 5 to version 6 beta 6
+1. pm_check.inc - improved perfomance of the file
+2. search.asp - removed so small bugs in the HTML
+3. active_topics.asp - fixed the missing space around the word on when displaying the last
+visit date
+4. pm_welcome.asp - improved performance
+5. register_new_user.asp - fixed bug whereby a user could enter a blank username
+6. post_preview.asp - prevent browser from caching this page
+7. message_form.inc - same as above
+8. post_message_form.asp - changed to display post reply when quoting a post
+9. actice_topics.asp - fixed bug with moving between pages and the order of the topics
+10. langauge_file.inc - added some missed out text to the langauge file
+11. active_topics.asp - changed to fix bug with some foriegn langauge servers
+12. register_new_user.asp - changed so that when e-mail activation is on you can only use
+an e-mail address once to register (stops a user having multiple accounts)
+13. login_user.asp - changed 'Don't add me to active users list' to 'Add me to active users list'
+14. register_forum.asp - same as above
+15. register_new_user.asp - same as above
+16. acive_users.inc - fixed bug where by it wasn't removing all un active users.
+17. post_message.asp - fixed bug where you could enter a post thet could be got to that had 
+blenk spaces as the subject heading
+18. not_posted.asp - changed to support the bug above
+19. IE_message.form.inc - fixed formatting bug when emoticons are turned off
+20. forum_password_form.asp - fixed auto login bug
+
+
+The following pages have been changed to add Stored Procedures for SQL Server
+1. SQL_server_setup.asp
+2. common.asp - in main directory
+3. display_forum_topics.asp
+4. defualt.asp
+5. active_users.inc
+6. search.asp
+7. pm_check.asp
+9. date_time_functions.inc
+10. active_topics.asp
+11. display_topic_threads.asp
+12. forum_jump.inc
+13. forum_permissions.inc
+14. active_users.asp
+15. forum_members.asp
+
+
+Changes from version 6 beta 6 to version 6 full
+1. IE_message_form.inc - fixed bug where the admin and moderators can't choose to receive
+e-mail notification reply to posts when the admin e-mail notification is off
+2. message_form.inc - same as above
+3. post_message.asp - same as above
+4. common.asp - changed to support SQL views
+5. default.asp -same as above
+6. active_uesrs.asp - same as above
+7. SQL_server_setup.asp - same as above
+8. display_topic_threads.asp - fixed bug where the link back to the search page wasn't working when
+moving between multiple pages of a topic
+
+The following pages are chaned to log the users IP address when they post a message
+1. langauge_file.inc
+2. post_message.asp
+3. display_message_thread.asp
+4. IP_addr - database field added to the table tblThread with a datatype of text 28
+
+The following pages are changed to add the page numbers for topics with more than one page
+1. display_forum_topics.asp
+2. search.asp
+3. active_topics.asp
+
+The following files have been changed to prevent malicous code in links
+1. post_message.asp
+2. pm_post_message.asp
+5. display_topic_threads.asp
+6. pm_show_message.asp
+7. profile_edit.asp
+8. code_check.asp - page added
+
+
+Changes from version 6.0 to version 6.10
+
+1. code_check.asp - changed so that links that have & in them work.
+2. IE_message_form.inc - fixed bug where by admin and moderators can't select receive e-mail notification
+if the admin e-mail notification is turned off
+3. message_form.inc - same as above
+4. display_forum_topics.asp - fixed bug where priority topics where not displayed at the top of the page
+after the show topics date had expired.
+5. SQL_server_setup.asp - same as above (SQL Server version only)
+6. IE_message_form.inc - fixed bug where Norton Internet Security's add blocker was placing an empty image 
+tag in posts if users had this running on there machines.
+7. IE_textbox.asp - same as above
+8. common.asp - fixed last date bug on some servers
+9. mark_posts_as_read.asp - same as above
+10. pm_show_messsage.asp - changed some code that was not on the language file
+11. display_topic_threads.asp - changed to allow forum admin to post in locked and closed topics
+12. post_message_form.asp - same as above
+13. edit_post.asp - same as above
+14. search.asp - changed so that any words seached for are highlighted in the results
+15. display_topic_threads.asp - same as above
+16. active_topics.asp - fixed bug where active topics forums where shown in the wrong order
+
+The following pages have had added security added to them
+1. forum_members.asp
+2. seacrh.asp
+3. pm_add_buddy.asp
+4. check_code.asp
+5. post_message.asp
+6. pm_post_message.sp
+7. format_post.inc
+8. edit_post.inc
+9. convert_post_to_text.inc
+10. post_preview.asp
+11. register_new_user.asp
+12. profile_edit.asp
+13. login_user.asp
+14. forum_password_form.asp
+15. seacrh_form.asp
+
+Changes from version 6.10 to version 6.11
+
+1. register_new_user.asp - fixed bug when registering with an avatar
+
+
+Changes from version 6.11 to version 6.12
+
+1. insufficient_permissions.asp - changed to add login and register buttons to this page
+2. pm_show_message.asp - fixed bug where the profile edit button linked to the wrong page
+3. forum_members.asp - fixed bug where when you clicked on a character it didn't show members
+strating with that character.
+4. display_printer_threads.asp - fixed langauge file bugs
+5. forum_members.asp - same as above
+6. langauge_file.inc - same as above
+
+Fixed bug where e-mails are not correctly sent to some e-mail addresses
+1. code_check.asp
+2. register_new_user.asp
+3. post_message.asp
+4. pm_show_message.asp
+5. forgotten_password.asp
+
+
+Changes from version 6.12 to version 6.20
+
+1. common.asp - fixed date bug on foriegn language servers where the CDate function would
+return an error
+2. mark_posts_as_read.asp - same as above
+3. register_new_user.asp - fixed bug where signature wasn't going through the bad word filter
+4. profile_eidt.asp - same as above
+5. code_check.asp - improved the filters
+6. register_mail_confirm.asp - made the text telling the user they need to activate there account
+via an e-mail larger so they don't miss it
+7. language_file.inc - changed to add new forum text
+8. profile_edit.asp - changed so that members have to reactivate there accounts if they change there
+e-mail address when e-mail activation is enabled
+9. register_new_user.asp - fixed so that a welcome message is now displayed to new users
+10. profile.inc - same as above
+11. display_topic_threads.asp - added add buddy link
+12. move_post_form.asp - page added to allow posts to be moved to another forum or topic
+13. move_post_form_to.asp - same as above
+14. move_post.asp - page to do the actual moving of the topic
+15. pm_add_buddy.asp - fixed bug where you couldn't add administrator to the buddy list
+16. pm_post_message.asp - add more security
+17. display_topic_threads.asp - changed the layout and look
+18. member_profile.asp - the forum admin can now change a users password for them
+
+
+Changes from version 6.20 to version 6.21
+1. IE_message_form.inc - changed to set the focus on the text box when clicking on a formatting button
+2. IE_emoticons_smilies.asp - changed to set the focus on the text box when clciking on an emoticon
+and to close the pop up window once the emoticon has been selected.
+
+
+Changes from version 6.21 to version 6.22
+1. common.asp - both are changed to set the LCID to US so there is some capatibilty with dates
+between different servers.
+2. display_topic_threads.asp - fixed bug where if the page position was above 1 when linking back
+and there where no page above 1 it now autmactically drops back to page 1
+3. change_admin_username.asp - fixed bug where when changing to a username containing the
+word admin it reported the uesrname as being taken.
+4. common.asp - put a time limit on how long a member has to edit or delete there posts
+5. display_topic_threads.asp - same as above
+6. pm_post_message.asp - changed so that someone can't use a cached copy of the PM post form to
+try and send a PM when they are logged out.
+7. profile.inc - changed so that it shows super moderators as moderators when not inside a forum
+8. forum_members.asp - changed the look and improved perfomance
+9. SQL_server_setup.asp - removed a stored procedure that is longer used in the forum
+10. IE_message_form.inc - changed so that the buddy drop down list is in alphabetical order
+11. message_form.inc - same as above
+
+
+Changes from version 6.22 to version 6.23
+1. format_post.inc - changed to more acuratly covert [IMG] images tags to images
+2. edit_post.inc - changed to stop a crash with missformed links and images
+3. code_check.asp - fixed bug that corsed post formating errors if someone tried posting an image that didn't
+have an extenstion to it.
+4. pm_post_message.asp - changed so that if JavaScript is disabled the user cannot send a pm with no
+subject and/or message body.
+
+
+Changes from version 6.23 to version 6.24
+1. Search.asp - fixed bug where clicking on the last post icon didn't work
+2. format_post.inc - improved the formatting code
+3. code_check.asp - improved the security filters
+4. edit_post.inc - improved post editing filters
+5. format_post.inc - improved post editing filters and removed bug where incorrect quots would course problems.
+6. post_preveiw.asp - changed to improve the way the tables are formatted.
+7. forum_members.asp - changed so that the add buddy button is not shown if the PM system is turned off
+
+Changes from version 6.24 to version 6.25
+1. post_message.asp - changed so that the guest account doesn't come under the anti-spam settings.
+2. format_post.inc - fixed bug when quoting messages
+3. edit_post.inc - same as above
+4. signature_preview.asp - page added to preview a new signature enetred by a user
+5. pm_post_message.asp - changed to allow the user to edit there post if they give an invalid subject or message
+6. active_topics.asp - fixed SQL error on case sensitive SQL Server installations.
+7. search.asp - changed the way authors and searched to give more accurate results.
+8. activate.asp - fixed SQL query bug
+9. register_new_user.asp - now encodes the usercode stored in cookie for better forum security
+10. profile_edit.asp - same as above
+11. common.asp - both thses fiels are changed to encode the cookie when read from the users
+machine to unsure there is no malicious code in it.
+12. code_check.asp - refined SQL encoder
+
+
+Changes from version 6.25 to version 6.26
+1. code_check.asp - inproved the filters
+2. common.asp - admin area file added more security and changed the size of allowed cookies
+3. date_time_function.asp - same as above
+4. remove_link_buttons.asp - same as above
+5. activate.asp - changed so that suspeneded users can't use the code in their cookies to try and reactivate
+their account
+6. profile.inc - same as above
+7. register_new_user.asp - same as above
+9. change_admin_username.asp - same as above
+10. profile.inc - changed to profile_inc.asp
+11. profile.asp - updated to reflect the change in name of the profile.inc file
+12. pop_up_profile.asp same as above
+13. coomon.asp - fixed last date cookie bug that ment the cookie refreshed on every page
+14. every page is changed for better integration with the header and footer include files
+
+
+Changes from version 6.26 to version 6.27
+1. common.asp - fixed bug that occurs when delet all cookies link is clicked
+2. code_check.asp - better detection of web images and fixed resize image bug
+3. send_mail_functions.asp - fixed Metadata regsitery bug for servers that don't have CDOSYS installed
+4. signature_preview.asp - file added to preview signatures with
+5. register_form.asp - added link to signature preview
+6. profile_edit.asp - added link to signature preview
+7. langauge_file.inc - file updated to support signature preview window
+
+
+Changes from version 6.27 to version 6.28
+1. register_form.asp - fixed JavaScript bug
+2. login_user.asp - changed so passwords are not case sensitive
+3. forum_password_form.asp - changed so that passwords are not case sensitive
+4. profile_inc.asp - fixed bug where the accountr with ID 3 could not be changed.
+
+
+
+Changes from version 6.28 to version 6.29
+1. code_check.asp - fixed bug where images with the extension in capital letters were not displayed correctly
+2. mark_posts_as_read.asp - fixed variable bug when not logged in
+3. remove_cookies.asp - same as above
+4. format_post.inc - fixed message formating bug when editing a quoted message with a non IE web browser
+5. edit_post.in - same as above
+6. post_message_form.asp - same as above
+7. IE_textbox.asp - same as above
+8. common.asp - better use of coding
+9. forum_password_form.asp - fixed table colour bug
+10. display_topic_threads.asp - fixed return page bug when clicking to search for an author
+11. post_message_form.asp - fixed bug for ferign languages displaying the wrong text when quoting
+12. send_mail_functions.inc - improved performance and fixed a few bugs
+13. post_message.asp - fixed email notification bug that effects some systems running the Access version
+that are using older MDAC drivers
+14. login_user.asp - fixed recordset closing bug
+15. log_off_user.asp - same as above
+16. forgotten_password.asp - same as above
+17. forum_password_forum.asp - same as above
+18. IE_textbox.asp - same as above
+19. remove_cookies.asp - same as above
+20. registration rules.asp - same as above
+21. search_form.asp - same as above
+22. signature_preview.asp - same as above
+23. register_new_user.asp - re-written to improve performance
+
+
+Changes from version 6.29 to version 6.30
+1. SQL_server_Setup.asp - changed the stored procedure wwfSpThreadDetails to include tblTopic.Forum_ID
+2. disply_topic_threads.asp - changed to fix security bug where you can see topics in restrcited forums.
+
+
+Changes from version 6.30 to version 6.31
+1. code_check.asp - security update fix
+
+Changes from version 6.31 to version 6.32
+1. code_check.asp - bug fix where links were trunkated if there was an image in the post
+
+===========================================================================================

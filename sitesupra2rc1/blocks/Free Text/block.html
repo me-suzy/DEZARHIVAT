@@ -1,0 +1,71 @@
+<?php
+
+$tmpMain = '<table border="0" cellpadding="0" cellspacing="8" width="100%">{title}<tr><td>{text}</td></tr>{buttons}</table>';
+
+$get = $GLOBALS['HTTP_GET_VARS'];
+if(isset($get['page']) && isset($get['block'])) {
+	if(0 + $get['page'] && ((0 + $get['block'] || $get['block'] == '0'))) {
+		if ($temp = &$supra['connect']->QueryRow('SELECT blocks, title, date FROM pages_' . $supra['lang'] . $supra['edit'].' WHERE id = ' . $get['page'])) {
+			$pb = gzUnserialize($temp['blocks']);
+			if ($pb[$get['block']]['block'] == 'Free Text') 
+				$Text = $pb[$get['block']]['text'];
+			$html = new Template($tmpMain);
+			$html->set('title', '');
+			$html->set('text', $Text);
+			$html->set('buttons', '');
+			echo $html->finish();
+		}
+	}
+}
+
+else {	
+
+	$tmp_print_href = '?id=' . (0 + $block['printHref'] ? $block['printHref'] : 1);
+	
+	$title = (isset($block['title']) && strlen($block['title'])) 
+			? '<tr><td class="cTitle">' . $block['title'] . '</td></tr>'
+			: '';
+			
+	$text = isset($block['text']) ? $block['text'] : '';
+	
+	if(($block['group0'] && strlen($block['printText'])) || ($block['group1'] && strlen($block['emailText']))) {
+	
+		if($block['group0'] && strlen($block['printText'])) {
+			$tmp = '<td style="background:#B00101;"><a class="mainMenuLink" href="{href}">{text}</a></td>';
+			$print = new Template($tmp);
+			$print->set('href', $tmp_print_href . '&page=' . $site['doc']['id'] . '&block=' . $site['block']);
+			$print->set('text', $block['printText']);
+		} else 
+			$print = '';
+
+		if($block['group1'] && strlen($block['emailText'])) {
+			$tmp = '<td style="background:#B00101;"><a class="mainMenuLink" href="{href}">{text}</a></td>';
+			$send = new Template($tmp);
+			$tmp_link = strtr($block['emailBody'], Array ('{link}'=>'http://' . $GLOBALS['HTTP_SERVER_VARS']['HTTP_HOST'] . '/' . $site['lang'] . '/?id=' . $site['doc']['id']));
+			$send->set('href', 'mailto:?subject=' . rawurlencode($block['emailSubject']) . '&body=' . rawurlencode($tmp_link));
+			$send->set('text', $block['emailText']);
+		} else 
+			$send = '';
+
+		$tmp = '
+				<tr>
+					<td align="right">
+						<table cellpadding="4" cellspacing="3">
+							<tr>{print}{send}</tr>
+						</table>
+					</td></tr>';
+		
+		$footer = new Template($tmp);
+		$footer->set('print', $print);
+		$footer->set('send', $send);
+	} else
+		$footer = '';
+		
+	$html = new Template($tmpMain);
+	$html->set('title', $title);
+	$html->set('text', $text);
+	$html->set('buttons', $footer);
+	echo $html->finish();
+}
+
+?>

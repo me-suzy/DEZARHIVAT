@@ -1,0 +1,311 @@
+<html>
+
+<head>
+<style type="text/css">
+BODY, TABLE, P {
+	font-family: Tahoma;
+	font-size: 10pt;
+	color: #000000; 
+}
+A:LINK, A:VISITED, A:ACTIVE {
+	font-family : Tahoma;
+	font-size : 12px;
+	color : #0080C0;
+}
+A:HOVER {
+	font-family : Tahoma;
+	font-size : 12px;
+	color : #000000;
+	text-decoration : none;
+}
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>New Page 0</title>
+</head>
+
+<body>
+
+<p><b>Installing for the first time? <a target="main" href="install.htm">Click Here</a></b>
+<p>Before 
+upgrading, make sure your server meets these requirements. If you're using 
+paFileDB 2, then paFileDB 3 should work without a problem:<br>
+&nbsp;
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+  <tr>
+    <td width="2%" valign="top">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%">paFileDB 2.0 or Higher</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%">Unix, Linux, Windows NT/2k/XP OS*</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%">PHP 4 or Above</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%">MySQL Database Access</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%">About 1 MB space for the PHP and image files--Data for 
+    categories and files will take up more space</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%">FTP Upload Access</td>
+  </tr>
+</table>
+<font size="1">*paFileDB 3 has been tested on the following OSes and has 
+worked without problems: RedHat Linux, Windows 2000 Pro, Windows XP Pro, all 
+running the Apache web server</font></p>
+
+<p>You will also need the following things:</p>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+  <tr>
+    <td width="2%" valign="top">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%">Text Editor (Notepad/SimpleText will work just fine</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%">FTP Program (Dreamweaver, Frontpage, and other HTML editors 
+    are not recommended)*</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%">A little PHP or general programming knowledge might help, 
+    but isn't required :)</td>
+  </tr>
+</table><font size="1">*Recommended FTP programs for Windows: </font>
+<a target="main" href="http://www.smartftp.com"><font size="1">SmartFTP (Free)</font></a><font size="1">,
+</font>
+<a target="main" href="http://www.globalscape.com/products/cuteftp/index.shtml">
+<font size="1">CuteFTP ($39.95/Pro: $59.95)</font></a><font size="1">, </font>
+<a target="main" href="http://www.ipswitch.com/Products/WS_FTP/index.html">
+<font size="1">WS_FTP ($39.95)</font></a></p>
+<p>
+<p>To upgrade from version 2.x, follow these simple steps:</p>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1" height="285">
+  <tr>
+    <td width="2%" valign="top" height="16">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="16">Unzip the paFileDB 3 zip file (You probably already did if 
+    you are reading this)</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="160">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="160">Go into the &quot;includes&quot; directory in the unzipped directory 
+    and open up mysql.php in a text editor such as Notepad. Change the variables 
+    so they now contain the correct MySQL settings for your server. Your host 
+    can provide these settings for you. If you are unsure how to change 
+    variables, it's pretty easy. The default MySQL server variable is set as 
+    this:<br>
+    $db[host] = &quot;<b>localhost</b>&quot;;<br>
+    If your MySQL server is db.mysite.com, you would change that variable to 
+    this:<br>
+    $db[host] = &quot;<b>db.mysite.com</b>&quot;;<br>
+    Once you are done, save and close the file. <b>Note:</b> Some text editors 
+    (Such as UltraEdit and EditPlus) will make a backup of the file you just 
+    saved, such as mysql.php.bak. These files can be viewed by anyone and 
+    probably contain MySQL server passwords and can be a security risk. To make 
+    sure these files aren't uploaded, delete them before uploading.<br>
+    <b>If you are upgrading, you <i>must</i> leave $db[prefix] set as &quot;pafiledb&quot;</b></td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="31">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="31">Once the settings are configured, use your FTP 
+    program to upload the files to your server. Put the paFileDB 3 files in a 
+    different directory than paFileDB 2*. Example:<br>
+    paFileDB 2 is in http://www.mysite.com/<b>pafiledb2<br>
+    </b>Install paFileDB 3 in <a href="http://www.mysite.com/pafiledb3">
+    http://www.mysite.com/<b>pafiledb3</b></a><br>
+    <b>Note:</b> You do not need to upload install.php, but you <b>do</b> need 
+    to upload upgrade.php</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="32">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="32"><b>If you are running a Windows NT/2k/XP server, skip this 
+    step. If you're running a Unix/Linux server, continue reading</b>:<br>
+    CHMOD the directory &quot;uploads&quot; 777 using your FTP program.*</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="32">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="32">Run upgrade.php in your browser, example: 
+    http://www.mysite.com/pafiledb3/<b>upgrade.php </b>and the upgrader will 
+    walk you through the steps to finish upgrading paFileDB 3 to the new version</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="14">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="14" valign="top">Once paFileDB 3 is working 
+    correctly, you can delete upgrade.php and your old paFileDB 2 files from 
+    your server.</td>
+  </tr>
+</table>
+<font size="1">*See your FTP program's help file for specific instructions on doing this</font></p>
+<p>If you are upgrading from 3.0 Beta 1, follow these steps:</p>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; font-family:Tahoma; font-size:10pt; color:#000000" bordercolor="#111111" width="100%" id="AutoNumber2" height="80">
+  <tr>
+    <td width="2%" valign="top" height="16">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="16">Unzip the paFileDB 3 zip file (You probably already did if 
+    you are reading this)</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="22">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td height="22" valign="top">Go into the &quot;includes&quot; directory in the unzipped directory 
+    and open up mysql.php in a text editor such as Notepad. Change the variables 
+    so the settings in the Beta 3 mysql.php file are the same as the Beta 1 
+    mysql.php. The settings MUST be the same for a Beta 1 to Beta 2 upgrade.</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="1">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="1">Once the settings are configured, using your FTP 
+    program, <b>delete</b> the directory where paFileDB 3.0 Beta 1 is installed.<b>
+    </b>This <b>will not</b> delete your data. Once it's deleted, upload the 
+    following files to the server:<br>
+    -pafiledb.php<br>
+    -upgrade.php<br>
+    -Everything in the following directories: images, includes, lang, sessions, 
+    styles, uploads</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="32">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="32"><b>If you are running a Windows NT/2k/XP server, skip this 
+    step. If you're running a Unix/Linux server, continue reading</b>:<br>
+    CHMOD the directory &quot;uploads&quot; 777 using your FTP program.*</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="1">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="1">Run upgrade.php and click &quot;&gt;&gt; Continue &lt;&lt;&quot; until 
+    you get to the Set Options page. Choose &quot;I am upgrading from Version 3 Beta 
+    1&quot; and scroll down and click &quot;&gt;&gt; Continue &lt;&lt;&quot; You <b>do not</b> need to fill 
+    out the Settings and Admin info form on the page.</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="7">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="7">The upgrade process is complete and you can use 
+    your database and log into your admin center with the username/password you 
+    used on Beta 1.</td>
+  </tr>
+  </table>
+<font size="1">*See your FTP program's help file for specific instructions on doing this</font><p>If you are upgrading from 3.0 Beta 
+2 or 2.1, follow these steps:</p>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; font-family:Tahoma; font-size:10pt; color:#000000" bordercolor="#111111" width="100%" id="AutoNumber3" height="93">
+  <tr>
+    <td width="2%" valign="top" height="16">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="16">Unzip the paFileDB 3 zip file (You probably already did if 
+    you are reading this)</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="22">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td height="22" valign="top">Go into the &quot;includes&quot; directory in the unzipped directory 
+    and open up mysql.php in a text editor such as Notepad. Change the variables 
+    so the settings in the Beta 3 mysql.php file are the same as the Beta 2/2.1 mysql.php. The settings MUST be the same for a Beta 1 to Beta 2 upgrade.</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="1">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="1">Once the settings are configured, using your FTP 
+    program, upload the 
+    following files to the server (Overwrite everything that is there):<br>
+    -pafiledb.php<br>
+    -upgrade.php<br>
+    -Everything in the following directories: images, includes, lang, styles</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="32">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="32"><b>If you are running a Windows NT/2k/XP server, skip this 
+    step. If you're running a Unix/Linux server, continue reading</b>:<br>
+    CHMOD the directorya &quot;uploads&quot; 777 using your FTP program.*</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="32">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="32">Run upgrade.php and click &quot;&gt;&gt; Continue &lt;&lt;&quot; until 
+    you get to the Set Options page. Choose &quot;I am upgrading from Version 3 Beta 
+    2 or Beta 2.1&quot; and scroll down and click &quot;&gt;&gt; Continue &lt;&lt;&quot; You <b>do not</b> need to fill 
+    out the Settings and Admin info form on the page.</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="7">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="7">The upgrade process is complete and you can use 
+    your database and log into your admin center with the username/password you 
+    used on Beta 2/2.1.</td>
+  </tr>
+  </table>
+<font size="1">*See your FTP program's help file for specific instructions on doing this</font><p>If you are upgrading from 3.0 Beta 
+3, follow these steps:</p>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; font-family:Tahoma; font-size:10pt; color:#000000" bordercolor="#111111" width="100%" id="AutoNumber4" height="93">
+  <tr>
+    <td width="2%" valign="top" height="16">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="16">Unzip the paFileDB 3 zip file (You probably already did if 
+    you are reading this)</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="22">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td height="22" valign="top">Go into the &quot;includes&quot; directory in the unzipped directory 
+    and open up mysql.php in a text editor such as Notepad. Change the variables 
+    so the settings in the Beta 3.1 mysql.php file are the same as the Beta 3 mysql.php. The settings MUST be the same for a Beta 1 to Beta 2 upgrade.</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="1">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="1">Once the settings are configured, using your FTP 
+    program, upload the 
+    following files to the server (Overwrite everything that is there):<br>
+    -pafiledb.php<br>
+    -Everything in the following directories: images, includes, lang, styles</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="32">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="32"><b>If you are running a Windows NT/2k/XP server, skip this 
+    step. If you're running a Unix/Linux server, continue reading</b>:<br>
+    CHMOD the directory &quot;uploads&quot; 777 using your FTP program.*</td>
+  </tr>
+  <tr>
+    <td width="2%" valign="top" height="7">
+    <img border="0" src="images/bullet.gif" width="16" height="16"></td>
+    <td width="98%" height="7">The upgrade process is complete and you can use 
+    your database and log into your admin center with the username/password you 
+    used on Beta 2/2.1.</td>
+  </tr>
+  </table>
+<font size="1">*See your FTP program's help file for specific instructions on doing this</font></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</p>
+<p>&nbsp;</p>
+</p>
+</body>
+
+</html>

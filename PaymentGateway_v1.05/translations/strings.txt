@@ -1,0 +1,64 @@
+main_title|R3N3 Payment Gateway Administration
+script_by|Script by <a href="http://www.smarterscripts.com">SmarterScripts.com</a>
+main_menu_cc|Credit Card Settings
+main_menu_pp|PayPal Settings
+main_menu_reports|View Reports
+main_menu_scripts|Script Settings
+more_info|More Information
+supported_cc|Please click on one of the supported credit card processors to view and edit settings:
+update|Update
+settings_updated|Settings Updated
+registered_scripts_list|Please select one of the following registered scripts:
+no_registered_scripts|<i>Currently no scripts are registered with the Payment Gateway</i>
+update|Update
+changes_saved|Changes Saved
+script_explain_id|This is a unique ID to identify this script installation. It will always remain constant for this script.
+script_explain_name|This string is just a name you can use to easily identify the script. Giving a different name will in no way impact the script itself.
+script_explain_dir|The server path (without a trailing slash) to the directory where the scripts are kept
+script_explain_include|The full server path to the file containing the payment_complete function (to be called when a payment is successfully made)
+script_explain_payment|Payment Options
+script_explain_methods|Which payment methods will this script accept?
+script_explain_ccmin|The minimum amount that you will accept via credit card for this script:
+script_explain_ppmin|The minimum amount that you will accept via PayPal for this script:
+script_explain_cc_accept|Which of the supported credit card processors should this script use to process credit cards?
+script_explain_pp_accept|Would you like to accept PayPal payments with this script?
+script_explain_clickbank_urls|If you choose Clickbank as your credit card processor, this box will allow you to enter your Clickbank order URLs. Enter the display name of the product (e.g. "$10 Deposit" or "Hiking Boots") followed by a '|', and then the total amount, another '|', and then the full Clickbank URL for that product<br><br>Example: <i>$10.00|10|http://www.clickbank.net/sell.cgi?link=smartcgis/1/Deposit</i><br><br>This script will create a select box of these values for users to choose from.
+script_explain_cb_heading|Clickbank URLs
+script_explain_an_heading|Authorize.net Payment Form Customization
+script_explain_auth_logo|Full URL to an image that will be displayed as your logo on the payment form:
+script_explain_auth_back|Full URL to an image to be used as the background of the payment form:
+script_explain_auth_bgcolor|HTML color for the payment form's background color:
+script_explain_auth_link|HTML color for the payment form's link text color:
+script_explain_auth_text|HTML color for the payment form's default text color:
+script_explain_auth_pay_header|HTML or text to be displayed at the top of the payment form:
+script_explain_auth_pay_footer|HTML or text to be displayed at the bottom of the payment form:
+script_explain_auth_rec_heading|Authorize.net Receipt Customization
+script_explain_auth_rec_button|The text that will appear on the receipt on a button to return to your site<br><br>e.g. "Click here to continue":
+script_explain_auth_rec_header|HTML or text to be displayed at the top of the receipt:
+script_explain_auth_rec_footer|HTML or text to be displayed at the bottom of the receipt:
+script_explain_auth_email_heading|Authorize.net E-mail Receipt Customization
+script_explain_auth_email|Do you want to send an e-mail receipt to your customers?
+script_explain_auth_email_header|HTML or text to be displayed at the top of the e-mail receipt:
+script_explain_auth_email_footer|HTML or text to be displayed at the bottom of the e-mail receipt:
+none|None
+yes|Yes
+no|No
+bad_script|There is no script registered with that ID. Please contact the webmaster about this error.
+bad_include|Cannot locate the registered script to include it. Please contact the webmaster about this error.
+bad_order|Your order cannot be found in the database. Please contact the webmaster about this error.
+login_title|R3N3 Payment Gateway
+username|Username
+password|Password
+login_submit|Go
+invalid_login|Invalid Login
+welcome|Welcome to the R3N3 Payment Gateway
+unregister_warning|Removing this script will remove all information shown on this page. However, past payment information for this script will still be present.
+script_deleted|The selected script's information has been removed
+time|Time
+script|Script
+processor|Processor
+amount|Amount
+no_deposits|No Deposits Found
+next|Next
+previous|Previous
+receipt|Receipt ID

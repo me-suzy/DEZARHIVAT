@@ -1,0 +1,334 @@
+<!--
+#####################################################################
+#                                                                   #
+#    Copyright © 1999-2001 CGISCRIPTS.NET - All Rights Reserved     #
+#                                                                   #
+#####################################################################
+#                                                                   #
+#          THIS COPYRIGHT INFORMATION MUST REMAIN INTACT            #
+#                AND MAY NOT BE MODIFIED IN ANY WAY                 #
+#                                                                   #
+#####################################################################
+#
+# When you downloaded this script you agreed to accept the terms
+# of this Agreement. This Agreement is a legal contract, which
+# specifies the terms of the license and warranty limitation between
+# you and CGISCRIPTS.NET. You should carefully read the following
+# terms and conditions before installing or using this software.
+# Unless you have a different license agreement obtained from
+# CGISCRIPTS.NET, installation or use of this software indicates
+# your acceptance of the license and warranty limitation terms
+# contained in this Agreement. If you do not agree to the terms of this
+# Agreement, promptly delete and destroy all copies of the Software.
+#
+# Versions of the Software
+# Only one copy of the registered version of CGISCRIPTS.NET
+# may used on one web site.
+#
+# License to Redistribute
+# Distributing the software and/or documentation with other products
+# (commercial or otherwise) or by other than electronic means without
+# CGISCRIPTS.NET's prior written permission is forbidden.
+# All rights to the CGISCRIPTS.NET software and documentation not expressly
+# granted under this Agreement are reserved to CGISCRIPTS.NET.
+#
+# Disclaimer of Warranty
+# THIS SOFTWARE AND ACCOMPANYING DOCUMENTATION ARE PROVIDED "AS IS" AND
+# WITHOUT WARRANTIES AS TO PERFORMANCE OF MERCHANTABILITY OR ANY OTHER
+# WARRANTIES WHETHER EXPRESSED OR IMPLIED.   BECAUSE OF THE VARIOUS HARDWARE
+# AND SOFTWARE ENVIRONMENTS INTO WHICH CGISCRIPTS.NET MAY BE USED, NO WARRANTY
+# OF FITNESS FOR A PARTICULAR PURPOSE IS OFFERED.  THE USER MUST ASSUME THE
+# ENTIRE RISK OF USING THIS PROGRAM.  ANY LIABILITY OF CGISCRIPTS.NET WILL BE
+# LIMITED EXCLUSIVELY TO PRODUCT REPLACEMENT OR REFUND OF PURCHASE PRICE.
+# IN NO CASE SHALL CGISCRIPTS.NET BE LIABLE FOR ANY INCIDENTAL, SPECIAL OR
+# CONSEQUENTIAL DAMAGES OR LOSS, INCLUDING, WITHOUT LIMITATION, LOST PROFITS
+# OR THE INABILITY TO USE EQUIPMENT OR ACCESS DATA, WHETHER SUCH DAMAGES ARE
+# BASED UPON A BREACH OF EXPRESS OR IMPLIED WARRANTIES, BREACH OF CONTRACT,
+# NEGLIGENCE, STRICT TORT, OR ANY OTHER LEGAL THEORY. THIS IS TRUE EVEN IF
+# CGISCRIPTS.NET IS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN NO CASE WILL
+# CGISCRIPTS.NET' LIABILITY EXCEED THE AMOUNT OF THE LICENSE FEE ACTUALLY PAID
+# BY LICENSEE TO CGISCRIPTS.NET.
+#####################################################################
+#                                                                   #
+# Credits:                                                          #
+# Andy Angrick - Programmer - angrick@cgiscript.net                 #
+# Mike Barone  - Developer  - mbarone@cgiscript.net                 #
+#                                                                   #
+# For information about this script or other scripts please see :   #
+# http://www.cgiscript.net                                          #
+#                                                                   #
+# Thank you for trying out our script.                              #
+# If you have any suggestions or ideas for a new innovative script  #
+# please direct them to suggest@cgiscript.net.   Thanks.            #
+#                                                                   #
+#####################################################################
+-->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Add New GridView</title>
+
+<style>
+<!--
+ INPUT.button { background-color:#eeeeee;font:verdana;font-weight:bold;color:#000080;font-size:10pt; }
+-->
+</style>
+
+</head>
+
+<body>
+<form method=post action="in(cgiurl)" enctype="multipart/form-data" name=form1>
+<div align="center">
+  <center>
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+    <table border="0" cellpadding="3" cellspacing="0"><tr><td>
+      <table border="1" cellpadding="3" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+        <tr>
+          <td width="100%">
+            <p align="center"><b><font color="#000000" face="Verdana" size="4">Create a
+            New
+            GridView</font></b></p>
+          </td>
+        </tr>
+      </table>
+      </td></tr>
+      <tr><td>
+      <table border="1" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+        <tr>
+          <td width="100%">
+            <table border="0" width="100%" cellspacing="0" cellpadding="3">
+              <tr>
+                <td width="100%"><b><font color="#000000" face="Verdana" size="2">Step
+                  1: Name the GridView Database</font></b></td>
+              </tr>
+              <tr>
+                <td width="100%">
+                  <table border="0" cellspacing="0" cellpadding="3">
+                    <tr>
+                      <td valign="middle"><font color="#000000" face="Verdana" size="2"><b>Name:</b></font></td>
+                      <td valign="middle"><input type="text" name="GridName" size="20"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      </td></tr>
+      <tr>
+        <td>
+      <table border="1" cellpadding="3" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+        <tr>
+          <td width="100%">
+            <table border="0" width="100%" cellspacing="0" cellpadding="3">
+              <tr>
+                <td width="100%"><b><font color="#000000" face="Verdana" size="2">Step
+                  2: Select Method and Delimiter Type</font></b></td>
+              </tr>
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="3" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                    <tr>
+                      <td width="100%">
+                        <table cellpadding="3">
+                            <tr>
+                            <td rowspan="3" valign="top" align="center"><input type="radio" value="import" name="type" checked></td>
+                            <td>
+                              <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                                <tr>
+                                  <td><font face="Verdana" size="2"><b>Import</b></font></td>
+                                  <td nowrap><font color="#000000" face="Verdana" size="1">(Select
+                                    flat file on local hard drive)</font></td>
+                                </tr>
+                              </table>
+                              </td>
+                            </tr>
+                        	<tr>
+                            <td><input type="file" name="file" size="20" onFocus="CheckRadio(0);"></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <table border="0" cellspacing="0" cellpadding="2">
+                                <tr>
+                                  <td>
+                              <p align="right"><font color="#000000" face="Verdana" size="1">Delimiter:</font></td>
+                                  <td><select size="1" name="idel"><option>TAB</option><option selected>COMMA</option><option>PIPE</option></select></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="3" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                    <tr>
+                      <td width="100%">
+                        <table border="0" cellspacing="0" cellpadding="3">
+                          <tr>
+                            <td rowspan="3" valign="top"><input type="radio" value="cut" name="type"></td>
+                            <td valign="top">
+                              <table border="0" cellspacing="0" cellpadding="2">
+                                <tr>
+                                  <td><b><font face="Verdana" size="2">Copy/Paste</font></b></td>
+                                  <td nowrap><font color="#000000" face="Verdana" size="1">(Copy
+                                    and Paste text into text area below)</font></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top"><textarea rows="5" name="data" cols="45" wrap=off onFocus="CheckRadio(1);"></textarea></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <table border="0" cellspacing="0" cellpadding="2">
+                                <tr>
+                                  <td>
+                              <p align="right"><font color="#000000" face="Verdana" size="1">Delimiter:</font></td>
+                                  <td><font face="Verdana" size="1"><select size="1" name="cdel"><option selected>COMMA</option><option>PIPE</option><option>TAB</option></select></font></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="3" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                    <tr>
+                      <td width="100%">
+                        <table border="0" cellspacing="0" cellpadding="3">
+                          <tr>
+                            <td rowspan="3" valign="top"><font face="Verdana" size="1"><b><input type="radio" value="create" name="type"></b></font></td>
+                            <td valign="top">
+                              <table border="0" cellspacing="0" cellpadding="2">
+                                <tr>
+                                  <td><b><font face="Verdana" size="2">Create</font></b></td>
+                                  <td nowrap><font color="#000000" face="Verdana" size="1">(Specify
+                                    desired rows and columns below)</font></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top">
+                              <table border="0" cellspacing="0" cellpadding="3">
+                                <tr>
+                                  <td valign="middle" align="center"></td>
+                                  <td valign="middle" align="center">
+                                    <table border="0" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                        <td><font face="Verdana" size="1">Columns:</font></td>
+                                        <td><font face="Verdana" size="1"><b><input type="text" name="cols" size="2" onFocus="CheckRadio(2);"></b></font></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td valign="middle" align="right">
+                                    <table border="0" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                        <td><font face="Verdana" size="1">Rows:</font></td>
+                                        <td><font face="Verdana" size="1"><b><input type="text" name="rows" size="2" onFocus="CheckRadio(2);"></b></font></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td valign="middle" align="center">
+                                    <table border="1" bordercolor="#000000" cellspacing="0" cellpadding="2">
+                                      <tr>
+                                        <td valign="middle" align="center"><font face="Courier New" size="1">1a</font></td>
+                                        <td valign="middle" align="center"><font face="Courier New" size="1">1b</font></td>
+                                        <td valign="middle" align="center"><font face="Courier New" size="1">1c</font></td>
+                                        <td valign="middle" align="center"><font face="Courier New" size="1">1d</font></td>
+                                        <td valign="middle" align="center"><font face="Courier New" size="1">1e</font></td>
+                                        <td valign="middle" align="center"><font face="Courier New" size="1">1f</font></td>
+                                        <td valign="middle" align="center"><font face="Courier New" size="1">1g</font></td>
+                                      </tr>
+                                      <tr>
+                                        <td valign="middle" align="center"><font face="Courier New" size="1">2a</font></td>
+                                        <td valign="middle" align="center"><font face="Courier New" size="1">2b</font></td>
+                                        <td valign="middle" align="center"><font face="Courier New" size="1">2c</font></td>
+                                        <td valign="middle" align="center"><font face="Courier New" size="1">2d</font></td>
+                                        <td valign="middle" align="center"><font face="Courier New" size="1">2e</font></td>
+                                        <td valign="middle" align="center"><font face="Courier New" size="1">2f</font></td>
+                                        <td valign="middle" align="center"><font face="Courier New" size="1">2g</font></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <table border="0" cellspacing="0" cellpadding="2">
+                                <tr>
+                                  <td>
+                              <p align="right"><font color="#000000" face="Verdana" size="1">Delimiter:</font></td>
+                                  <td><font face="Verdana" size="1"><select size="1" name="crdel">
+			          <option selected>COMMA</option>
+			          <option>PIPE</option>
+				    <option>TAB</option>
+			        </select></font></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      </td>
+      </tr>
+      <tr><td>
+      <table border="1" cellpadding="3" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+        <tr>
+          <td width="100%">
+            <table border="0" width="100%" cellspacing="0" cellpadding="3">
+              <tr>
+                <td width="100%"><b><font color="#000000" face="Verdana" size="2">Step
+                  3: Click Next to Start Editing Database</font></b></td>
+              </tr>
+              <tr>
+                <td width="100%"><input CLASS="button" type="submit" value="Next ->" name="B1" style="font-family: Verdana; font-size: 10pt; color: #000000; font-weight: bold"><input type="hidden" value="addnew" name="command"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      </td></tr></table>
+    </td>
+  </tr>
+</table>
+  </center>
+</div>
+</form>
+
+</body>
+<script language=javascript>
+function CheckRadio(i){
+document.form1.type[i].checked=true;
+}
+</script>
+</html>

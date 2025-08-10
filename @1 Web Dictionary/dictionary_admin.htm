@@ -1,0 +1,37 @@
+<html>
+
+<head>
+<title>Dictionary</title>
+</head>
+
+<body bgcolor=white link="#FF0080"
+vlink="#FF0080">
+<table width=100%><tr bgcolor="#cc0000"><td><CENTER><font face="MS Sans Serif, Verdana" size="-1" color="#DDDDDD"><b>Administrator - Add Words</b></FONT></FONT></CENTER></td></tr></table>
+<FORM ACTION="http://www.upoint.net/cgi-bin/my_dictionary/dictionary.cgi" METHOD="POST">
+<table>
+<tr valign=top><td><font face="MS Sans Serif, Verdana" size="-1">Master Password:</font></td><td><input type=password name="checkpassword"></td></tr>
+<tr valign=top><td><font face="MS Sans Serif, Verdana" size="-1">Category:</font></td><td><select name="Category"><option>Select<option>
+Real Estate
+<option>Architecture
+</select></td></tr>
+<tr valign=top><td><font face="MS Sans Serif, Verdana" size="-1">Word:</font></td><td><input type=text name="Word"></td></tr>
+<tr valign=top><td><font face="MS Sans Serif, Verdana" size="-1">Meaning:</font></td><td><textarea name="Meaning" cols=40 rows=10></textarea></td></tr>
+<tr valign=top><td><font face="MS Sans Serif, Verdana" size="-1">Picture:</font></td><td><input type=text name="Picture"><br><font face="MS Sans Serif, Verdana" size="-2" color="#888888">Eg. A232.jpg</font></td></tr>
+</table><input type=hidden name=actiontotake value="Add"><input type=submit value="Add Record"></form>
+
+
+<table width=100%><tr bgcolor="#cc0000"><td><CENTER><font face="MS Sans Serif, Verdana" size="-1" color="#DDDDDD"><b>Administrator - Edit/Delete Words</b></FONT></FONT></CENTER></td></tr></table>
+<FORM ACTION="http://www.upoint.net/cgi-bin/my_dictionary/dictionary.cgi" METHOD="POST">
+<table><tr valign=top><td><font face="MS Sans Serif, Verdana" size="-1">Password:</td><td><input type=password name="checkpassword"></td></tr>
+<tr valign=top><td><font face="MS Sans Serif, Verdana" size="-1">Category:</font></td><td><select name="Category"><option>Select<option>
+Real Estate
+<option>Architecture
+</select></td></tr>
+<tr valign=top><td><font face="MS Sans Serif, Verdana" size="-1">Word:</font></td><td><input type=text name="Word"></td></tr>
+<tr valign=top><td><font face="MS Sans Serif, Verdana" size="-1">Meaning:</font></td><td><input type=text name="Meaning"></td></tr>
+<tr valign=top><td><font face="MS Sans Serif, Verdana" size="-1">Picture:</font></td><td><input type=text name="Picture"></td></tr>
+</table><br><input type=submit value="Search for Records to Edit"></form>
+
+</body>
+</html>
+

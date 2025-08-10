@@ -1,0 +1,297 @@
+<?php
+	if(getData())
+	{
+		switch($what)
+		{
+			case "REFRESH":
+				$query = "SELECT id, name, login, email, status FROM users ";
+				$query .= "WHERE name LIKE '%".$data['search']."%' OR login LIKE '%".$data['search']."%' ";
+				$query .= "ORDER BY ".$data['sortBy']." ".$data['sortOrder'];
+				$data = $GLOBALS['supra']['connect']->QueryData($query);
+				sendData($data);
+				break;
+				
+			case "DELETE":
+				$query = "DELETE FROM users WHERE id = ".$data['ID'];
+				$GLOBALS['supra']['connect']->Query($query);
+				break;
+			case "EDIT":
+				break;
+		}
+	}
+?>
+<html>
+<head>
+	<title>User manager</title>
+	<link rel="stylesheet" href="/supra/supra.css">
+	<script src="<?=$GLOBALS['supra']['request']['supraBack']?>/dialog.html"></script>
+	<style>
+		.gridhead {
+				width: 100%; 
+				height: 22;
+				padding-top: 0pt;
+				border-top: 1px solid buttonhighlight
+		}
+		.scrolldiv	{
+				position : absolute; 
+				overflow : auto;
+				width : 100%;
+				height : 100%;
+				border: 1px inset grey;
+				background: white; 
+				color: black;
+				padding: 0px
+		}
+		.dbt {
+				border: 1px solid;
+				font: tahoma;
+				text-decoration: none;
+				cursor: hand;
+				font-weight: normal
+		}
+		.selected {
+				background: #B4ABEE;
+		}
+	</style>
+
+</head>
+<script lanaguage="javascript">
+// definining global variables
+var supra, pValue, currSelection, lastSelection, last, sortBy, sortOrder, searchStr;
+
+// pointer to $site array
+supra = dialogArguments[0];
+// block property 
+pValue = dialogArguments[1];
+currSelection = 0;
+lastSelection = -1;
+sortBy = 'login';
+sortOrder = 'asc';
+last = '';
+searchStr = '';
+
+function init()
+{
+	setElements();
+	fillTable();
+	return;
+}
+
+function setElements()
+{
+	// if no records selected, then disable edit and delete buttons
+	btnEdit.disabled = !currSelection;
+	btnDelete.disabled = !currSelection;
+	// set View mode drop down according to property value
+	viewMode.selectedIndex = pValue.data.viewMode == 'Full' ? 0 : 1;
+	
+	return;
+}
+
+function changeSelection()
+{
+	pValue.data.viewMode = viewMode.selectedIndex == 0 ? 'Full' : 'Small';
+	return;
+}
+
+function fillTable()
+{
+	data = sendData("REFRESH", {sortBy: sortBy, sortOrder: sortOrder, search: searchStr});
+	
+	// defining grid fields and fields size
+	fields = {	
+			login		: Array('Login', 150),
+			name		: Array('Name', 150),
+			email		: Array('Email', 150),
+			status		: Array('Status', 100)
+		};
+
+	// building grid header
+	sTable = '<table width="100%" border="0" cellpadding="0" cellspacing="0"><tr>';
+	sFields = '';
+	for(key in fields)
+	{
+		sFields += '<td width="1%"><img src="/.gif" height="1" width="'+ fields[key][1]+ '"></td>';
+	}
+	sTable += sFields + '</tr><tr>';
+	
+	for(key in fields)
+	{
+		sTable += '	<td bgcolor="#CCCCCC">'+
+						'<button class="gridhead" onClick=sortGridBy("'+ key+ '");>'+
+							'<table width="100%" cellpadding="0" cellspacing="0" border="0">'+
+								'<tr><td width="10">'+ getArrow(key) +'</td><td>'+ fields[key][0]+ '</td></tr>'+
+							'</table>'+
+						'</button>'+
+					'</td>';
+	}
+	sTable += '</tr></table>';
+	header.innerHTML = sTable;
+
+	// building grid rows
+	sTable = '<table width="100%" border="0" cellpadding="0" cellspacing="0">' + sFields;
+	for(i = 0; i < data.length; i++)
+	{
+		switch (data[i]['status'])
+		{
+			case '1':
+				hcol = '#000000';
+				data[i]['status'] = "Active";
+				break;
+			default:
+				hcol = '#666666';
+				data[i]['status'] = "Inactive";
+				break;
+		}
+	
+		sTable += '<tr id="tr'+ data[i].id+ '" align="left" onClick=selectItem("'+ data[i].id+ '"); ondblClick="btnEdit.click();">';
+		for (key in fields)
+		{
+			sTable += '<td style="color:'+ hcol +';" class="dbt">'+ data[i][key] +'</td>';
+		}
+		sTable += '</tr>'; 
+	}
+	sTable += '</table>';
+	uList.innerHTML = sTable;
+
+	// Highlighting currently selected item
+	if(last != "")
+	{
+		if (!checkexistance(last))
+			return;
+		eval('tr' +last+ '.className = "selected";');
+	}
+
+	return;
+}
+
+function sortGridBy(lsort)
+{
+	if(sortBy == lsort) 
+		sortOrder = (sortOrder == 'asc' ? 'desc' : 'asc');
+	else
+		sortOrder = 'asc';
+
+	sortBy = lsort;
+	fillTable();
+
+	return;
+}
+
+function getArrow(cf)
+{
+	return(sortBy == cf ? (sortOrder == 'asc' ? '<img src="<?=$GLOBALS['supra']['request']['siteBase']?>/pic/arrow_up.gif">' : '<img src="<?=$GLOBALS['supra']['request']['siteBase']?>/pic/arrow_dn.gif">') : '<img src="<?=$GLOBALS['supra']['request']['siteBase']?>/.gif">');
+}
+
+function checkexistance(ID)
+{
+	var res = 1;
+	
+	eval('if (typeof(tr'+ ID+ ') == "unknown") res = 0;');
+	return res;
+}
+
+function selectItem(ID)
+{
+	currSelection = ID;
+	setElements();
+	if (last != ID)
+	{
+		if (last != "")
+			if (checkexistance(last)) eval('tr' +last+ '.className = lastSel;');
+
+		if (!checkexistance(ID))
+		{
+			last = -1; 
+			return;
+		}
+	
+		eval('lastSel = tr' +ID+ '.className;');
+		eval('tr' +ID+ '.className = "selected";');
+		last = ID;
+	}
+}
+
+function pSearch()
+{
+	searchStr = Search.value;
+	fillTable();
+	
+	return;
+}
+
+function newItem(mode)
+{
+	if(showModalDialog("<?=$GLOBALS['supra']['request']['supraBack']?>/editor.html?editor=" + escape("User manager/newItem.html") + "&" +Math.random(), [supra, mode, currSelection],"dialogWidth:400px;dialogHeight:300px;scrollbar:no;toolbar:no;center:yes;help:no;resizable:no;status:no;"))
+	{
+		fillTable();
+		setElements();
+	}
+	return;
+}
+
+function deleteItem()
+{
+	if(showModalDialog("<?=$GLOBALS['supra']['request']['supraBack']?>/editor.html?editor=" + escape("User manager/delete.html") + "&"+Math.random(), [supra],"scroll:no;dialogWidth:275px;dialogHeight:260px;center:yes;help:no;resizable:no;status:no;"))
+	{
+		sendData("DELETE", {ID: currSelection});
+		fillTable();
+		setElements();
+	}
+
+	return;
+}
+
+function closeWindow()
+{
+	// set property value
+	returnValue = {
+		'button': 'User manager', 
+		'data': {'viewMode': viewMode ? 'Full' : 'Small'}
+	}
+	window.close();
+}
+</script>
+<body>
+<table width="100%" id="myDialog" border="0" cellpadding="0" cellspacing="5">
+	<tr> 
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="5">
+				<tr>
+					<td>
+						<fieldset name="Users" style="height:400">
+							<table width="100%" border="0" cellpadding="0" cellspacing="5">
+								<tr>
+									<td><input type="text" id="Search">&nbsp;<button id="btnSearch" onClick="pSearch();">Search</button></td>
+									<td align="right">
+										View mode:&nbsp;
+										<select id="viewMode" onChange="changeSelection()">
+											<option value=1>Full</option>
+											<option value=0>Small</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td id="header" colspan="2"></td>
+								</tr>
+								<tr>
+									<td colspan="2"><div id="uList" style="width:100%;height:360" class="scrolldiv"></div></td>
+								</tr>
+							</table>
+						</fieldset>
+					</td>
+				</tr>
+				<tr>
+					<td align="right">
+						<button id="btnNew" onClick="newItem(1);">New</button>&nbsp;
+						<button id="btnEdit" onClick="newItem(0);">Edit</button>&nbsp;
+						<button id="btnDelete" onClick="deleteItem();">Delete</button>&nbsp;
+						<button id="btnCancel" onClick="closeWindow();">Close</button>&nbsp;
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

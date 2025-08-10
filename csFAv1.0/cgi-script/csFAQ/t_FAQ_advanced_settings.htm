@@ -1,0 +1,694 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>FAQ Advanced Settings</title>
+</head>
+
+<body>
+<form method=post action="in(cgiurl)" name="form1">
+<input type=hidden name=command value=setstyles>
+<input type=hidden name=database value="in(database)">
+<div align="center">
+  <center>
+<table border="1" cellpadding="3" cellspacing="0" bordercolorlight="#FFFFFF" bordercolordark="#000000">
+  <tr>
+    <td colspan="3" bgcolor="#E4DFD6" valign="middle" align="center">
+<p align="center"><font face="Verdana" size="5"><b>csFAQ Advanced Settings</b></font></p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3" bgcolor="#B0B898"><b><font face="Verdana" size="2">Security</font></b></td>
+  </tr>
+  <tr bgColor=#b0bb9d>
+    <td colspan="3" bgcolor="#DEE4E0"><font size="2" face="Verdana">Set
+      the security type for adding, modifying, and deleting files in this
+      database.</font></td>
+  </tr>
+  <tr>
+    <td align="left" bgcolor="#E4DFD6" valign="top" colspan="3">
+      <table border="0" width="100%" cellspacing="0" cellpadding="2">
+        <tr>
+          <td width="100%"><font face="Verdana"><input type="radio" name="security" value="none" in(securitynone) checked><font face="Verdana" size="2"><b>No
+      Public Management</b><br>
+      &nbsp;&nbsp;&nbsp; </font><font face="Verdana" size="1">(only the main
+      administrator can manage this FAQ database)</font></font></td>
+        </tr>
+        <tr>
+          <td width="100%"><font face="Verdana"><input type="radio" name="security" value="anon" in(securityanon)>
+      <font face="Verdana" size="2"><b>Anonymous Public Management</b><br>
+      &nbsp;&nbsp;&nbsp; </font><font face="Verdana" size="1">(anyone can add
+      items to this FAQ database)</font></font></td>
+        </tr>
+        <tr>
+          <td width="100%"><font face="Verdana"><input type="radio" name="security" value="password" in(securitypassword)>
+      <font face="Verdana" size="2"><b>Password Protected Public Management</b><br>
+      &nbsp;&nbsp;&nbsp; </font><font face="Verdana" size="1">(see below)</font></font></td>
+        </tr>
+      </table>
+      <div align="left">
+        <table border="0" cellpadding="3" cellspacing="0">
+          <tr>
+            <td><b><font face="Verdana" size="2">Password Protected Public Management</font>
+              </b>
+              <hr>
+              <font face="Verdana" size="1">If selected above,
+              these users will have&nbsp;<br>
+ access to maintain this FAQ database.&nbsp;&nbsp;<br>
+              Enter each <b>username:password&nbsp;<br>
+              </b>combination on a new line.&nbsp;<br>
+ Example: <b>john:secret<br>
+              john</b>  = username and <b>secret </b>= password.</font></td>
+            <td valign="top" align="left"><font face="Verdana"><textarea rows="6" name="userpass" cols="25">in(userpass)</textarea></font></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3" bgcolor="#B0B898"><b><font face="Verdana" size="2">Email
+      Settings:</font></b></td>
+  </tr>
+  <tr>
+    <td colspan="3" bgcolor="#E4DFD6">
+      <div align="left">
+        <table border="0" cellpadding="3" cellspacing="0" width="644">
+          <tr>
+            <td colspan="2" width="636"><font face="Verdana" size="2">Notification
+              Email</font></td>
+          </tr>
+          <tr>
+            <td width="54" align="right"><input type="checkbox" name="disnot" value="checked" in(disnot)></td>
+            <td width="574"><font face="Verdana" size="2">Disable Notification
+              Email</font></td>
+          </tr>
+          <tr>
+            <td width="54" align="right"><font face="Verdana" size="2">To:</font></td>
+            <td width="574"><font face="Verdana" size="2"><input type="text" name="adminemail" size="20" value="in(adminemail)"></font></td>
+          </tr>
+          <tr>
+            <td width="54" align="right"><font face="Verdana" size="2">Subject:</font></td>
+            <td width="574"><font face="Verdana" size="2"><input type="text" name="nsubject" size="20" value="in(nsubject)"></font></td>
+          </tr>
+          <tr>
+            <td width="54"><font face="Verdana" size="2">Message</font></td>
+            <td width="574"></td>
+          </tr>
+          <tr>
+            <td colspan="2" width="636"><font face="Verdana" size="1">This is
+              the message that is sent whenever a question has been submitted.
+              Use FORM(name) for the name field submitted on the form,
+              FORM(email) for the email field submitted on the form, FORM(title)
+              for the abbreviated question, and FORM(message) for the detailed
+              question. FORM(Date) will print out the date. Environment
+              variables are also available, for example, FORM(REMOTE_ADDR) will
+              be substituted with the ip address of the person submitting the
+              form.<br>
+              </font><textarea rows="6" name="nmessage" cols="77">in(nmessage)</textarea></td>
+          </tr>
+        </table>
+        <div align="left">
+          <table border="0" cellpadding="3" cellspacing="0">
+            <tr>
+            <td colspan="2" width="636"><font face="Verdana" size="2">Auto-reply
+              Email</font></td>
+            </tr>
+            <tr>
+            <td width="54" align="right"><input type="checkbox" name="disaut" value="checked" in(disaut)></td>
+            <td width="574"><font face="Verdana" size="2">Disable Autoreply Email</font></td>
+            </tr>
+            <tr>
+            <td width="54" align="right"><font face="Verdana" size="2">From:</font></td>
+            <td width="574"><font face="Verdana" size="2"><input type="text" name="afrom" size="20" value="in(afrom)"></font></td>
+            </tr>
+            <tr>
+            <td width="54" align="right"><font face="Verdana" size="2">Subject:</font></td>
+            <td width="574"><font face="Verdana" size="2"><input type="text" name="asubject" size="20" value="in(asubject)"></font></td>
+            </tr>
+            <tr>
+            <td width="54"><font face="Verdana" size="2">Message</font></td>
+            <td width="574"></td>
+            </tr>
+            <tr>
+            <td colspan="2" width="636"><font face="Verdana" size="1">This is
+              the message that is sent to the submitter of the form
+              acknowledging their question has been received. Use FORM(name) for
+              the name field submitted on the form, FORM(email) for the email
+              field submitted on the form, FORM(title) for the abbreviated
+              question, and FORM(message) for the detailed question. FORM(Date)
+              will print out the date. Environment variables are also available,
+              for example, FORM(REMOTE_ADDR) will be substituted with the ip
+              address of the person submitting the form.</font><br>
+              <textarea rows="6" name="amessage" cols="77">in(amessage)</textarea></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr bgColor=#b0bb9d>
+    <td colspan="3" bgcolor="#B0B898"><b><font face="Verdana" size="2">FAQ Listing
+      Format</font></b></td>
+  </tr>
+  <tr bgColor=#b0bb9d>
+    <td colspan="3" bgcolor="#E4DFD6">
+      <div align="left">
+        <table border="0" cellpadding="3" cellspacing="0">
+          <tr>
+            <td><input type="checkbox" name="dui" value="checked" in(dui)></td>
+            <td><font face="Verdana" size="2">Don't use icons.</font></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+  <tr bgColor=#c7c6ba>
+    <td align="right" bgcolor="#DEE4E0" rowspan="5" valign="top"><font face="Verdana" size="2">Optional
+      Title</font></td>
+    <td bgcolor="#DEE4E0" colspan="2"><font face="Verdana"><input type="text" name="tTitle" size="33" value="in(tTitle)"></font></td>
+  </tr>
+  <tr bgColor=#c7c6ba>
+    <td bgcolor="#E4DFD6" align="right"><font face="Verdana" size="2">Cell
+      Color:</font></td>
+    <td bgcolor="#E4DFD6">
+<table border="0" cellpadding="2" cellspacing="0">
+        <tr>
+          <td valign="middle" align="center"><font face="Verdana"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.OpTitleTableColorText);">
+         </font> </td>
+          <td valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(OpTitleTableColorText)">
+              <tr>
+                <td width="33">&nbsp;</td>
+              </tr>
+            </table></td>
+          <td valign="middle" align="center">
+            <font face="Verdana">#<INPUT maxLength=7 name=OpTitleTableColorText size=7 value=in(OpTitleTableColorText)></font>
+          </td>
+        </tr>
+      </table>
+
+ </td>
+  </tr>
+  <tr>
+    <td bgcolor="#DEE4E0" align="right"><font face="Verdana" size="2">Font
+      Color:</font></td>
+    <td bgcolor="#DEE4E0">
+<div align="left">
+<table border="0" cellpadding="2" cellspacing="0">
+        <tr>
+          <td valign="middle" align="center"><font face="Verdana"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.OpTitleTableText);">
+         </font> </td>
+          <td valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(OpTitleTableText)">
+              <tr>
+                <td width="33">&nbsp;</td>
+              </tr>
+            </table></td>
+          <td valign="middle" align="center">
+            <font face="Verdana">#<INPUT maxLength=7 name=OpTitleTableText size=7 value=in(OpTitleTableText)></font>
+          </td>
+        </tr>
+      </table>
+</div>
+ </td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#E4DFD6"><font face="Verdana" size="2">Font
+      Size:</font></td>
+    <td bgcolor="#E4DFD6"><font face="Verdana"><input type="text" name="OpTitleSize" size="3" value="in(OpTitleSize)"></font></td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#DEE4E0"><font face="Verdana" size="2">Font
+      Face:</font></td>
+    <td bgcolor="#DEE4E0"><font face="Verdana"><input type="text" name="OpTitleFace" size="23" value="in(OpTitleFace)"></font></td>
+  </tr>
+  <tr bgColor=#c7c6ba>
+    <td align="right" bgcolor="#E4DFD6"><font face="Verdana" size="2">Border</font></td>
+    <td bgcolor="#E4DFD6" colspan="2"><font face="Verdana"><input type="text" name="tTableBorder" size="8" value="in(tTableBorder)"></font></td>
+  </tr>
+  <tr bgColor=#c7c6ba>
+    <td align="right" bgcolor="#DEE4E0"><font face="Verdana" size="2">Table Width</font></td>
+    <td bgcolor="#DEE4E0" colspan="2"><font face="Verdana"><input type="text" name="tTableWidth" size="8" value="in(tTableWidth)"></font></td>
+  </tr>
+  <tr bgColor=#c7c6ba>
+    <td align="right" bgcolor="#E4DFD6"><font size="2" face="Verdana">Cell
+      Padding</font></td>
+    <td bgcolor="#E4DFD6" colspan="2"><font face="Verdana"><input type="text" name="tCellPadding" size="3" value="in(tCellPadding)"></font></td>
+  </tr>
+  <tr bgColor=#c7c6ba>
+    <td align="right" bgcolor="#DEE4E0"><font size="2" face="Verdana">Cell
+      Spacing</font></td>
+    <td bgcolor="#DEE4E0" colspan="2"><font face="Verdana"><input type="text" name="tCellSpacing" size="3" value="in(tCellSpacing)"></font></td>
+  </tr>
+  <tr bgColor=#d5d2bb>
+    <td align="right" bgcolor="#E4DFD6"><font face="Verdana" size="2">Even Cell Color</font></td>
+    <td bgcolor="#E4DFD6" colspan="2">
+<table border="0" cellpadding="2" cellspacing="0">
+        <tr>
+          <td valign="middle" align="center"><font face="Verdana"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.tEvenCellColorText);">
+         </font> </td>
+          <td valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(tEvenCellColorText)">
+              <tr>
+                <td width="33">&nbsp;</td>
+              </tr>
+            </table></td>
+          <td valign="middle" align="center">
+            <font face="Verdana">#<INPUT maxLength=7 name=tEvenCellColorText size=7 value=in(tEvenCellColorText)></font>
+          </td>
+        </tr>
+      </table>
+ </td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#DEE4E0"><font size="2" face="Verdana">Odd
+      Cell Color</font></td>
+    <td bgcolor="#DEE4E0" colspan="2">
+<table border="0" cellpadding="2" cellspacing="0">
+        <tr>
+          <td valign="middle" align="center"><font face="Verdana"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.tOddCellColorText);">
+         </font> </td>
+          <td valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(tOddCellColorText)">
+              <tr>
+                <td width="33">&nbsp;</td>
+              </tr>
+            </table></td>
+          <td valign="middle" align="center">
+            <font face="Verdana">#<INPUT maxLength=7 name=tOddCellColorText size=7 value=in(tOddCellColorText)></font>
+          </td>
+        </tr>
+      </table>
+ </td>
+  </tr>
+    <tr>
+    <td align="right" bgcolor="#DEE4E0" valign="top"><font face="Verdana" size="2">Entry
+      Order</font></td>
+    <td bgcolor="#DEE4E0" colspan="2"><font face="Verdana"><font size="1"><input type="radio" value="FIRST" name="entryorder" in(FIRST)>
+      Newest Entries <b>First</b><br>
+      <input type="radio" value="LAST" name="entryorder" in(LAST)> Newest Entries </font><b><font size="1">Last</font><font size="2">&nbsp;</font></b></font> </td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#E4DFD6" rowspan="3" valign="top"><font size="2" face="Verdana">Abbreviated
+      Question</font></td>
+    <td bgcolor="#E4DFD6" align="right"><font face="Verdana" size="2">Font
+      Color:</font></td>
+    <td bgcolor="#E4DFD6">
+
+<table border="0" cellpadding="2" cellspacing="0">
+        <tr>
+          <td valign="middle" align="center"><font face="Verdana"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.TitleTableText);">
+         </font> </td>
+          <td valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(TitleTableText)">
+              <tr>
+                <td width="33">&nbsp;</td>
+              </tr>
+            </table></td>
+          <td valign="middle" align="center">
+            <font face="Verdana"><font size="2">#</font><INPUT maxLength=7 name=TitleTableText size=7 value=in(TitleTableText)></font>
+          </td>
+        </tr>
+      </table>
+ </td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#DEE4E0"><font face="Verdana" size="2">Font
+      Size:</font></td>
+    <td bgcolor="#DEE4E0"><font face="Verdana"><input type="text" name="TitleSize" size="3" value="in(TitleSize)"></font></td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#E4DFD6"><font face="Verdana" size="2">Font
+      Face:</font></td>
+    <td bgcolor="#E4DFD6"><font face="Verdana"><input type="text" name="TitleFace" size="23" value="in(TitleFace)"></font></td>
+  </tr>
+  
+  <tr>
+    <td align="right" bgcolor="#DEE4E0" rowspan="3" valign="top"><font size="2" face="Verdana">Detailed
+      Question</font></td>
+    <td bgcolor="#DEE4E0" align="right"><font face="Verdana" size="2">Font
+      Color:</font></td>
+    <td bgcolor="#DEE4E0">
+<table border="0" cellpadding="2" cellspacing="0">
+        <tr>
+          <td valign="middle" align="center"><font face="Verdana"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.DescriptionTableText);">
+         </font> </td>
+          <td valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(DescriptionTableText)">
+              <tr>
+                <td width="33">&nbsp;</td>
+              </tr>
+            </table></td>
+          <td valign="middle" align="center">
+            <font face="Verdana"><font size="2">#</font><INPUT maxLength=7 name=DescriptionTableText size=7 value=in(DescriptionTableText)></font>
+          </td>
+        </tr>
+      </table>
+ </td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#E4DFD6"><font face="Verdana" size="2">Font
+      Size:</font></td>
+    <td bgcolor="#E4DFD6"><font face="Verdana"><input type="text" name="DescriptionSize" size="3" value="in(DescriptionSize)"></font></td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#DEE4E0"><font face="Verdana" size="2">Font
+      Face:</font></td>
+    <td bgcolor="#DEE4E0"><font face="Verdana"><input type="text" name="DescriptionFace" size="23" value="in(DescriptionFace)"></font></td>
+  </tr>
+  <tr>
+    <td colspan="3" bgcolor="#B0B898"><b><font face="Verdana" size="2">FAQ Long
+      Description Format</font></b></td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#E4DFD6" colspan="3">
+      <p align="center"><b><font face="Verdana" size="2">Page Properties</font></b></td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#DEE4E0"><font face="Verdana" size="2">Header<br>
+      </font><font face="Verdana" size="1">(htm, html, or txt extensions only)</font></td>
+    <td bgcolor="#DEE4E0" colspan="2">
+    <div align="left">
+      <table border="0" cellpadding="3" cellspacing="0">
+        <tr>
+          <td><font face="Verdana" size="2">in(hvh)<input type="button" value="View Current" onClick="NewWindow('in(hurl)','hurl',640,480,'yes','center');">in(ehvh)</font>
+          </td>
+          <td><font face="Verdana" size="2"><input type="button" value="Upload File" onClick="ShowUpload('in(database)','header');"></font>
+          </td>
+          <td><font face="Verdana" size="2">in(hvh)<input type="button" value="Remove" onClick="Remove('in(database)','header');">in(ehvh)
+          <input type=hidden name=pheader value="in(pheader)">
+          <input type=hidden name=pfooter value="in(pfooter)">
+          <input type=hidden name=pbackgnd value="in(pbackgnd)">
+            </font>
+          </td>
+        </tr>
+      </table>
+    </div>
+ </td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#E4DFD6"><font face="Verdana" size="2">Footer<br>
+      </font><font face="Verdana" size="1">(htm, html, or txt extensions only)</font></td>
+    <td bgcolor="#E4DFD6" colspan="2">
+    <div align="left">
+      <table border="0" cellpadding="3" cellspacing="0">
+        <tr>
+          <td><font face="Verdana" size="2">in(hvf)<input type="button" value="View Current" onClick="NewWindow('in(furl)','hurl',640,480,'yes','center');">in(ehvf)</font>
+          </td>
+          <td><font face="Verdana" size="2"><input type="button" value="Upload File" onClick="ShowUpload('in(database)','footer');"></font>
+          </td>
+          <td><font face="Verdana" size="2">in(hvf)<input type="button" value="Remove" onClick="Remove('in(database)','footer');">in(ehvf)</font>
+          </td>
+        </tr>
+      </table>
+    </div>
+ </td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#DEE4E0"><font face="Verdana" size="2">Background
+      Color</font></td>
+    <td bgcolor="#DEE4E0" colspan="2">
+    <table border="0" cellpadding="2" cellspacing="0">
+        <tr>
+          <td valign="middle" align="center"><font face="Verdana" size="2"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.BackgroundColorText);">
+         </font> </td>
+          <td valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(BackgroundColorText)">
+              <tr>
+                <td width="33">&nbsp;</td>
+              </tr>
+            </table></td>
+          <td valign="middle" align="center">
+            <font face="Verdana" size="2">#<INPUT maxLength=7 name=BackgroundColorText size=7 value=in(BackgroundColorText)></font>
+          </td>
+        </tr>
+      </table>
+ </td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#E4DFD6"><font face="Verdana" size="2">Background
+      Image<br>
+      </font><font face="Verdana" size="1">
+      (gif or jpeg extensions only)</font></td>
+    <td bgcolor="#E4DFD6" colspan="2">
+      <div align="left">
+        <table border="0" cellpadding="3" cellspacing="0">
+          <tr>
+            <td><font face="Verdana" size="2">in(hvb)<input type="button" value="View Current" onClick="if(this.value)NewWindow('in(burl)','hurl',640,480,'yes','center');">in(ehvb)</font>
+            </td>
+            <td><font face="Verdana" size="2"><input type="button" value="Upload File" onClick="ShowUpload('in(database)','backgnd');"></font>
+            </td>
+            <td><font face="Verdana" size="2">in(hvb)<input type="button" value="Remove" onClick="Remove('in(database)','backgnd');">in(ehvb)</font>
+            </td>
+          </tr>
+        </table>
+      </div>
+ </td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#DEE4E0" valign="top"><font face="Verdana" size="2">PopUp
+      Window Height/Width</font></td>
+  </center>
+    <td bgcolor="#DEE4E0" colspan="2" valign="top" align="left">
+      <table border="0" cellspacing="0" cellpadding="2">
+        <tr>
+          <td valign="middle" align="left" colspan="5">
+            <p align="left"><font face="Verdana" size="1"><b>Size</b></font></td>
+        </tr>
+        <center>
+        <tr>
+          <td valign="middle" align="center"><font face="Verdana" size="1">Width:</font></td>
+          <td valign="middle" align="center"><font face="Verdana" size="1"><input type="text" name="Width" size="6" value="in(Width)">
+            </font></td>
+          <td valign="middle" align="center"><font face="Verdana" size="1">
+      pixels x Height:</font></td>
+          <td valign="middle" align="center"><font face="Verdana" size="1"><input type="text" name="Height" size="6" value="in(Height)">
+            </font></td>
+          <td valign="middle" align="center"><font face="Verdana" size="1">
+      pixels</font></td>
+        </tr>
+        </table>
+      <div align="left">
+        <table border="0" cellpadding="3" cellspacing="0">
+          <tr>
+            <td colspan="7"><font face="Verdana" size="1"><b>Position</b></font></td>
+          </tr>
+          <tr>
+            <td><font face="Verdana" size="1"><input type="radio" name="position" in(positioncenter) value="center"></font></td>
+            <td><font face="Verdana" size="1">centered</font></td>
+            <td><font face="Verdana" size="1"><input type="radio" name="position" in(positionrandom) value="random"></font></td>
+            <td><font face="Verdana" size="1">random</font></td>
+            <td><font face="Verdana" size="1"><input type="radio" name="position" in(positionabsolute) value="absolute"></font></td>
+            <td><font face="Verdana" size="1">absolute:</font></td>
+            <td>
+              <div align="left">
+                <table border="0" cellpadding="3" cellspacing="0">
+                  <tr>
+                    <td><font face="Verdana" size="1">left:</font></td>
+                    <td><font face="Verdana" size="1"><input type="text" name="pleft" size="3" value="in(pleft)"></font></td>
+                    <td><font face="Verdana" size="1">top:</font></td>
+                    <td><font face="Verdana" size="1"><input type="text" name="ptop" size="3" value="in(ptop)"></font></td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="7"><font face="Verdana" size="1"><b>Style</b></font></td>
+          </tr>
+          <tr>
+            <td colspan="7">
+              <div align="left">
+                <table border="0" cellpadding="3" cellspacing="0">
+                  <tr>
+                    <td><font face="Verdana" size="1"><input type="checkbox" name="locationbar" value="checked" in(locationbar)></font></td>
+                    <td><font face="Verdana" size="1">Location
+                      Bar</font></td>
+                    <td><font face="Verdana" size="1"><input type="checkbox" name="directories" value="checked" in(directories)></font></td>
+                    <td><font face="Verdana" size="1">Directories</font></td>
+                    <td><font face="Verdana" size="1"><input type="checkbox" name="statusbar" value="checked" in(statusbar)></font></td>
+                    <td><font face="Verdana" size="1">Status Bar</font></td>
+                  </tr>
+                  <tr>
+                    <td><font face="Verdana" size="1"><input type="checkbox" name="menubar" in(menubar) value="checked"></font></td>
+                    <td><font face="Verdana" size="1">Menu Bar</font></td>
+                    <td><font face="Verdana" size="1"><input type="checkbox" name="toolbar" in(toolbar) value="checked"></font></td>
+                    <td><font face="Verdana" size="1">Tool Bar</font></td>
+                    <td><font face="Verdana" size="1"><input type="checkbox" name="resizable" in(resizable) value="checked"></font></td>
+                    <td><font face="Verdana" size="1">Resizable</font></td>
+                  </tr>
+                  <tr>
+                    <td><font face="Verdana" size="1"><input type="checkbox" name="scrollbar" in(scrollbar) value="checked"></font></td>
+                    <td><font face="Verdana" size="1">Scroll Bar</font></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+ </td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#E4DFD6" colspan="3">
+      <p align="center"><b><font face="Verdana" size="2">Text Styles</font></b></td>
+  </tr>
+
+  <tr>
+    <td align="right" bgcolor="#E4DFD6" rowspan="3" valign="top"><font size="2" face="Verdana">Abbreviated
+      Question</font></td>
+    <td bgcolor="#E4DFD6" align="right"><font face="Verdana" size="2">Font
+      Color:</font></td>
+    <td bgcolor="#E4DFD6">
+<table border="0" cellpadding="2" cellspacing="0">
+        <tr>
+          <td valign="middle" align="center"><font face="Verdana" size="2"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.fTitleText);">
+         </font> </td>
+          <td valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(fTitleText)">
+              <tr>
+                <td width="33">&nbsp;</td>
+              </tr>
+            </table></td>
+          <td valign="middle" align="center">
+            <font face="Verdana" size="2">#<INPUT maxLength=7 name=fTitleText size=7 value=in(fTitleText)></font>
+          </td>
+        </tr>
+      </table>
+ </td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#DEE4E0"><font face="Verdana" size="2">Font
+      Size:</font></td>
+    <td bgcolor="#DEE4E0"><font face="Verdana" size="2"><input type="text" name="fTitleSize" size="3" value="in(fTitleSize)"></font></td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#E4DFD6"><font face="Verdana" size="2">Font
+      Face:</font></td>
+    <td bgcolor="#E4DFD6"><font face="Verdana" size="2"><input type="text" name="fTitleFace" size="23" value="in(fTitleFace)"></font></td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#DEE4E0" rowspan="3" valign="top"><font size="2" face="Verdana">Detailed
+      Question</font></td>
+    <td bgcolor="#DEE4E0" align="right"><font face="Verdana" size="2">Font
+      Color:</font></td>
+    <td bgcolor="#DEE4E0">
+<table border="0" cellpadding="2" cellspacing="0">
+        <tr>
+          <td valign="middle" align="center"><font face="Verdana" size="2"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.fDescriptionText);">
+         </font> </td>
+          <td valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(fDescriptionText)">
+              <tr>
+                <td width="33">&nbsp;</td>
+              </tr>
+            </table></td>
+          <td valign="middle" align="center">
+            <font face="Verdana" size="2">#<INPUT maxLength=7 name=fDescriptionText size=7 value=in(fDescriptionText)></font>
+          </td>
+        </tr>
+      </table>
+ </td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#E4DFD6"><font face="Verdana" size="2">Font
+      Size:</font></td>
+    <td bgcolor="#E4DFD6"><font face="Verdana" size="2"><input type="text" name="fDescriptionSize" size="3" value="in(fDescriptionSize)"></font></td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#DEE4E0"><font face="Verdana" size="2">Font
+      Face:</font></td>
+    <td bgcolor="#DEE4E0"><font face="Verdana" size="2"><input type="text" name="fDescriptionFace" size="23" value="in(fDescriptionFace)"></font></td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#E4DFD6" rowspan="3" valign="top"><font size="2" face="Verdana">Answer&nbsp;</font></td>
+    <td bgcolor="#E4DFD6" align="right"><font face="Verdana" size="2">Font
+      Color:</font></td>
+    <td bgcolor="#E4DFD6">
+<table border="0" cellpadding="2" cellspacing="0">
+        <tr>
+          <td valign="middle" align="center"><font face="Verdana" size="2"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.fBodyText);">
+         </font> </td>
+          <td valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(fBodyText)">
+              <tr>
+                <td width="33">&nbsp;</td>
+              </tr>
+            </table></td>
+          <td valign="middle" align="center">
+            <font face="Verdana" size="2">#<INPUT maxLength=7 name=fBodyText size=7 value=in(fBodyText)></font>
+          </td>
+        </tr>
+      </table>
+ </td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#DEE4E0"><font face="Verdana" size="2">Font
+      Size:</font></td>
+    <td bgcolor="#DEE4E0"><font face="Verdana" size="2"><input type="text" name="fBodySize" size="3" value="in(fBodySize)"></font></td>
+  </tr>
+  <tr>
+    <td align="right" bgcolor="#E4DFD6"><font face="Verdana" size="2">Font
+      Face:</font></td>
+    <td bgcolor="#E4DFD6"><font face="Verdana" size="2"><input type="text" name="fBodyFace" size="23" value="in(fBodyFace)"></font></td>
+  </tr>
+
+  <tr>
+    <td align="right" bgcolor="#E4DFD6" valign="top" colspan="3">
+      <table border="0" width="100%" cellspacing="0" cellpadding="5">
+        <tr>
+          <td width="50%">
+            <p align="right">
+<input type=submit value='  Apply  '></td>
+          <center>
+          <td width="50%"><input type="button" value="Cancel" onClick="javascript:history.back()">
+          </td>
+          </tr>
+        </table>
+      </td>
+  </tr>
+</table>
+</div>
+</form>
+</body>
+<script language=javascript>
+function SelectCl(tf){
+var rndURL = (1000*Math.random());
+var fname = tf.name;
+var fcolor = tf.value;
+var windowURL = "in(cgiurl)?command=showcolor&database=in(database)&fieldname="+fname+"&cc="+fcolor+"&rnd="+rndURL;
+newWindow = window.open(windowURL,null,'width=600,height=300,location=0,directories=0,status=0,menuBar=0,scrollBars=yes,resizable=yes');
+newWindow.focus();
+}
+
+function ShowUpload(d,t){
+var URL = "in(cgiurl)?command=showupload&database="+d+"&type="+t;
+NewWindow(URL,'upload',600,200,'no','center');
+}
+
+function Remove(d,t){
+if(!confirm("Are you sure you want to remove this?")){
+return false;
+}
+var rndURL = (1000*Math.random());
+if(t=='header'){
+document.form1.pheader.value='';
+}
+if(t=='footer'){
+document.form1.pfooter.value='';
+}
+if(t=='backgnd'){
+document.form1.pbackgnd.value='';
+}
+var URL = "in(cgiurl)?command=remove&database="+d+"&type="+t+"&rndURL="+rndURL;
+//window.location = URL;
+NewWindow(URL,'remove',100,100,'no','center');
+}
+
+var win=null;
+function NewWindow(mypage,myname,w,h,scroll,pos){
+if(pos=="random"){LeftPosition=(screen.width)?Math.floor(Math.random()*(screen.width-w)):100;TopPosition=(screen.height)?Math.floor(Math.random()*((screen.height-h)-75)):100;}
+if(pos=="center"){LeftPosition=(screen.width)?(screen.width-w)/2:100;TopPosition=(screen.height)?(screen.height-h)/2:100;}
+else if((pos!="center" && pos!="random") || pos==null){LeftPosition=0;TopPosition=20}
+settings='width='+w+',height='+h+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',location=no,directories=no,status=no,menubar=no,toolbar=no,resizable=yes';
+win=window.open(mypage,null,settings);
+if(win.focus){win.focus();}}
+</script>
+</html>

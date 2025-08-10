@@ -1,0 +1,203 @@
+<HTML>
+<HEAD>
+<TITLE>CGIScript.net Shared Drive</TITLE>
+
+<style>
+<!--
+ INPUT.button { background-color:#eeeeee;font:verdana;font-weight:bold;color:#000080;font-size:10pt; }
+-->
+</style>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF">
+<FORM action="in(cgiurl)" method=post>
+<div align="center">
+  <center>
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%">
+      <table border="0" width="100%" cellspacing="0" cellpadding="3">
+        <tr>
+          <td width="100%">
+            <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+              <tr>
+                <td width="100%" valign="middle" align="center" nowrap>
+                <B><font face="Verdana" size="5">csFileShare - Management</font></B> 
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">
+            <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+              <tr>
+                <td width="100%">
+                  <table border="0" width="100%" cellspacing="0" cellpadding="3">
+                    <tr>
+                      <td width="100%" nowrap>
+                        <p align="left"><B><font face="Verdana" size="2">Name of Shared Drive</font></B></td>
+                    </tr>
+                    <tr>
+                      <td width="100%" nowrap>
+                        <table border="1" width="100%" bgcolor="#FFFFFF" cellspacing="0" cellpadding="3" bordercolor="#000000">
+                          <tr>
+                            <td width="100%"><font face="Verdana" size="2">in(sname)</font></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">
+            <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+              <tr>
+                <td width="100%">
+                  <table border="0" width="100%" cellspacing="0" cellpadding="3">
+                    <tr>
+                      <td width="100%"><B><font face="Verdana" size="2">Description of Shared Drive</font></B></td>
+                    </tr>
+                    <tr>
+                      <td width="100%"><INPUT size=50 name=sdesc value="in(sdesc)"> </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">
+            <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+              <tr>
+                <td width="100%">
+                  <table border="0" width="100%" cellspacing="0" cellpadding="3">
+                    <tr>
+                      <td width="100%"><B><font size="2" face="Verdana">Limitations</font><font face="Verdana" size="1">
+                        </font> </B><font face="Verdana" size="1">(pertains to this shared drive only)</font></td>
+                    </tr>
+                    <tr>
+                      <td width="100%">
+                        <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                          <tr>
+                            <td width="100%">
+                              <table border="0" cellspacing="0" cellpadding="3">
+                                <tr>
+                                  <td colspan="3"><B><font face="Verdana" size="2">File Type Limits</font></B></td>
+                                </tr>
+                                <tr>
+                                  <td valign="middle"><font face="Verdana" size="2"><INPUT type=radio value=NOLIMIT name=filetype in(filetype_NOLIMIT)></font></td>
+                                  <td valign="middle"><font face="Verdana" size="2">All file types.</font></td>
+                                  <td valign="middle"></td>
+                                </tr>
+                                <tr>
+                                  <td valign="middle"><font face="Verdana" size="2"><INPUT type=radio value=LIMIT name=filetype in(filetype_LIMIT)></font></td>
+                                  <td valign="middle">
+                                    <p align="center"><font face="Verdana" size="2"><INPUT name=fileext size="20" value="in(fileext)"> 
+                                    </font></td>
+                                  <td valign="middle"><font face="Verdana"><font size="1">Ex: gif, jpg, avi, mov, htm<br>Separated each w/comma.</font></font></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="100%">
+                        <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                          <tr>
+                            <td width="100%">
+                              <table border="0" cellspacing="0" cellpadding="3">
+                                <tr>
+                                  <td colspan="2"><B><font size="2" face="Verdana">Disk Space Quota in MB</font></B></td>
+                                </tr>
+                                <tr>
+                                  <td align="right"><font size="2" face="Verdana">Entire Shared Drive:</font></td>
+                                  <td>
+                                    <table border="0" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                        <td align="right"><font size="2" face="Verdana"><INPUT type=radio value=UNLIMITED name=qshare in(qshare_UNLIMITED)></font></td>
+                                        <td>
+                                          <p align="left"><font size="2" face="Verdana">Unlimited</font></td>
+                                        <td width="15">&nbsp;</td>
+                                        <td>
+                                          <p align="right"><font size="2" face="Verdana"><INPUT type=radio value=LIMIT name=qshare in(qshare_LIMIT)></font></td>
+                                        <td>
+                                          <p align="left"><font size="2" face="Verdana"><INPUT size=5 name=qsharelimit value="in(qsharelimit)"> </font></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="100%">
+                        <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                          <tr>
+                            <td width="100%">
+                              <table border="0" cellspacing="0" cellpadding="3">
+                                <tr>
+                                  <td colspan="2"><B><font size="2" face="Verdana">Automatic Purge</font></B></td>
+                                </tr>
+                                <tr>
+                                  <td align="right"><font size="2" face="Verdana"><INPUT type=radio value=NEVER name=apurge in(apurge_NEVER)></font></td>
+                                  <td><font size="2" face="Verdana">Never purge the files.</font></td>
+                                </tr>
+                                <tr>
+                                  <td align="right"><font size="2" face="Verdana"><INPUT type=radio value=AUTO name=apurge in(apurge_AUTO)></font></td>
+                                  <td>
+                                    <table border="0" cellspacing="0" cellpadding="2">
+                                      <tr>
+                                        <td nowrap><font size="2" face="Verdana">Purge the files every</font></td>
+                                        <td nowrap><font size="2" face="Verdana"><INPUT size=5 name=apurgedays value="in(apurgedays)"> 
+                                          </font></td>
+                                        <td nowrap><font size="2" face="Verdana">day(s).</font></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">
+            <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+              <tr>
+                <td width="100%" valign="middle" align="center">
+                  <p align="center"><INPUT CLASS="button" type=submit value="-= Submit =-" name=B3> 
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+  </center>
+</div>
+<input type=hidden name=command value=savedrive>
+<input type=hidden name=id value="in(id)"> 
+</FORM>
+
+</BODY></HTML>

@@ -1,0 +1,35 @@
+<?php
+$mainT='
+	<table border="0" cellpadding="5" cellspacing="0" width="100%">
+		<tr>
+			<td class="{class}">{header}</td>
+		</tr>
+		<tr>
+			<td>{short}</td></tr>
+		<tr>
+			<td align="right">{more}</td>
+		</tr>
+	</table>';
+if(1>($folder=intval($folder)))$folder=1;
+
+$query='SELECT path,short FROM '.suPAGES.' WHERE id='.$folder;
+
+if($data=$suSQL->queryRow($query))
+{
+	$link='<a href="'.suBASE.$data['path'].'" class="more">'.$more.'</a>';
+	$short=$data['short'];
+}
+else
+{
+	$short=$link='&nbsp;';
+}
+
+$class='rightHeadline'.($htype==2?'2':'');
+
+$html=suTemplate($mainT);
+$html->set('class',$class);
+$html->set('header',$htext);
+$html->set('short',$short);
+$html->set('more', $link);
+echo $html->finish();
+?>

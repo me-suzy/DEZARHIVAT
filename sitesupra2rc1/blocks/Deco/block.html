@@ -1,0 +1,12 @@
+<?php
+$out='';
+if($image)
+{
+	$_=suTemplate($template0);
+	$_->set('src',$image['src']);
+	$_->set('y',$image['y']);
+	$_->set('x',$image['x']);
+	echo $out=$_->finish();
+}
+if(!$out&&suEDIT)echo 'Deco Block';
+?>

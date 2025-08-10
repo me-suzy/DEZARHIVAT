@@ -1,0 +1,301 @@
+<!--
+#!/usr/bin/perl
+#
+# Version: 1.0 - 011401
+#
+#####################################################################
+#                                                                   #
+#    Copyright © 1999-2000 CGISCRIPTS.NET - All Rights Reserved     #
+#                                                                   #
+#####################################################################
+#                                                                   #
+#          THIS COPYRIGHT INFORMATION MUST REMAIN INTACT            #
+#                AND MAY NOT BE MODIFIED IN ANY WAY                 #
+#                                                                   #
+#####################################################################
+#
+# When you downloaded this script you agreed to accept the terms
+# of this Agreement. This Agreement is a legal contract, which
+# specifies the terms of the license and warranty limitation between
+# you and CGISCRIPTS.NET. You should carefully read the following
+# terms and conditions before installing or using this software.
+# Unless you have a different license agreement obtained from
+# CGISCRIPTS.NET, installation or use of this software indicates
+# your acceptance of the license and warranty limitation terms
+# contained in this Agreement. If you do not agree to the terms of this
+# Agreement, promptly delete and destroy all copies of the Software.
+#
+# Versions of the Software
+# Only one copy of the registered version of CGISCRIPTS.NET
+# may used on one web site.
+#
+# License to Redistribute
+# Distributing the software and/or documentation with other products
+# (commercial or otherwise) or by other than electronic means without
+# CGISCRIPTS.NET's prior written permission is forbidden.
+# All rights to the CGISCRIPTS.NET software and documentation not expressly
+# granted under this Agreement are reserved to CGISCRIPTS.NET.
+#
+# Disclaimer of Warranty
+# THIS SOFTWARE AND ACCOMPANYING DOCUMENTATION ARE PROVIDED "AS IS" AND
+# WITHOUT WARRANTIES AS TO PERFORMANCE OF MERCHANTABILITY OR ANY OTHER
+# WARRANTIES WHETHER EXPRESSED OR IMPLIED.   BECAUSE OF THE VARIOUS HARDWARE
+# AND SOFTWARE ENVIRONMENTS INTO WHICH CGISCRIPTS.NET MAY BE USED, NO WARRANTY
+# OF FITNESS FOR A PARTICULAR PURPOSE IS OFFERED.  THE USER MUST ASSUME THE
+# ENTIRE RISK OF USING THIS PROGRAM.  ANY LIABILITY OF CGISCRIPTS.NET WILL BE
+# LIMITED EXCLUSIVELY TO PRODUCT REPLACEMENT OR REFUND OF PURCHASE PRICE.
+# IN NO CASE SHALL CGISCRIPTS.NET BE LIABLE FOR ANY INCIDENTAL, SPECIAL OR
+# CONSEQUENTIAL DAMAGES OR LOSS, INCLUDING, WITHOUT LIMITATION, LOST PROFITS
+# OR THE INABILITY TO USE EQUIPMENT OR ACCESS DATA, WHETHER SUCH DAMAGES ARE
+# BASED UPON A BREACH OF EXPRESS OR IMPLIED WARRANTIES, BREACH OF CONTRACT,
+# NEGLIGENCE, STRICT TORT, OR ANY OTHER LEGAL THEORY. THIS IS TRUE EVEN IF
+# CGISCRIPTS.NET IS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN NO CASE WILL
+# CGISCRIPTS.NET' LIABILITY EXCEED THE AMOUNT OF THE LICENSE FEE ACTUALLY PAID
+# BY LICENSEE TO CGISCRIPTS.NET.
+#
+# Credits:
+# Andy Angrick - Programmer - angrick@cgiscript.net
+# Mike Barone - Design - mbarone@cgiscript.net
+#
+# For information about this script or other scripts see
+# http://www.cgiscript.net
+#
+# Thank you for trying out our script.
+# If you have any suggestions or ideas for a new innovative script
+# please direct them to suggest@cgiscript.net.  Thanks.
+#
+-->
+<HTML>
+<HEAD>
+<TITLE>CSIncludes Dynamic Popup</TITLE>
+
+<style>
+<!--
+ INPUT.button { background-color:#eeeeee;font:verdana;font-weight:bold;color:#000080;font-size:10pt; }
+-->
+</style>
+
+</HEAD>
+<BODY>
+	<FORM method="POST" action="in(cgiurl)" name="form1">
+	<input type=hidden name=command value=a>
+	<input type=hidden name=id value=in(id)>
+
+<table border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
+  <tr>
+     <td width="100%" valign="middle" align="center">
+        <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0">
+           <tr>
+             <td width="100%">
+              <table border="0" width="100%" cellspacing="0" cellpadding="3">
+                <tr>
+                  <td width="100%">
+                    <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                      <tr>
+                        <td width="100%" nowrap valign="middle" align="center"><font size="5" face="Verdana"><B>Add/Edit a New Item</B></font></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%">
+                    <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                      <tr>
+                        <td width="100%" valign="middle" align="center">
+
+                        					<TABLE border="0" cellpadding="0" cellspacing="0">
+						<TR>
+							<TD align="right" valign="middle"><FONT face="verdana,arial,helvetica" size="2">Identifier:</FONT>
+							</TD>
+							<TD valign="middle">
+								<INPUT type="text" name="identifier" size="20" value="in(identifier)">
+							</TD>
+							<TD valign="middle" nowrap><FONT face="verdana,arial,helvetica" size="1">(one word)</FONT>
+							</TD>
+						</TR>
+						<TR>
+							<TD align="right" valign="middle"><FONT face="verdana,arial,helvetica" size="2">Description:</FONT>
+							</TD>
+							<TD valign="middle">
+								<INPUT type="text" name="description" size="20" value="in(description)">
+							</TD>
+							<TD valign="middle" nowrap><FONT face="verdana,arial,helvetica" size="1">(few words)</FONT>
+							</TD>
+						</TR>
+					</TABLE>
+
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%">
+                    <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                      <tr>
+                        <td width="100%">
+                          <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                            <tr>
+                              <td width="100%" valign="middle" align="center">
+                <font face="verdana,arial,helvetica" size="1">Enter your data to include below. If the data contains html,<br>please start with an &lt;html&gt; tag and end with an &lt;/html&gt; tag.</font>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="100%" valign="middle" align="center"><CENTER><TEXTAREA rows="8" name="line" cols="50">in(line)</TEXTAREA></CENTER>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%">
+                    <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                      <tr>
+                        <td width="100%" valign="middle" align="center">
+
+                        								<TABLE border="0" cellspacing="0">
+									<TR>
+										<TD><FONT size="1" face="verdana,arial,helvetica">Resize TextArea</FONT>
+										</TD>
+										<TD><FONT size="1" face="verdana,arial,helvetica">
+											<INPUT type="text" name="cols" size="3"></FONT>
+										</TD>
+										<TD><FONT size="1" face="verdana,arial,helvetica">Cols X</FONT>
+										</TD>
+										<TD><FONT size="1" face="verdana,arial,helvetica">
+											<INPUT type="text" name="rows" size="3"></FONT>
+										</TD>
+										<TD><FONT size="1" face="verdana,arial,helvetica">Rows</FONT>
+										</TD>
+										<TD><FONT size="1" face="verdana,arial,helvetica">
+											<INPUT CLASS="button" type="button" value="-=Resize=-" onClick="ChangeSize()"></FONT>
+										</TD>
+									</TR>
+								</TABLE>
+
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%">
+                    <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                      <tr>
+                        <td width="100%" valign="middle" align="center">&nbsp;<INPUT CLASS="button" type="submit" value="-= Save =-" name="B3">
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+             </td>
+           </tr>
+        </table>
+     </td>
+  </tr>
+</table>
+
+</FORM>
+</BODY>
+<SCRIPT language=javascript>if(GetCookie('csincludecolse')){
+document.form1.cols.value=GetCookie('csincludecolse');
+}
+else{
+document.form1.cols.value=document.form1.line.cols;
+}
+
+if(GetCookie('csincluderowse')){
+document.form1.rows.value=GetCookie('csincluderowse');
+}
+else{
+document.form1.rows.value=document.form1.line.rows;
+}
+
+
+ChangeSize();
+
+function ChangeSize(){
+
+var cols = document.form1.cols.value;
+var rows = document.form1.rows.value;
+
+var maxr = ((screen.availHeight-200)/75)*5;
+var maxc = ((((screen.availWidth-200)/100)*15))/1.1;
+
+if(rows > maxr){
+rows=maxr;
+}
+if(cols > maxc){
+cols=maxc;
+}
+
+document.form1.line.cols=cols;
+document.form1.line.rows=rows;
+
+var resizex= (100 * (document.form1.cols.value/15))+200 + (document.form1.cols.value*.75);
+var resizey= (75 * (document.form1.rows.value/5))+400;
+
+if(resizex > screen.availWidth){
+resizex = screen.availWidth;
+}
+if(resizey > screen.availHeight){
+resizey = screen.availHeight;
+}
+
+window.resizeTo(resizex,resizey);
+var l = (screen.availWidth/2) - (resizex/2);
+var t = (screen.availHeight/2) - (resizey/2);
+window.moveTo(l,t);
+
+document.cookie="csincludecolse="+document.form1.cols.value+";path=/;expires='Thu, 24-Jul-03 00:00:01 GMT";
+document.cookie="csincluderowse="+document.form1.rows.value+";path=/;expires='Thu, 24-Jul-03 00:00:01 GMT";
+}
+
+function getCookieVal (offset) {
+  var endstr = document.cookie.indexOf (";", offset);
+  if (endstr == -1)
+    endstr = document.cookie.length;
+  return unescape(document.cookie.substring(offset, endstr));
+}
+function FixCookieDate (date) {
+  var base = new Date(0);
+  var skew = base.getTime(); // dawn of (Unix) time - should be 0
+  if (skew > 0)  // Except on the Mac - ahead of its time
+    date.setTime (date.getTime() - skew);
+}
+function GetCookie (name) {
+  var arg = name + "=";
+  var alen = arg.length;
+  var clen = document.cookie.length;
+  var i = 0;
+  while (i < clen) {
+    var j = i + alen;
+    if (document.cookie.substring(i, j) == arg)
+      return getCookieVal (j);
+    i = document.cookie.indexOf(" ", i) + 1;
+    if (i == 0) break;
+  }
+  return null;
+}
+function SetCookie (name,value,expires,path,domain,secure) {
+  document.cookie = name + "=" + escape (value) +
+    ((expires) ? "; expires=" + expires.toGMTString() : "") +
+    ((path) ? "; path=" + path : "") +
+    ((domain) ? "; domain=" + domain : "") +
+    ((secure) ? "; secure" : "");
+}
+
+function DeleteCookie (name,path,domain) {
+  if (GetCookie(name)) {
+    document.cookie = name + "=" +
+      ((path) ? "; path=" + path : "") +
+      ((domain) ? "; domain=" + domain : "") +
+      "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+  }
+}
+</SCRIPT>
+</HTML>

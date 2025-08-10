@@ -1,0 +1,90 @@
+<html><head><title>Smart Search MySQL Add-On v1.003 Setup</title></head>
+
+<body>
+
+<p align="center"><u><strong>Smart Search MySQL Add-On (v1.003) Setup Instructions</strong></u></p>
+
+<p><strong><u><font color="red">Setup</font></u></strong></p>
+
+<p>Before installing the MySQL add-on, FIRST make sure that you successfully install
+and configure Smart Search v4.18 or higher.  Using the MySQL add-on with a version earlier than 4.18
+will produce unpredictable results.</p>
+
+<p><u><b>Upgrade Instructions from v1.001 or v1.002</b></u></p>
+<ul>
+  <li>Copy listings.cgi to the "include" directory of your Smart Search installation and chmod it to 755
+</ul>
+
+<p><u><b>Upgrade Instructions from v1.0</b></u></p>
+<p><ul>
+  <li>
+    If the path to Perl on your server is not "/usr/bin/perl" you will also have to edit mysql_setup.cgi.
+    Place the proper path to Perl in the first line of the script.  You're now finished with your text editor.
+  </li>  
+  <li>copy mysql_setup.cgi and mysql_setup.pl to the main directory of your Smart Search installation
+	and listings.cgi to the "include" directory.</li>
+  <li>Set these files to file permission 755 (CHMOD 755).
+  <li>Run mysql_setup.cgi or mysql_setup.pl
+</ul></p>
+
+<p><u><b>Installation Directions</b></u></p>
+
+<ul>
+  <li>
+    The first thing you need to do is create an empty MySQL database on your server.
+    How you do this depends on your server configuration, but there is usually an option
+    in your hosting account control panel to manage MySQL databases.  It doesn't really
+    matter what you call this database ("smartsearch" isn't a bad choice), but remember that
+    database name, along with the username and password that need to be used to
+    access that database. You will also need to know the host name or IP address for your
+    database server.
+  </li>
+  <li>
+	Now, open up the included "mysql.cgi" in the text editor of your choice.  This is a very
+	short file responsible for connecting to your MySQL server.  At the top of the file you
+	will notice areas to enter your database server's host name, the database name, and a
+	username/password combination used to access the database server.  Change these values
+	to match your configuration and then save mysql.cgi with the updated information.
+  </li>
+  <li>
+    If the path to Perl on your server is not "/usr/bin/perl" you will also have to edit mysql_setup.cgi.
+    Place the proper path to Perl in the first line of the script.  You're now finished with your text editor.
+  </li>
+  <li>
+  	Using an FTP program, open the directory on your web server where your Smart Search
+  	installation is located.
+  </li>
+  <li>
+	In ASCII mode, upload mysql.cgi, bids.cgi, listings.cgi, and search.cgi to your "include" directory.
+	This will overwrite existing versions of bids.cgi, listings.cgi and search.cgi.
+  </li>
+  <li>
+    CHMOD those four files (mysql.cgi, bids.cgi, listings.cgi, and search.cgi) to 755.
+  </li>
+  <li>
+	For the next step, if you have many listings to copy from your current installation to a MySQL database, you will need to use
+	mysql_setup.pl.  Otherwise use mysql_setup.cgi.
+  </li>
+  <li>
+    Upload mysql_setup.cgi or mysql_setup.pl to your main Smart Search directory and CHMOD that file to 755.
+  </li>
+  <li>
+    Either 1) Open mysql_setup.cgi in your browser.  OR<br>
+	2) Run "perl mysql_setup.pl" from a shell (e.g. Telnet)<br>
+	This will create the necessary tables in your database, copy any member listings to the database, and
+    delete the now unnecessary files in your "keywords" directory.
+  </li>
+  <li>
+	Remove mysql_setup.cgi (or mysql_setup.pl) from your server.
+  </li>
+  <li>
+	If your Smart Search installation contains listings, you will now need to rebuild the keyword
+	database.  You can do this from either admin.cgi > "Miscellaneous" or rebuild.pl from a remote shell.
+  </li>
+  <li>
+  	Once the keyword database is rebuilt, you're finished.  You can now use Smart Search exactly as you would
+  	use it without the MySQL add-on.
+  </li>
+</ul>
+</body>
+</html>

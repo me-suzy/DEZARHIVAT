@@ -1,0 +1,18 @@
+Installation instrcution:
+
+1) Create a directory called "Linksubmit" under your root directory
+www.yourdomain.com/Linksubmit). Chomd this directory to 777.
+
+2) Create a directory called "images" under the "Linksubmit"
+directory. Chmod this directory to 777.
+
+3) Go to Part B of the Linksubmit.cgi script. Configure this part
+as necessary.
+
+4) Upload the script Linksubmit.cgi to your cgi-bin. Chmod this
+script to 755.
+
+5) Modify (the layout and the form's URL) and upload "admin.htm" 
+and "user.htm" to the folder "Linksubmit" you created above.
+
+To go to the link page, point to www.yourdomain.com/cgi-bin/Linksubmit.cgi

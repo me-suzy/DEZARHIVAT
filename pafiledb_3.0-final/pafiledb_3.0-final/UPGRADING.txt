@@ -1,0 +1,29 @@
+If you are upgrading from paFileDB Beta 3.1:
+Due to changes in many of the files, the easiest way to upgrade is:
+
+1. Delete the following directories and everything in them:
+----includes
+----styles
+----sessions
+
+2. Delete the following files:
+----pafiledb.php
+
+3. Open the file includes/mysql.php in a text editor and change the settings to your correct database settings (You can use the same settings that you had in the old mysql.php)
+
+4. Upload the following folders and everything in them:
+----includes (with the copy of mysql.php with the correct settings)
+----styles
+
+5. Upload the following files:
+----pafiledb.php
+----toplist.php
+
+6. Run admin.php and make sure you can log into your admin center and use it without problems. If you have problems, you will have to switch back to sessions instead of cookies. See the "Sessions or Cookies" section in manual.html for more information.
+
+7. If everything is working without problems, then you're done! :)
+
+
+
+
+If you are upgrading from a version older than paFileDB Beta 3.1 please see the "Upgrading" section in manual.html for further instructions

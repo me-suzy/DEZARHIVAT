@@ -1,0 +1,44 @@
+INSTALLATION:
+============
+
+events.cgi:
+1) Change the first line (path to Perl) of the script.
+2) Go to STEP 2 in the script. Read the instruction there and modify accordingly.
+3) Upload this script to your cgi bin. Chmod to 755. You may also rename the script or upload it to somewhere outside the cgi bin provided that you configure it according under STEP 2 and that your ISP allows you to run scripts outside cgi bin.
+
+admin.htm (Admin form), user.htm (Public search form):
+1) Cut everything and paste into your existing web page (to suit your own layout).
+2) Modify the form action URL in both form. Point it to your events.cgi.
+3) Modify the URL of the link "List All Events" in the form user.htm.
+
+template.htm:
+1) Create your own template and place +++ (three plus signs) at the location where you want the script results to be printed. See STEP 2 in the script for details.
+
+Required/Optional fields:
+1) By default, field input for "Headline" and "Detailed News" are required during data entry. To make it an optional field, please read the instruction under section R4 of the script.
+
+Sorting:
+1) By default, news with latest entry date is displayed on top. To reverse this, change section J1 in the script from
+@keepers=reverse(sort(@keepers));   to
+@keepers=sort(@keepers);
+
+Image display:
+1) By default, the image is left-aligned. To change this, mofiy under section K15 the following codes:
+print "<img align=left src=\"$ImageuploadURL$Image_Upload\"> \n";}
+2) If you uploaded an image and your news text is too short, the next following news may start immediately next to the earlier image. This is because the earlier image is left-aligned. In this case, add a few "Enter" at the end of the detailed news for the earlier event.
+
+PROBLEMS?
+========
+Please sent an email to help@upoint.net describing
+- the problems
+- error message generated
+- URL to the script and/or result page
+- other things that you think might be helpful
+* We usually response in less than 12 hours (average is about 4 hours). But before that, you will receive an auto-responded email describing the most common CGI installation mistakes.
+
+The Management,
+UPDN Network Sdn Bhd
+www.upoint.net
+General: mail@upoint.net
+Technical help: help@upoint.net
+

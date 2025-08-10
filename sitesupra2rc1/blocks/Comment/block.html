@@ -1,0 +1,22 @@
+<?php
+
+if ($supra['edit']) {
+	
+	if (!isset($block['header']))
+		$block['header'] = 'HEADER';
+	if (!isset($block['text']))
+		$block['text'] = 'Right click to edit text.';
+
+	$html = '
+			<table width="100%" border="0" cellspacing="0" cellpadding="5">
+				<tr>
+					<td class="rightHeadline3">' . $block['header'] .'</td>
+				</tr>
+				<tr bgcolor="#FFFF9C">
+					<td>' . $block['text'] . '</td>
+				</tr>
+			</table>';
+
+	echo $html;
+}
+?>

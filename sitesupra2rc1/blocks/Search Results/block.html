@@ -1,0 +1,96 @@
+<?
+$html='';
+$post = $GLOBALS['HTTP_POST_VARS'];
+$get = $GLOBALS['HTTP_GET_VARS'];
+
+if (isset($get['page']) && $get['page'])
+	$page = $get['page'];
+else
+	$page = 1;
+
+if (isset($get['action']) && $get['action'])
+	$post['search'] = $get['search'];
+
+$limitS = ($page - 1) * $block['maxRecs'];
+$limitE = $page * $block['maxRecs'];
+
+if (isset($post['search'])) {
+	$html = '<table border="0" cellspacing="0" cellpadding="0" width="100%">';
+
+	$search = sqllike($post['search']);
+
+	$query = '
+		SELECT count(*) 
+		FROM pages_' . $supra['lang'] . $supra['edit'] . ' 
+		WHERE (search LIKE "%' . $search . '%" AND redirect = "" 
+		AND path NOT LIKE "'. suDIR_SYS. '/%") AND active = 1
+	';
+	$maxRecs = $supra['connect']->QueryValue($query);
+
+	$query = '
+		SELECT id, short, title 
+		FROM pages_' . $supra['lang'] . $supra['edit'] . ' 
+		WHERE (search LIKE "%' . $search . '%" AND redirect = "" 
+			AND path NOT LIKE "'. suDIR_SYS. '/%") 
+			AND active = 1
+		LIMIT ' . $limitS . ', ' . $limitE 
+	;
+	$data = $supra['connect']->QueryData($query);
+
+	$tmp_item = '
+		<tr><td><a href="?id={id}" class="task">{title}</a></td></tr>
+		<tr><td>{short}</td></tr>
+		';
+	$items = new Template($tmp_item, true);
+	$items->set($data);
+
+	if ($page == 1 && $limitE >= $maxRecs)
+		$buttons = '';
+	else {
+		$tmp_btns = '
+			<tr><td>&nbsp;</td></tr>
+			<tr><td align=right>{prev}{next}</td></tr>
+		';
+		$buttons = new Template($tmp_btns);
+		if ($page > 1)
+			$prev = '<a href="?id=' . $get['id'] . '&action=previous&page=' . ($page - 1) . '&search=' . rawurlencode($post['search']).'">' . $block['prev'] . '</a>';
+		else 
+			$prev = '';
+		if ($limitE < $maxRecs)
+			$next = ($page > 1 ? ' | ' : '')
+					. '<a href="?id=' . $get['id'] . '&action=next&page=' . ($page + 1) . '&search=' . rawurlencode($post['search']). '">' . $block['next'] . '</a>';
+		else
+			$next = '';
+
+		$buttons->set('prev', $prev);
+		$buttons->set('next', $next);
+
+	}
+
+} else {
+	$items = '<tr><td>' . $block['error'] . '</td></tr>';
+	$buttons = '';
+}
+
+$main = '
+		<table width=100% border=0 cellspacing=8 cellpadding=0>
+			<tr>
+				<td class="cTitle">{header}</td>
+			</tr>
+			<tr>
+				<td>
+					<table border="0" cellspacing="0" cellpadding="0" width="100%">
+						{items}
+						{buttons}
+					</table>
+				</td>
+			</tr>
+		</table>
+		';
+
+$html = new Template($main);
+$html->set('header', $block['htext']);
+$html->set('items', $items);
+$html->set('buttons', $buttons);
+echo $html->finish();
+?>

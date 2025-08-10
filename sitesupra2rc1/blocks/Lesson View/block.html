@@ -1,0 +1,51 @@
+<?php
+$mainT='<table border="0" cellpadding="5" cellspacing="0" width="100%">{title}{listEU}</table>';
+$titleT='
+	<tr>
+		<td class="rightHeadline3">{title}</td>
+	</tr>';
+$listT='
+	<tr bgcolor="#D1E7FD">
+		<td>
+			<table border="0" cellspacing="4" cellpadding="0">
+				<tr>
+					<td colspan="2" class="blueHeadline2">{header}</td>
+				</tr>
+				{items}
+			</table>
+		</td>
+	</tr>';
+$itemT='
+	<tr>
+		<td valign="top"><img src="'.suFILES.'/pic/pin_blue.gif" height="4" width="4" hspace="5" vspace="5" /></td>
+		<td><a href="'.suBASE.'{path}" class="blue">{title}</a></td>
+	</tr>';
+
+if($title)
+{
+	$titleT=suTemplate($titleT);
+	$titleT->set('title',$title);
+}
+else 
+	$titleT='';
+
+if(!$id=intval($folderEU))$id=1;
+$query='SELECT path,title FROM '.suPAGES.' WHERE parent='.$id.' AND active=1 ORDER BY sort';
+
+if($data=$suSQL->queryData($query))
+{
+	$itemT=suTemplate($itemT,1);
+	$itemT->set($data);
+	$listT=suTemplate($listT);
+	$listT->set('header',$forEU);
+	$listT->set('items',$itemT);
+}
+else
+	$listT='';
+
+$html=suTemplate($mainT);
+$html->set('title',$titleT);
+$html->set('listEU',$listT);
+echo $html->finish();
+//print_r($block);
+?>

@@ -1,0 +1,27 @@
+
+<FORM ACTION="http://www.upoint.net/myscripts/invoice/listinvoice.cgi" METHOD="POST">
+<b><font face="verdana, arial" color="#000080" size="3">Edit or Delete Invoices</font></b>
+<p><font face="verdana, arial" size="-2">Your master password is: <font color="#FF0000">upoint</font></font>
+</p>
+<table><tr valign=top><td align="right"><font face="verdana, arial" size="-1"><b>Password:</b></font></td><td colspan="3"><input style="background-color: #eeeeee; border-style: solid; border-width: 1" type=password name="checkpassword"><font face="verdana, arial" size="-1" color="#FF0000"><b>*
+      </b></font><font face="verdana, arial" size="-2">Edit/Delete buttons appear
+      only if password is
+correct</font>
+    </td></tr>
+<tr valign=top><td align="right"><font face="verdana, arial" size="-1"><b>Customer ID:</b></font></td><td colspan="3"><input style="background-color: #eeeeee; border-style: solid; border-width: 1" type=text name="Customer_ID"><font face="verdana, arial" size="-2">
+    Input is optional only if password is correct.</font>
+  </td></tr>
+<tr valign=top><td align="right"><font face="verdana, arial" size="-1"><b>Customer:</b></font></td><td colspan="3"><input style="background-color: #eeeeee; border-style: solid; border-width: 1" type=text name="Customer"></td></tr>
+<tr valign=top><td align="right"><font face="verdana, arial" size="-1"><b>Address:</b></font></td><td colspan="3"><input style="background-color: #eeeeee; border-style: solid; border-width: 1" type=text name="Address"></td></tr>
+<tr valign=top><td align="right"><font face="verdana, arial" size="-1"><b>Order Number:</b></font></td><td><input style="background-color: #eeeeee; border-style: solid; border-width: 1" type=text name="Order_Number"></td><td align="right"><font face="verdana, arial" size="-1"><b>Terms:</b></font></td><td><select style="background-color: #eeeeee; border-style: solid; border-width: 1" name="Terms"><option>Select<option>
+0
+<option>15
+<option>30
+<option>60
+<option>90
+<option>180
+</select></td></tr>
+<tr valign=top><td align="right"><font face="verdana, arial" size="-1"><b>Message:</b></font></td><td><input style="background-color: #eeeeee; border-style: solid; border-width: 1" type=text name="Message"></td><td align="right"><font face="verdana, arial" size="-1" color="#FF0000"><b>Confidential:</b></font></td><td><input type=text style="background-color: #eeeeee; border-style: solid; border-width: 1" name="Hidden_Remarks"></td></tr>
+<tr valign=top><td align="right"></td><td colspan="3"><input type="checkbox" name="Hidepaid" value="1">
+    <font face="verdana, arial" size="-2">Hide paid invoices</font></td></tr>
+</table><br><input type=submit value="Search for Records to Edit"></form>

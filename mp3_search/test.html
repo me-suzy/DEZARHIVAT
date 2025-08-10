@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>MP3-Search Test</TITLE>
+</HEAD>
+<BODY BGCOLOR=FFFFFF TOPMARGIN=5 LEFTMARGIN=10>
+<p>&nbsp;
+<P><FONT FACE="ARIAL,HELVETICA" SIZE="4" COLOR="cc0000"><B>Search Engine Test Page:</B></FONT>
+<P><FONT FACE="VERDANA,GENEVA" SIZE="2">Once you have installed your Meta Search Engine, you can use this page to test it. To try a search, type some <b>Keywords</b> and click on the 'Search' button.</font>
+<P><FONT FACE="VERDANA,GENEVA" SIZE="2" COLOR=004080>Just make sure the 'action' parameter in the Search-Box shows to the URL of your script correctly on your server.</font>
+
+<p>&nbsp;
+<!------ Example Search Box HTML Starts ------>
+<form action="/cgi-bin/cgsearch/cgsearch.cgi" method="get">
+<center>
+<table border=0 cellspacing=0 cellpadding=4 width=425>
+<tr>
+<td colspan=2 align=center nowrap>
+<font face="arial,helvetica" size=2>
+<input type="text" name="query" value="" size="30" maxlength="100">
+<input type=submit value="Search"></font></td>
+</tr>
+<tr valign=top>
+<td><font face="arial,helvetica" color="#808080" size=1>Target&nbsp;&#187;</font></td>
+<td nowrap><font face="arial,helvetica" color="#800000" size=2>
+<input type="radio" name="where" value="web">-Web &nbsp;
+<input type="radio" name="where" value="mp3" checked>-MP3</font></td>
+</tr>
+</table></center>
+</form>
+<!------ Example Search Box HTML Ends ------>
+
+<p>&nbsp;
+<p><font face="arial,helvetica" size=2><b>Here is an another Sample Example:</b></font>
+
+<!------ Example Search Box HTML Starts ------>
+<form action="/cgi-bin/cgsearch/cgsearch.cgi" method="get">
+<center>
+<table border=0 cellspacing=0 cellpadding=4 width=425>
+<tr>
+<td colspan=2 align=center nowrap>
+<font face="arial,helvetica" size=2>
+<input type="text" name="query" value="" size="30" maxlength="100">
+<input type=submit value="Search"></font></td>
+</tr>
+<tr valign=top>
+<td nowrap><font face="arial,helvetica" color="#808080" size=1>Search Target &#187;</font></td>
+<td><font face="arial,helvetica" color="#800000" size=2>
+<SELECT NAME="where">
+<OPTION VALUE="web">The Web
+<OPTION VALUE="mp3" SELECTED>MP3
+</SELECT>
+</font></td>
+</tr>
+</table></center>
+</form>
+<!------ Example Search Box HTML Ends ------>
+
+<p><font face="arial,helvetica" color=990000 size=2>This page is provided as an Example of Search-Box and also to try your Meta Search Engine when you first install it.</font>
+<P>&nbsp;
+
+</BODY>
+</HTML>

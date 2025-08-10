@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+<title>CSUpload Management</title>
+<meta content="text/html; charset=windows-1252" http-equiv="Content-Type">
+</head>
+
+<body style="FONT-FAMILY: verdana, helvetica, arial; FONT-SIZE: 10pt">
+
+<form name="form1" method="POST" action="in(cgiurl)">
+  <input type="hidden" name="command" value="manage"><input type="hidden" name="format"
+  value="in(format)"><table border="0" cellPadding="3" cellSpacing="0">
+    <tr>
+      <td><table border="0" width="100%" cellspacing="0" cellpadding="5">
+        <tr>
+          <td width="100%"><font color="#000000" face="verdana,helvetica,arial" size="4"><b>CSUpload
+          by CGIScript.net</b></font><br>
+          </td>
+        </tr>
+      </table>
+      </td>
+    </tr>
+    <tr>
+      <td bgcolor="#CFD3C0"><font color="#000000" face="verdana,helvetica,arial" size="3"><b>Current
+      Group</b></font> </td>
+    </tr>
+    <tr>
+      <td><table border="0" cellpadding="0" cellspacing="5" width="80%">
+        <tr>
+          <td width="50%"><font face="Verdana"><font size="2">Select A Group</font><br>
+          <select size="1" name="database" onChange="javascript:document.form1.submit();">
+          in(databases)</select> </font></td>
+          <td width="50%"><font face="Verdana"><input type="button" value="Add A Group"
+          onClick="ShowAdd();"></font></td>
+        </tr>
+        <tr>
+          <td width="50%"><font face="Verdana"><input type="button" value="Advanced Settings"
+          onClick="javascript:ShowAdv();"></font></td>
+          <td width="50%"><font face="Verdana"><input type="button" value="Delete Selected Group"
+          onClick="CheckDelete();"></font></td>
+        </tr>
+      </table>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<table>
+  <tr>
+    <td width="100%"><form>
+      <font size="2"><p>To display this on your webpage. Make sure server side includes (SSI)
+      are activated and add the following code where you want the upload items to appear (hint:
+      you can cut/paste this onto your page):</font> <font size="1"><br>
+      <textarea rows="3" cols="64">in(ssiurl)</textarea> <br>
+      <input type="button" value="Preview" onClick="javascript:ShowPre();"> </font></p>
+    </form>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><table border="0" width="100%" cellspacing="0" cellpadding="5">
+      <tr>
+        <td width="100%" bgcolor="#CFD3C0"><b><font size="3">File Management</font></b></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td><div align="left"><table cellpadding="5" width="100%">
+      <tr>
+        <td width="100%" align="left" bgcolor="#FFFFF2" colspan="2"><font size="3"><form
+        action="in(cgiurl)" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="command" value="savefile"><input type="hidden" name="database"
+          value="in(database)"><b><p>Upload a New File</b></font></p>
+          <p><font size="1">(select the file on your computer by clicking the browse button, enter a
+          description, select an icon and click the 'Upload the File' button.)</font></p>
+
+        </td>
+      </tr>
+      <tr>
+        <td width="100%" align="center" colspan="2"><div align="left"><table border="0">
+          <tr>
+            <td><font size="2"><input type="file" name="file" size="20"></font></td>
+            <td></td>
+            <td><font size="2"><b>Select file on local hard drive.</b></font></td>
+          </tr>
+        </table>
+        </div></td>
+      </tr>
+      <tr>
+        <td width="260" align="left" valign="top"><b><font size="2">Description</font><font
+        size="3"><br>
+        <textarea name="description" rows="3" cols="30"></textarea></font></b></td>
+        <td width="416" align="left" valign="top"><font face="verdana, helvetica, arial" size="2"><b>Select
+        the icon you wish to represent posting </b>(will appear next to your posting)<br>
+        in(iline)</font></td>
+      </tr>
+      <tr>
+        <td width="100%" align="left" colspan="2"><font size="2"><input type="submit"
+        value="Upload the File" name="Upload"></form> </font></td>
+      </tr>
+    </table>
+    </div></td>
+  </tr>
+  <tr>
+    <td><!--webbot bot="HTMLMarkup" startspan --><INPUT name="command" type="hidden" value="add"><!--webbot bot="HTMLMarkup" endspan --> <!--webbot
+    bot="HTMLMarkup" startspan --><INPUT name="id" type="hidden"><!--webbot bot="HTMLMarkup" endspan --> <table border="0"
+    width="100%" cellspacing="0" cellpadding="5">
+      <tr>
+        <td width="100%" bgcolor="#CFD3C0"><b><font size="3">Manage an Existing File</font></b></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td><font size="2">Listed below are files you have uploaded using CSUpload. Simply
+    reselect the local file on the line item you wish to upload and click &quot;Upload&quot;
+    on that line. Regardless of name of file on local it will be renamed to the current server
+    file name. Click on the File Name to see the full path to the file (for linking purposes).
+    Click on the description to edit the file's description or change the icon.</font></td>
+  </tr>
+  <tr>
+    <td><table border="1" width="100%">
+      <tr>
+        <td bgColor="#FFFFF2"><font size="2"><b>File Name </b></font></td>
+        <td bgColor="#FFFFF2" align="left"><font size="2"><b>Description</b></font> </td>
+        <td bgColor="#FFFFF2" align="center"><font size="2"><b>Date</b></font> </td>
+        <td bgColor="#FFFFF2" align="center"><font size="2"><b>Select File</b></font> </td>
+        <td bgColor="#FFFFF2" align="center"><font size="2"><b>Upload </b></font></td>
+        <td bgColor="#FFFFF2" align="center"><font size="2"><b>Delete<br>
+        File</b></font> </td>
+      </tr>
+      <tr>
+        <td>in(line) <TBODY></td>
+      </tr>
+    </table>
+    <p></TBODY></td>
+  </tr>
+</table>
+
+<p>in(cinfo) <script language="javascript">
+function Delete(id){
+if(confirm("Are you sure you want to delete this file?")){
+var rndURL = (1000*Math.random());
+window.location = "in(cgiurl)?command=delete&database=in(database)&filename="+id+"&rnd="+rndURL;
+}
+return true;
+}
+function ShowDesc(id){
+var rndURL = (1000*Math.random());
+var windowURL = "in(cgiurl)?command=showdesc&database=in(database)&filename="+id+"&rnd="+rndURL;
+newWindow = window.open(windowURL,null,'width=600,height=300,location=0,directories=0,status=0,menuBar=yes,scrollBars=yes,resizable=yes');
+newWindow.focus();
+}
+function ShowFile(id){
+var rndURL = (1000*Math.random());
+var windowURL = "in(fileurl)"+id;
+newWindow = window.open(windowURL,null,'width=640,height=300,location=yes,directories=0,status=0,menuBar=yes,scrollBars=yes,resizable=yes');
+newWindow.focus();
+}
+function CheckDelete(){
+var rndURL = (1000*Math.random());
+if (document.form1.database.selectedIndex < 0){
+alert("Error. Please select a list to delete.");
+return true;
+}
+var list = document.form1.database.options[document.form1.database.selectedIndex].value;
+if(confirm("Are you sure you want to delete this group?")){
+window.location = "in(cgiurl)?command=deletedb&database="+list+"&rnd="+rndURL;
+return true;
+}
+else{
+return false;
+}
+}
+function ShowAdd(){
+var rndURL = (1000*Math.random());
+var windowURL = "in(cgiurl)?database=in(database)&command=showadddb&rnd="+rndURL;
+newWindow = window.open(windowURL,null,'width=500,height=300,location=0,directories=0,status=0,menuBar=1,scrollBars=yes,resizable=yes');
+newWindow.focus();
+}
+function ShowAdv(){
+var rndURL = (1000*Math.random());
+window.location = "in(cgiurl)?database=in(database)&command=showadv&rnd="+rndURL;
+}
+function ShowPre(){
+var rndURL = (1000*Math.random());
+var windowURL = "in(pubcgiurl)?database=in(database)&command=view";
+newWindow = window.open(windowURL,'preview','width=500,height=300,location=yes,directories=0,status=0,menuBar=1,scrollBars=yes,resizable=yes');
+newWindow.focus();
+}
+</script> </p>
+</body>
+</html>

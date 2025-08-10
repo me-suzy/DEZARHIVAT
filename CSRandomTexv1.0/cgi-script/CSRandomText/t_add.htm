@@ -1,0 +1,357 @@
+
+<HTML>
+<HEAD>
+<TITLE>CSRandomText Dynamic Popup</TITLE>
+
+<style>
+<!--
+ INPUT.button { background-color:#eeeeee;font:verdana;font-weight:bold;color:#000080;font-size:10pt; }
+-->
+</style>
+
+</HEAD>
+<BODY>
+	<FORM method="POST" action="in(cgiurl)" name="form1">
+	<input type=hidden name=command value=a>
+	<input type=hidden name=id value=in(id)>
+
+<table border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
+  <tr>
+     <td width="100%" valign="middle" align="center">
+        <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0">
+           <tr>
+             <td width="100%">
+              <table border="0" width="100%" cellspacing="0" cellpadding="3">
+                <tr>
+                  <td width="100%">
+                    <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                      <tr>
+                        <td width="100%" nowrap valign="middle" align="center"><font size="5" face="Verdana"><B>Add/Edit a New Block</B></font></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%">
+                    <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                      <tr>
+                        <td width="100%" valign="middle" align="center">
+
+                        					<TABLE border="0" cellpadding="0" cellspacing="0">
+						<TR>
+							<TD align="right" valign="middle"><FONT face="verdana,arial,helvetica" size="2">Identifier:</FONT>
+							</TD>
+							<TD valign="middle">
+								<INPUT type="text" name="identifier" size="20" value="in(identifier)">
+							</TD>
+							<TD valign="middle" nowrap><FONT face="verdana,arial,helvetica" size="1">(one word)</FONT>
+							</TD>
+						</TR>
+						<TR>
+							<TD align="right" valign="middle"><FONT face="verdana,arial,helvetica" size="2">Description:</FONT>
+							</TD>
+							<TD valign="middle">
+								<INPUT type="text" name="description" size="20" value="in(description)">
+							</TD>
+							<TD valign="middle" nowrap><FONT face="verdana,arial,helvetica" size="1">(few words)</FONT>
+							</TD>
+						</TR>
+					</TABLE>
+
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%">
+                    <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                      <tr>
+                        <td width="100%">
+                          <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                            <tr>
+                            <TD vAlign=center align=middle width="100%">
+                              <p align="left"><FONT 
+                              face=verdana,arial,helvetica size=1>Enter the text
+                              to display in the text area below.<br>
+                              Separate each block of text to be randomly
+                              displayed with ### on a line by itself.&nbsp;</FONT> </p>
+ </TD>
+                            </tr>
+                            <tr>
+                              <td width="100%" valign="middle" align="center">
+                                <div align="center">
+                                  <center>
+                                  <table border="0" cellpadding="3" cellspacing="0">
+                                    <tr>
+                                  <td><font face="verdana,arial,helvetica" size="1">Contains
+                                    HTML code?&nbsp;</font></td>
+                                  <td>
+                                    <table border="0" cellspacing="0" cellpadding="2">
+                                      <tr>
+                                        <td align="right"><input type="radio" value="YES" name="html" in(YHTML)></td>
+                                        <td><font face="verdana,arial,helvetica" size="1">Yes&nbsp;</font></td>
+                                        <td></td>
+                                        <td align="right"><input type="radio" value="NO" name="html" in(NHTML)></td>
+                                        <td><font face="verdana,arial,helvetica" size="1">No&nbsp;</font></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                    </tr>
+                                  </table>
+                                  </center>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="100%" valign="middle" align="center"><CENTER><TEXTAREA rows="8" name="line" cols="50">in(line)</TEXTAREA></CENTER>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                <TD width="100%" align="left">
+                  <TABLE cellSpacing=0 borderColorDark=#ffffff cellPadding=5 
+                  width="100%" bgColor=#c0c0c0 borderColorLight=#000000 
+border=1>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=center align=middle width="100%">
+                        <div align="left">
+                        <TABLE cellSpacing=0 border=0>
+                          <TBODY>
+                          <tr>
+                            <TD colspan="2"><b><font face="verdana,arial,helvetica" size="2">Display
+                              Order&nbsp;</font></b> </TD>
+                          </tr>
+                          <TR>
+                            <TD> </TD>
+                            <TD>
+                              <table border="0" cellspacing="0" cellpadding="2">
+                                <tr>
+                                  <td>
+                                    <table border="0" cellspacing="0" cellpadding="2">
+                                      <tr>
+                                        <td width="50%"><input type="radio" name="type" value="R" in(YR)></td>
+                                        <td width="50%" nowrap><font face="verdana,arial,helvetica" size="1">Random</font></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td></td>
+                                  <td><input type="radio" name="type" value="O" in(NR)></td>
+                                  <td>
+                                    <table border="0" cellspacing="0" cellpadding="2">
+                                      <tr>
+                                        <td><font face="verdana,arial,helvetica" size="1">Sequential
+                                          Order</font></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+ </TD>
+                          </TR></TBODY></TABLE>
+                        </div>
+                      </TD></TR></TBODY></TABLE></TD>
+                </tr>
+                <tr>
+                <TD width="100%" align="left">
+                  <TABLE cellSpacing=0 borderColorDark=#ffffff cellPadding=5 
+                  width="100%" bgColor=#c0c0c0 borderColorLight=#000000 
+border=1>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=center align=middle width="100%">
+                        <div align="left">
+                        <TABLE cellSpacing=0 border=0>
+                          <TBODY>
+                          <tr>
+                            <TD colspan="2"><b><font face="verdana,arial,helvetica" size="2">Refresh
+                              Rate&nbsp;</font></b> </TD>
+                          </tr>
+                          <TR>
+                            <TD><font face="verdana,arial,helvetica" size="1">Refresh
+                              Text:</font> </TD>
+                            <TD>
+                              <table border="0" cellspacing="0" cellpadding="2">
+                                <tr>
+                                  <td>
+                                    <table border="0" cellspacing="0" cellpadding="2">
+                                      <tr>
+                                        <td width="50%"><input type="radio" name="refresh" value="E" in(YE)></td>
+                                        <td width="50%" nowrap><font face="verdana,arial,helvetica" size="1">Each
+                                          Visit</font></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td></td>
+                                  <td><input type="radio" name="refresh" value="D" in(NE)></td>
+                                  <td>
+                                    <table border="0" cellspacing="0" cellpadding="2">
+                                      <tr>
+                                        <td><font face="verdana,arial,helvetica" size="1">Every</font></td>
+                                        <td><input type="text" name="rdays" size="3" value="in(rdays)"></td>
+                                        <td><font face="verdana,arial,helvetica" size="1">Day(s).</font></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+ </TD>
+                          </TR></TBODY></TABLE>
+                        </div>
+                      </TD></TR></TBODY></TABLE></TD>
+                </tr>
+                <tr>
+                  <td width="100%">
+                    <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                      <tr>
+                        <td width="100%" valign="middle" align="center">
+
+                        								<TABLE border="0" cellspacing="0">
+									<TR>
+										<TD><FONT size="1" face="verdana,arial,helvetica">Resize TextArea</FONT>
+										</TD>
+										<TD><FONT size="1" face="verdana,arial,helvetica">
+											<INPUT type="text" name="cols" size="3"></FONT>
+										</TD>
+										<TD><FONT size="1" face="verdana,arial,helvetica">Cols X</FONT>
+										</TD>
+										<TD><FONT size="1" face="verdana,arial,helvetica">
+											<INPUT type="text" name="rows" size="3"></FONT>
+										</TD>
+										<TD><FONT size="1" face="verdana,arial,helvetica">Rows</FONT>
+										</TD>
+										<TD><FONT size="1" face="verdana,arial,helvetica">
+											<INPUT CLASS="button" type="button" value="-=Resize=-" onClick="ChangeSize()"></FONT>
+										</TD>
+									</TR>
+								</TABLE>
+
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%">
+                    <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                      <tr>
+                        <td width="100%" valign="middle" align="center">&nbsp;<INPUT CLASS="button" type="submit" value="-= Save =-" name="B3">
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+             </td>
+           </tr>
+        </table>
+     </td>
+  </tr>
+</table>
+
+</FORM>
+</BODY>
+<SCRIPT language=javascript>if(GetCookie('csincludecolse')){
+document.form1.cols.value=GetCookie('csincludecolse');
+}
+else{
+document.form1.cols.value=document.form1.line.cols;
+}
+
+if(GetCookie('csincluderowse')){
+document.form1.rows.value=GetCookie('csincluderowse');
+}
+else{
+document.form1.rows.value=document.form1.line.rows;
+}
+
+
+ChangeSize();
+
+function ChangeSize(){
+
+var cols = document.form1.cols.value;
+var rows = document.form1.rows.value;
+
+var maxr = ((screen.availHeight-200)/75)*5;
+var maxc = ((((screen.availWidth-200)/100)*15))/1.1;
+
+if(rows > maxr){
+rows=maxr;
+}
+if(cols > maxc){
+cols=maxc;
+}
+
+document.form1.line.cols=cols;
+document.form1.line.rows=rows;
+
+var resizex= (100 * (document.form1.cols.value/15))+200 + (document.form1.cols.value*.75);
+var resizey= (75 * (document.form1.rows.value/5))+550;
+
+if(resizex > screen.availWidth){
+resizex = screen.availWidth;
+}
+if(resizey > screen.availHeight){
+resizey = screen.availHeight;
+}
+
+window.resizeTo(resizex,resizey);
+var l = (screen.availWidth/2) - (resizex/2);
+var t = (screen.availHeight/2) - (resizey/2);
+window.moveTo(l,t);
+
+document.cookie="csincludecolse="+document.form1.cols.value+";path=/;expires='Thu, 24-Jul-03 00:00:01 GMT";
+document.cookie="csincluderowse="+document.form1.rows.value+";path=/;expires='Thu, 24-Jul-03 00:00:01 GMT";
+}
+
+function getCookieVal (offset) {
+  var endstr = document.cookie.indexOf (";", offset);
+  if (endstr == -1)
+    endstr = document.cookie.length;
+  return unescape(document.cookie.substring(offset, endstr));
+}
+function FixCookieDate (date) {
+  var base = new Date(0);
+  var skew = base.getTime(); // dawn of (Unix) time - should be 0
+  if (skew > 0)  // Except on the Mac - ahead of its time
+    date.setTime (date.getTime() - skew);
+}
+function GetCookie (name) {
+  var arg = name + "=";
+  var alen = arg.length;
+  var clen = document.cookie.length;
+  var i = 0;
+  while (i < clen) {
+    var j = i + alen;
+    if (document.cookie.substring(i, j) == arg)
+      return getCookieVal (j);
+    i = document.cookie.indexOf(" ", i) + 1;
+    if (i == 0) break;
+  }
+  return null;
+}
+function SetCookie (name,value,expires,path,domain,secure) {
+  document.cookie = name + "=" + escape (value) +
+    ((expires) ? "; expires=" + expires.toGMTString() : "") +
+    ((path) ? "; path=" + path : "") +
+    ((domain) ? "; domain=" + domain : "") +
+    ((secure) ? "; secure" : "");
+}
+
+function DeleteCookie (name,path,domain) {
+  if (GetCookie(name)) {
+    document.cookie = name + "=" +
+      ((path) ? "; path=" + path : "") +
+      ((domain) ? "; domain=" + domain : "") +
+      "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+  }
+}
+</SCRIPT>
+</HTML>

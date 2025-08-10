@@ -1,0 +1,165 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>csPassword</title>
+<style fprolloverstyle>A:hover {color: red}
+</style>
+
+</head>
+
+<body style="font-family: verdana, arial, helvetica; font-size: 10pt" bgcolor="#FFFFFF" text="#000080" link="#0000FF" vlink="#800000" alink="#FF0000">
+<form name=form1 method=post action="in(cgiurl)">
+<input type=hidden name=command value=browse>
+
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD align=center background="../images/top-filler.gif" vAlign="middle">
+      <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0">
+        <tr>
+          <td width="100%">
+            <table border="0" width="100%" cellspacing="0" cellpadding="3">
+              <tr>
+                <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                    
+  <tr>
+                  <td width="100%">
+                    <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                      <tr>
+                        <td width="100%" nowrap valign="middle" align="center"><b><font size="5" face="Tahoma" color="#000000">Select
+                          a Directory</font></b></td>
+                      </tr>
+                    </table>
+                  </td>
+  </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                    <tr>
+                      <td width="100%">
+                        <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                          <tr>
+                            <td width="100%">
+
+<p>
+  <b>
+  <font face="Tahoma" size="2" color="#000000">Index of the current directory:
+  in(disdir)</font></b></p>
+
+<font face="Tahoma" size="2" color="#000000">Browse to the directory that you
+want to protect</font>
+
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="100%">
+
+<div align="center">
+  <center>
+  <table border="0" cellspacing="0" cellpadding="0" height="23">
+    <tr>
+      <td><b><font face="Tahoma" size="2" color="#000000">Actions:</font></b></td>
+      <td><b><font size="2" face="Tahoma"><select size="1" name="MyAction" onChange="DoForm(this[this.selectedIndex].value);this.selectedIndex=0;">
+          <option value="cancel">Select Action</option>
+          <option value="setdir">Set Directory and Return<option>
+
+        </select></font></b></td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="100%">
+
+                                  <table cellspacing="0" cellpadding="3" width=100% bordercolor="#000000" border="1">
+
+          <tr align="middle">
+            <td align="center" valign="middle"><b><font face="Tahoma" size="2" color="#000000">Select</font></b></td>
+            <td align=left>&nbsp;</td>
+            <td align=left><b><font face="Tahoma" size="2" color="#000000">Name</font></b></td>
+            <td align=left><b><font face="Tahoma" size="2" color="#000000">Size</font></b></td>
+            <td align=left><b><font face="Tahoma" size="2" color="#000000">Created</font></b></td>
+            <td align="left"><b><font face="Tahoma" size="2" color="#000000">Mode</font></b></td>
+          </tr>
+          <font color="#000000" size="2" face="Tahoma">
+          in(line)</font>
+      </table>
+
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="100%">
+
+<div align="center">
+  <center>
+  <table border="0" cellspacing="0" cellpadding="0" height="23">
+    <tr>
+      <td><b><font face="Tahoma" size="2" color="#000000">Actions:</font></b></td>
+      <td><b><font size="2" face="Tahoma"><select size="1" name="MyAction2" onChange="DoForm(this[this.selectedIndex].value);this.selectedIndex=0;">
+          <option value="cancel">Select Action</option>
+          <option value="setdir">Set Directory and Return<option>
+        </select></font></b></td>
+    </tr>
+  </table>
+  </center>
+</div>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                    <tr>
+                      <td width="100%">
+                        <p align="center"><font face="Tahoma" size="2" color="#000000">&nbsp;in(cinfo)</font></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <p align="center">&nbsp;
+</td></tr></table>
+
+
+<input type=hidden name=dir value="in(dir)">
+<input type=hidden name=Rad value="">
+     </form>
+</body>
+<script language=javascript>
+
+function DoForm(i){
+
+if(i=="setdir"){
+SetDir();
+}
+
+}
+
+function SetRad(Val){
+document.form1.Rad.value=Val;
+return true;
+}
+
+
+function SetDir(){
+var File=document.form1.Rad.value;
+var windowURL = "in(cgiurl)?command=setdir&dir="+escape(document.form1.dir.value)+"&file="+File;
+window.location = windowURL;
+}
+</script>
+</html>

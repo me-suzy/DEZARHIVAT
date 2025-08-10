@@ -1,0 +1,170 @@
+<!--
+#!/usr/bin/perl
+#
+# Version: 1.0 - 011401
+#
+#####################################################################
+#                                                                   #
+#    Copyright © 1999-2000 CGISCRIPTS.NET - All Rights Reserved     #
+#                                                                   #
+#####################################################################
+#                                                                   #
+#          THIS COPYRIGHT INFORMATION MUST REMAIN INTACT            #
+#                AND MAY NOT BE MODIFIED IN ANY WAY                 #
+#                                                                   #
+#####################################################################
+#
+# When you downloaded this script you agreed to accept the terms
+# of this Agreement. This Agreement is a legal contract, which
+# specifies the terms of the license and warranty limitation between
+# you and CGISCRIPTS.NET. You should carefully read the following
+# terms and conditions before installing or using this software.
+# Unless you have a different license agreement obtained from
+# CGISCRIPTS.NET, installation or use of this software indicates
+# your acceptance of the license and warranty limitation terms
+# contained in this Agreement. If you do not agree to the terms of this
+# Agreement, promptly delete and destroy all copies of the Software.
+#
+# Versions of the Software
+# Only one copy of the registered version of CGISCRIPTS.NET
+# may used on one web site.
+#
+# License to Redistribute
+# Distributing the software and/or documentation with other products
+# (commercial or otherwise) or by other than electronic means without
+# CGISCRIPTS.NET's prior written permission is forbidden.
+# All rights to the CGISCRIPTS.NET software and documentation not expressly
+# granted under this Agreement are reserved to CGISCRIPTS.NET.
+#
+# Disclaimer of Warranty
+# THIS SOFTWARE AND ACCOMPANYING DOCUMENTATION ARE PROVIDED "AS IS" AND
+# WITHOUT WARRANTIES AS TO PERFORMANCE OF MERCHANTABILITY OR ANY OTHER
+# WARRANTIES WHETHER EXPRESSED OR IMPLIED.   BECAUSE OF THE VARIOUS HARDWARE
+# AND SOFTWARE ENVIRONMENTS INTO WHICH CGISCRIPTS.NET MAY BE USED, NO WARRANTY
+# OF FITNESS FOR A PARTICULAR PURPOSE IS OFFERED.  THE USER MUST ASSUME THE
+# ENTIRE RISK OF USING THIS PROGRAM.  ANY LIABILITY OF CGISCRIPTS.NET WILL BE
+# LIMITED EXCLUSIVELY TO PRODUCT REPLACEMENT OR REFUND OF PURCHASE PRICE.
+# IN NO CASE SHALL CGISCRIPTS.NET BE LIABLE FOR ANY INCIDENTAL, SPECIAL OR
+# CONSEQUENTIAL DAMAGES OR LOSS, INCLUDING, WITHOUT LIMITATION, LOST PROFITS
+# OR THE INABILITY TO USE EQUIPMENT OR ACCESS DATA, WHETHER SUCH DAMAGES ARE
+# BASED UPON A BREACH OF EXPRESS OR IMPLIED WARRANTIES, BREACH OF CONTRACT,
+# NEGLIGENCE, STRICT TORT, OR ANY OTHER LEGAL THEORY. THIS IS TRUE EVEN IF
+# CGISCRIPTS.NET IS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN NO CASE WILL
+# CGISCRIPTS.NET' LIABILITY EXCEED THE AMOUNT OF THE LICENSE FEE ACTUALLY PAID
+# BY LICENSEE TO CGISCRIPTS.NET.
+#
+# Credits:
+# Andy Angrick - Programmer - angrick@cgiscript.net
+# Mike Barone - Design - mbarone@cgiscript.net
+#
+# For information about this script or other scripts see
+# http://www.cgiscript.net
+#
+# Thank you for trying out our script.
+# If you have any suggestions or ideas for a new innovative script
+# please direct them to suggest@cgiscript.net.  Thanks.
+#
+-->
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>CSFiler - Login</title>
+
+<style>
+<!--
+ INPUT.button { background-color:#eeeeee;font:verdana;font-weight:bold;color:#000080;font-size:10pt; }
+-->
+</style>
+
+</head>
+
+<body>
+
+<form method="POST" action="in(cgiurl)" name=form1 onSubmit="return SetPass();">
+<input type=hidden name=command value="">
+<div align="center">
+  <center>
+  <table width=100% height="100%"><tr><td valign="middle" align="center">
+  <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0">
+    <tr>
+      <td>
+        <div align="center">
+                 <table border="0" cellpadding="3" cellspacing="0">
+                    <tr>
+                      <td>
+                        <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                          <tr>
+                            <td width="100%"><img border="1" src="in(imageurl)/top.gif" alt="Login" width="332" height="80"></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                          <tr>
+                            <td width="100%">
+                              <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                                <tr>
+                                  <td width="50%" align="right"><font size="2" face="verdana,arial,helvetica"><b>Username</b></font><font face="verdana,arial,helvetica"><b><font size="2">:
+                        </font></b></font></td>
+                                  <td width="50%"><input type="text" name="UserName" size="30"></td>
+                                </tr>
+                                <tr>
+                                  <td width="50%" align="right"><font face="verdana,arial,helvetica"><b><font size="2">Password:
+                        </font></b></font></td>
+                                  <td width="50%"><input type="password" name="PassWord" size="30"></td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" colspan="2">
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="right">
+                        <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                          <tr>
+                            <td width="100%" valign="middle" align="center"><input CLASS="button" type="submit" value="-=Login=-" name="B1"><img border="0" src="http://www.cgiscript.net/spacer.gif" width="1" height="1"></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+
+      </div>
+    </td>
+  </tr>
+  </table></td></tr>
+  </table>
+</div>
+</form>
+
+</body>
+<script language=javascript>
+document.form1.UserName.focus();
+function SetPass(){
+var UserName = document.form1.UserName.value;
+var PassWord = document.form1.PassWord.value;
+if(!UserName){
+alert("Error. Please enter a username");
+return false;
+}
+if(!PassWord){
+alert("Error. Please enter a password");
+return false;
+}
+document.cookie = "UserName="+UserName;
+document.cookie = "PassWord="+PassWord;
+return true;
+}
+</script>
+</html>

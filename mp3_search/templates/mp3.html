@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<TITLE>MP3-Search Results</TITLE>
+</HEAD>
+<BODY BGCOLOR=FFFFFF>
+
+<!------- Here Goes the Header ------->
+<!--- You can put Whatever you want -->
+<P><FONT FACE="ARIAL,HELVETICA" SIZE="3" COLOR="FF8000"><B>Search Results:</B></FONT>
+<P>&nbsp;
+<!------- Here Ends the Header ------->
+
+
+
+<!--SHOWRESULTSHERE-->
+
+
+<!------ Search Box HTML Starts ------>
+<form action="/cgi-bin/cgsearch/cgsearch.cgi" method="get">
+<center>
+<table border=0 cellspacing=0 cellpadding=4 width=425>
+<tr>
+<td colspan=2 align=center nowrap>
+<font face="arial,helvetica" size=2>
+<input type="text" name="query" value="$QUERY" size="30" maxlength="100">
+<input type=submit value="Search"></font></td>
+</tr>
+<tr valign=top>
+<td><font face="arial,helvetica" color="#808080" size=1>Target&nbsp;&#187;</font></td>
+<td nowrap><font face="arial,helvetica" color="#800000" size=2>
+<input type="radio" name="where" value="web" checked>-Web &nbsp;
+<input type="radio" name="where" value="mp3">-MP3 &nbsp;
+</font></td>
+</tr>
+<tr valign=top>
+<td><font face="arial,helvetica" color="#808080" size=1>Match&nbsp;&#187;</font></td>
+<td nowrap><font face="arial,helvetica" color="#800000" size=2>
+<input type="radio" name="match" value="all" checked>-All words
+<input type="radio" name="match" value="any">-Any word
+<input type="radio" name="match" value="phrase">-Exact text</font></td>
+</tr>
+<tr valign=top>
+<td nowrap><font face="arial,helvetica" color="#808080" size=1>Per-Page&nbsp;&#187;</font></td>
+<td nowrap><font face="arial,helvetica" color="#800000" size=1>
+<SELECT NAME="pp">
+<OPTION VALUE=8 SELECTED>8 Results
+<OPTION VALUE=10>10 Results
+<OPTION VALUE=16>16 Results
+<OPTION VALUE=20>20 Results
+</SELECT>
+</font></td>
+</tr>
+</table></center>
+</form>
+<!------- Search Box HTML Ends ------->
+
+
+<!------- Here Goes the Footer ------->
+<!--- You can put Whatever you want -->
+<hr size=1 color=808080 noshade>
+<P>&nbsp;
+
+<!------ Footer Ends the Header ------>
+
+</BODY>
+</HTML>

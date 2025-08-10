@@ -1,0 +1,49 @@
+<?php
+
+$header = isset($block['htext']) ? $block['htext'] : 'PRODUCTS';
+$limit = (isset($block['numProducts']) && $block['numProducts']) ? $block['numProducts'] : 3;
+
+if (isset($block['folder']) && strlen($block['folder'])) {
+	$query = 'SELECT id, short, title FROM pages_' . $supra['lang'] . $supra['edit'] . ' WHERE parent = ' . $block['folder'] . ' AND active = 1 LIMIT 0, ' . $block['numProducts'];
+	$products = &$supra['connect']->QueryData($query);
+}
+
+if (isset($products) && count($products)) {
+
+	$tmp0 = '<table width="100%" cellspacing="0" cellpadding="0" border="0">{items}</table>';
+	$content = new Template($tmp0);
+
+	$tmp1 = '
+		<tr><td><a href="?id={id}" class="task">{title}</a></td></tr>
+		<tr><td>{short}</td></tr>
+		<tr><td>&nbsp;</td></tr>
+		';
+	$items = new Template($tmp1, true);
+	$items->set($products);
+
+	$content->set('items',$items);
+	
+} else 
+	$content = '&nbsp;';
+	
+$main = '
+		<table cellpadding="0" cellspacing="8" width="100%">
+			<tr>
+				<td>
+					<table border="0" cellpadding="3" cellspacing="0" width="100%">
+						<tr>
+							<td class="cTitle2">{header}</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>{content}</td>
+			</tr>
+		</table>';
+
+$html = new Template($main);
+$html->set('header', $header);
+$html->set('content', $content);
+echo $html->finish();
+?>

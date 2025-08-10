@@ -1,0 +1,250 @@
+ <?php
+
+function checkEmail($email) {
+	return (ereg ("^([[:alnum:]|.|_]{1,})@([[:alnum:]|.|_]+)$", $email, $regs));
+}
+ 
+$get = $GLOBALS['HTTP_GET_VARS'];
+$post = $GLOBALS['HTTP_POST_VARS'];
+
+if (!function_exists('unsubscribe')) {
+	function unsubscribe($supra, $block, $get) {
+		if(0 + $get['pin']) {
+			if(strlen($get['code'])) {
+				if($data = $supra['connect']->QueryRow ('SELECT id, task, note FROM subscribetmp WHERE id = ' . $get['pin'] . ' AND code = "' .$get['code'] . '"')) {
+					if(!$data['task']) {
+						if ($data['note'] == 0) {
+							$supra['connect']->Query('DELETE FROM subscribe WHERE id = ' . $data['id']);
+							$supra['connect']->Query('DELETE FROM subscribetmp WHERE id = ' . $data['id']);
+							echo SubscribeOut($block['Msg1']);
+						}
+						else {
+							$supra['connect']->Query('UPDATE subscribe SET prop = ' . $data['note'] . ' WHERE id = ' . $data['id']);
+							$supra['connect']->Query('DELETE FROM subscribetmp WHERE id = ' . $data['id']);
+							echo SubscribeOut($block['Msg3']);
+						}
+					}
+					else if ($data['task'] == 1) {
+						$supra['connect']->Query('UPDATE subscribe SET prop = ' . $data['note'] . ' WHERE id = ' . $data['id']);
+						$supra['connect']->Query('DELETE FROM subscribetmp WHERE id = ' . $data['id']);
+						echo SubscribeOut($block['Msg3']);
+					}
+					$supra['connect']->Query('DELETE FROM subscribetmp WHERE date < now() - interval 10 day');
+					return 1;
+				}
+			}
+		}
+		return 0;
+	}
+}
+
+if(!function_exists('subscribe')) {
+	function subscribe($supra, $block, $email, $bit) {
+		$tmp = explode ("|", unescape($supra['userbit']));
+		$updatesettings = '';
+		foreach($tmp as $id => $data)
+			if($bit & (1 << $id)) {
+				$updatesettings .= strlen($updatesettings) ? ', ' : '';
+				$updatesettings .= $data;
+			}
+		if(!$data = $supra['connect']->QueryRow('SELECT id, prop FROM subscribe WHERE email = "' . $email . '"')) {
+			if($supra['connect']->Query('INSERT INTO subscribe (email, prop) VALUES ("' . $email . '", ' . $bit . ')')) {
+				$message = strtr($block['Subscribe1'], Array ('{settings}' => $updateSettings));
+				sendEmail($supra, $block, $email, $message);
+				return 1;
+			}
+		}
+		else {
+			$code = randomizer(strlen ($email));
+			if($supra['connect']->Query('SELECT id FROM subscribetmp WHERE id = ' . $d['id']))
+				$supra['connect']->Query('DELETE FROM subscribetmp WHERE id = ' . $d['id']);
+			
+			$currentSettings = '';
+			foreach($tmp as $id => $data)
+				if($data['prop'] & (1 << $id)) {
+					$currentsettigs .= strlen($currentsettigs) ? ', ' : '';
+					$currentsettigs .= $data;
+				}
+			if($supra['connect']->Query('INSERT INTO subscribetmp(id, code,  date, task, note) VALUES (' . $d['id'] . ', "' . $code . '", NOW(), 1, ' . $bit . ')')) {
+				$message .= strtr($block['Update1'], Array ('{link}' => 'http://' . $GLOBALS['HTTP_HOST'] . '/' . $supra['lang'] . '/?id=' . $supra['doc']['id'] . '&pin=' . $d['id'] . '&code=' .$code, '{settingsBefore}' => $currentSettigs, '{settingsAfter}' => $updateSettings));
+				sendEmail($supra, $block, $email, $message);
+				return 1;
+			}
+		}
+	}
+}
+if(!function_exists('prepareData')) {
+	function prepareData($supra, $email, $bit, $block) {
+		$code = randomizer(strlen($email));
+		if($data = $supra['connect']->QueryRow('SELECT id, prop FROM subscribe WHERE email = "' . $email . '"')) {
+			if($supra['connect']->Query('SELECT id FROM subscribetmp WHERE id = ' . $data['id']))
+				$supra['connect']->Query('DELETE FROM subscribetmp WHERE id = ' . $data['id']);
+	
+			$tmp = explode ("|", unescape($supra['userbit']));
+			$currentSettings = '';
+	
+			foreach($tmp as $id => $value)
+				if ($data['prop'] & (1 << $id)) {
+					$currentsettigs .= strlen($currentsettigs) ? ', ' : '';
+					$currentsettigs .= $value;
+				}
+	
+			$comparebits=$data['prop'] & (~$bit);
+			$updatesettings = '';
+			foreach($tmp as $id => $value)
+				if ($compareBits & (1 << $id)) {
+					$updatesettings .= strlen($updatesettings) ? ', ' : '';
+					$updatesettings .= $value;
+				}
+	
+			if($supra['connect']->Query('INSERT INTO subscribetmp (id, code, date, note) VALUES (' . $d['id'] . ', "' . $code . '", NOW(), ' . $compareBits.')')) {
+					$message .= strtr($block['prepareData1'], Array ('{link}' => 'http://' . $GLOBALS['HTTP_HOST'] . '/' . $supra['lang'] . '/?id=' . $supra['doc']['id'] . '&pin=' . $d['id'] . '&code=' . $code, '{settingsBefore}' => $currentSettigs, '{settingsAfter}' => $updateSettings));
+					sendEmail($supra, $block, $email, $message);
+					return 1;
+			}
+		}
+		return 0;	
+	}
+}
+
+if(!function_exists('bitToInt')) {
+	function bitToInt($supra, $post) {
+		$bit = explode("|", unescape($supra['userbit']));
+		$res = 0;
+		$max = count($bit);
+		for($a = 0; $a < $max; $a++) {
+			if(isset($post['check_'.$a]))
+				$res += 1 << $a;
+		}
+		return $res;
+	}
+}
+
+if(!function_exists('randomizer')) {
+	function randomizer($length) {
+		$arr = array("1","2","3","4","5","6","7","8","9","0","q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l", "z","x","c","v","b","n","m","Q","W","E","R","T","Y","U", "I","O","P","A","S","D","F","G","H","J","K","L","Z","X", "C","V","B","N","M"); 
+		srand((float) microtime() * 1000000); 
+		for($i = $length; $i > 0; $i--) { 
+			$str .= $arr[rand(0, sizeof($arr))];
+		}
+		return $str;
+	}
+}
+
+if(!function_exists('sendEmail')) {
+	function sendEmail($supra, $block, $email, $message) {
+		$os = null;
+		if(isset($GLOBALS['OS']))
+			$os = strpos($GLOBALS['OS'], 'Windows') === false ? 'other' : 'win32';
+		if(isset($GLOBALS['OSTYPE']))
+			$os = strpos($GLOBALS['OSTYPE'], 'linux') === false ? 'other' : 'linux';
+	
+		if($os == 'linux') {
+			$code = Array ('en' => 2, 'lv' => 7, 'ru' => 1);
+			$charset = 'windows-125' . $code[$supra['lang']];
+			$mailFrom = $block['emailTitle'] . '<' . $block['emailhome'] . '>';
+			$mailTo = $email . '<' . $email . '>';
+			$mailHeader = "MIME-Version: 1.0\nContent-Type: text/plain; charset={$charset}\nContent-Transfer-Encoding: 8bit\nFrom:{$mailFrom}\nX-Mailer: PHP/" . phpversion();	
+			mail($mailTo, $block['Subject1'] , $message, $mailHeader);
+		}
+		else if ($os == 'win32') {
+			$tmp = new COM('CDONTS.NewMail') or die('Could not create an email');
+			$tmp->from = $block['emailHome'];
+			$tmp->to = $email;
+			$tmp->subject = $block['Subject1'];
+			$tmp->body = $message;
+			$tmp->send();
+		}
+	}
+}
+
+if(!function_exists('SubscribeOut')) {
+	function SubscribeOut($a) {
+		$html .= '<table cellpadding="2" cellspacing="5" width="100%"><tr><td class="buttonText">' . $a . '</td></tr></table>';
+		return $html;
+	}
+}
+
+$html = '';
+$html .= '<tr><td colspan="2" class="buttonText">' . $block['Title1'] . '</td></tr>';
+$html .= '
+	<form method="POST" name="Subscribe">
+	<input type="HIDDEN" name="command" value="subscribe">
+	<input type="HIDDEN" name="id" value="' . $supra['doc']['id'] . '">
+	<input type="HIDDEN" name="cacheclear" value="yes">
+	<script>
+		function selectElements(arg) {
+			var a;	
+			a = document.getElementsByTagName(\'INPUT\');
+			for(var b in a) {
+				if(a[b].type != \'checkbox\')
+					continue;
+				if(a[b].name.indexOf(\'check_\') != -1)
+					a[b].checked = arg.checked?1:0;
+			}
+		}
+	</script>';
+	$html .= '<tr><td width="5%"><input type="CHECKBOX" onclick="selectElements(this);" name="allElements"></td><td class="buttonText">' . $block['Title3'] . '</td></tr>';
+
+if(isset($supra['conf']['userbit']))
+	$Bit = explode('|', unescape($supra['conf']['userbit']));
+else
+	$Bit = Array();
+foreach($Bit as $id => $title) {
+	$html .= '<tr><td width="5%"><input type="CHECKBOX" name="check_' . $id . '" value="' . $id . '"></td><td class="buttonText">' . $title . '</td></tr>';
+}
+
+if (isset($get['code']) && isset($get['pin'])) {
+	unsubscribe($supra, $block, $get);
+}
+if(isset($post['command']))
+if(($post['command'] == 'subscribe') && isset($post['subscribe']) || isset($post['unsubscribe'])) {
+	if(checkEmail($post['email'])) {
+		if(isset($post['subscribe'])) {
+			if($bitCode = bitToInt($supra, $post)) {
+				if(subscribe($supra, $block, $post['email'], $bitCode))
+					echo SubscribeOut($block['Msg2']);
+			}
+			else
+				echo SubscribeOut($block['Error2']);
+		}
+		else if(isset($post['unsubscribe'])) {			
+			$bitCode = bitToInt($supra, $post);
+			if(prepareData($supra, $post['email'], $bitCode, $block))
+				echo SubscribeOut($block['Msg2']);
+		}
+	}
+	else
+		echo SubscribeOut($block['Error1']);
+}
+
+$html .= '
+	<tr>
+		<td colspan="2">
+			<table border="0" cellpadding="2" cellspacing="0">
+				<tr>
+					<td class="buttonText">' . $block['Title2'] . '</td>
+				</tr>
+				<tr>
+					<td><input size="20" style="width: 250px" name="email" type="TEXT"></td>
+				</tr>
+			</table>
+			<table border="0" cellpadding="2" cellspacing="0">
+				<tr>
+					<td><input class="buttonText" style="background:#B00101; border: 1px solid #B00101; color:#FFFFFF;" type="SUBMIT" name="subscribe" value="'.$block['Button1'].'">&nbsp;<input class="buttonText" style="background:#B00101; border: 1px solid #B00101; color:#FFFFFF;" type="SUBMIT" name="unsubscribe" value="' . $block['Button2'] . '"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</form>';
+
+$html = '
+	<table border="0" cellpadding="0" cellspacing="5" width="100%">
+		<tr>
+			<td>
+				<table border="0" cellpadding="2" cellspacing="0" width="100%">' . $html . '</table>
+			</td>
+		</tr>
+	</table>';
+echo $html;
+?>

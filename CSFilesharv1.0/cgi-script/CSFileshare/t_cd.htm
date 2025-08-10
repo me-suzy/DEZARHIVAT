@@ -1,0 +1,104 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>CSFileshare</title>
+
+<style>
+<!--
+ INPUT.button { background-color:#eeeeee;font:verdana;font-weight:bold;color:#000080;font-size:10pt; }
+-->
+</style>
+
+</head>
+
+<body>
+
+<form method="POST" action="in(cgiurl)" name=form1 onSubmit="return CheckCD();">
+<input type=hidden name=command value="adddir">
+<input type=hidden name=sdrive value="in(sdrive)">
+<input type=hidden name=cdir value="in(cdir)">
+<div align="center">
+  <center>
+  <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0">
+    <tr>
+      <td>
+        <div align="center">
+                <div align="center">
+                  <table border="0" cellpadding="3" cellspacing="0">
+                    <tr>
+                      <td>
+                        <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                          <tr>
+                            <td width="100%">
+                        <p align="center"><b><font face="verdana,arial,helvetica" size="4">Create
+                        Directory</font></b></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table border="1" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%" cellpadding="2">
+                          <tr>
+                            <td width="100%">
+                              <table border="0" cellspacing="0" cellpadding="3">
+                                <tr>
+                                  <td>
+                        <font size="2"><b><font face="verdana,arial,helvetica">Name:</font></b></font>
+                                  </td>
+                                  <td>
+                        <input name="dname" size="30">
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2">
+                                    <p align="center"><font face="verdana,arial,helvetica" size="1">(only
+                        alpha-numeric characters are allowed.)</font></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="right">
+                        <div align="center">
+                          <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                            <tr>
+                              <td width="100%">
+                                <p align="center"><input CLASS="button" type="submit" value="-=Create=-" name="B1"></p>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+      </div>
+    </td>
+  </tr>
+  </table>
+</div>
+</form>
+
+</body>
+<script language=javascript>
+document.form1.dname.focus();
+function CheckCD(){
+if(!document.form1.dname.value){
+alert("Please enter a directory name");
+return false;
+}
+else{
+return true;
+}
+
+}
+</script>
+</html>

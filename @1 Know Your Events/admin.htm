@@ -1,0 +1,23 @@
+ <table width=100%><tr bgcolor="#008000"><td><b><FONT color="#FFFFFF" face="Verdana, Arial" size="-1">Master Add Records Interface</FONT></b></td></tr></table>
+<FORM ACTION="http://www.upoint.net/myscripts/events/events.cgi" METHOD="POST" ENCTYPE="multipart/form-data">
+<p><font face="Verdana, Arial" size="-2">
+Your current master password is: <font color="#FF0000">upoint</font></font></p>
+<table>
+<tr valign=top><td><font face="Verdana, Arial" size="-1"><b><font color="#FF0000">*</font>Master Password:</b></font></td><td><input type=password name="checkpassword"></td></tr>
+<tr valign=top><td><font face="Verdana, Arial" size="-1"><b>Event Date-Time:</b></font></td><td><input type=text name="Time" size="35"></td></tr>
+<tr valign=top><td><font face="Verdana, Arial" size="-1"><b>Venue:</b></font></td><td><input type=text name="Venue" size="35"></td></tr>
+<tr valign=top><td><font face="Verdana, Arial" size="-1"><b><font color="#FF0000">*</font>Headline:</b></font></td><td><input type=text name="Headline" size="35"></td></tr>
+<tr valign=top><td><font face="Verdana, Arial" size="-1"><b>Image Upload:</b></font></td><td><input type=FILE name="Image_Upload"></td></tr>
+<tr valign=top><td><font face="Verdana, Arial" size="-1"><b><font color="#FF0000">*</font>Detailed News:</b></font></td><td><textarea name="Detailed_News" cols=45 rows=10></textarea></td></tr>
+</table><input type=hidden name=actiontotake value="Add"><input type=submit value="Post an Event"></form>
+
+
+<table width=100%><tr bgcolor="#008000"><td><b><font face="Verdana, Arial" size="-1" color="#FFFFFF">Master Edit/Delete Interface</font></b></td></tr></table>
+<FORM ACTION="http://www.upoint.net/myscripts/events/events.cgi" METHOD="POST">
+<font face="Verdana, Arial" size="-2">
+Your master password is: <font color="#FF0000"> upoint</font><BR>Edit and delete buttons appear only if correct password is entered (it is case sensitive).</font>
+<table><tr valign=top><td><font face="Verdana, Arial" size="-1"><b><font color="#FF0000">*</font>Password:</b></font></td><td><input type=password name="checkpassword"></td></tr>
+<tr valign=top><td><font face="Verdana, Arial" size="-1"><b>Venue:</b></font></td><td><input type=text name="Venue" size="35"></td></tr>
+<tr valign=top><td><font face="Verdana, Arial" size="-1"><b>Headline:</b></font></td><td><input type=text name="Headline" size="35"></td></tr>
+<tr valign=top><td><font face="Verdana, Arial" size="-1"><b>Detailed News:</b></font></td><td><input type=text name="Detailed_News" size="35"></td></tr>
+</table><br><input type=submit value="Search for Events to Edit"></form>

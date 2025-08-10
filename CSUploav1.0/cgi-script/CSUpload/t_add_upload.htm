@@ -1,0 +1,277 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Upload Management</title>
+
+<style type="text/css"><!--
+a{color:#41779E;text-decoration:none;font-weight:bold}
+a:active{color:red;font-weight:bold}
+a:hover{color:#7A007B;text-decoration:underline;font-weight:bold}
+
+INPUT.button { background-color:#eeeeee;font:verdana;font-weight:bold;color:#000080;font-size:10pt; }
+--></style>
+
+</head>
+
+<body style="font-family: verdana, helvetica, arial; font-size: 10pt">
+<form method=post action=in(cgiurl) name=form1 enctype="multipart/form-data">
+<input type=hidden name=command value="in(command)">
+<input type=hidden name=database value="in(database)">
+<input type=hidden name=id value=in(id)>
+<div align="center">
+  <center>
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0">  <tr>
+    <td width="100%">
+      <table border="0" width="100%" cellspacing="0" cellpadding="3">
+        <tr>
+          <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">              <tr>
+                <td width="100%">
+                  <p align="center"><font size="5"><b>in(title1)</b></font></p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">              <tr>
+                <td width="100%">
+                  <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                    <tr>
+                      <td width="100%" align="center">
+<p align="center">
+<font size="2"><b>Brief Description of Upload </b></font><font size="1">(use
+                        Maximize button for exploded view)</font>
+</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="100%">
+                        <div align="center">
+                          <center>
+                        <table border="0" cellspacing="0" cellpadding="2">
+                          <tr>
+                            <td>
+<font size="2">
+<input class="button" type="button" value="Maximize" onClick="NewWindow('in(htmlurl)/maximize.htm','max',640,480,'yes','center');"></font>
+                            </td>
+                            <td>
+<font size="2">
+<textarea rows="2" name="description" cols="50">in(description)</textarea></font>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                            </td>
+                            <td>
+<div align="left">
+  <table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+      <td><input type="radio" name="html" in(htmlNO) value="NO"></td>
+      <td><font face="verdana, helvetica, arial" size="1">Description DOES NOT contain
+        HTML</font></td>
+      <td><input type="radio" name="html" in(htmlYES) value="YES"></td>
+      <td><font face="verdana, helvetica, arial" size="1">Description contains HTML</font></td>
+    </tr>
+  </table>
+</div>
+                            </td>
+                          </tr>
+                        </table>
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">              <tr>
+                <td width="100%">
+                  <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                    <tr>
+                      <td width="100%" align="center">
+<p align="center">
+<font size="2"><b>File to Upload</b></font>
+</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="100%">
+                        <p align="center"><input class="button" type="file" name="file" size="20">
+                        <input type=hidden name=rn value="in(rn)">
+                        in(vlink)
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">              <tr>
+                <td width="100%" align="center">
+                  <div align="center">
+                    <center>
+                  <table border="0" cellspacing="0" cellpadding="2">
+                    <tr>
+                      <td width="100%">
+                        <p align="center"><font size="2"><b>Select Desired Display Option</b></font><font size="1">
+            (limited to one selection)</font></p>
+                      </td>
+                    </tr>
+  </center>
+                  <tr>
+                    <td width="100%">
+                      <table border="0" cellspacing="0">
+                        <tr>
+                          <td nowrap width="92">
+                            <p align="right"><font size="2">Window:</font></td>
+  <center>
+<td width="538">
+  <table border="0" cellspacing="0" cellpadding="2">
+    <tr>
+      <td nowrap><font size="2"><input type="radio" value="P" name="display" in(dP) checked></font></td>
+      <td nowrap><font size="2"> POP-UP Window</font><font size="1">
+                  (new window)</font></td>
+      <td nowrap><font size="2"><input type="radio" value="S" name="display" in(dS)></font></td>
+      <td nowrap><font size="2"> On Same Page</font><font size="1">
+                  (same window/frame)</font></td>
+    </tr>
+  </table>
+</td>
+                          </tr>
+                        </table>
+                      </td>
+  </center>
+                  </tr>
+                  </table>
+                </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">              <tr>
+                <td width="100%">
+                  <table border="0" width="100%" cellspacing="0" cellpadding="2" height="51">
+                    <tr>
+                      <td width="100%" align="center"><B><FONT face="verdana, helvetica, arial"
+      size=2>Select the icon you wish to represent the upload item</FONT>
+                        <font face="verdana, helvetica, arial" size="1"> </font> </B><font face="verdana, helvetica, arial" size="1">(will
+      appear next to the item)</font></td>
+                    </tr>
+                    <tr>
+                      <td width="100%" align="center">
+                        <div align="center">
+                          <center>
+                        <table border="1" bordercolor="#000000" bgcolor="#FFFFFF" cellspacing="0" cellpadding="2">
+                          <tr>
+                            <td>      <table border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" cellspacing="0" cellpadding="2">
+                          <tr>
+                            <td>
+
+       in(iline)
+                            </td>
+                          </tr>
+                        </table>     </td>
+                          </tr>
+                        </table>
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">              <tr>
+                <td width="100%">
+                  <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                    <tr>
+                      <td width="100%" align="center"><FONT
+      face="verdana, helvetica, arial" size=2><B>Authorization</B></FONT><font face="verdana, helvetica, arial" size="1">
+      (select one)</font></td>
+                    </tr>
+                    <tr>
+                      <td width="100%" align="center">
+                        <table border="0" cellspacing="0" cellpadding="2">
+                          <tr>
+                            <td><FONT
+      face="verdana, helvetica, arial" size=2><INPUT name=authorization
+      type=radio value=Y in(aY) checked>  </FONT></td>
+                            <td><FONT
+      face="verdana, helvetica, arial" size=2>  Display on Site</FONT></td>
+                            <td></td>
+                            <td><FONT
+      face="verdana, helvetica, arial" size=2><INPUT name=authorization
+      type=radio value=N in(aN)>  </FONT></td>
+                            <td><FONT
+      face="verdana, helvetica, arial" size=2>  Do not Display </FONT><font face="verdana, helvetica, arial" size="1"> (hold)</font></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">              <tr>
+                <td width="100%">
+                  <p align="center"><font size="2"><input class="button" type=submit value="in(sbutton)">
+</font>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">              <tr>
+                <td width="100%">
+
+<p align="center"><font face="Tahoma" size="1">Powered by: <a href="http://www.cgiscript.net" target="_blank">CGI
+Script.net</a></font></p>
+
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</div>
+</form>
+
+</BODY>
+<script language=javascript>
+var win=null;
+function NewWindow(mypage,myname,w,h,scroll,pos){
+if(pos=="random"){LeftPosition=(screen.width)?Math.floor(Math.random()*(screen.width-w)):100;TopPosition=(screen.height)?Math.floor(Math.random()*((screen.height-h)-75)):100;}
+if(pos=="center"){LeftPosition=(screen.width)?(screen.width-w)/2:100;TopPosition=(screen.height)?(screen.height-h)/2:100;}
+else if((pos!="center" && pos!="random") || pos==null){LeftPosition=0;TopPosition=20}
+settings='width='+w+',height='+h+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',location=no,directories=no,status=no,menubar=no,toolbar=no,resizable=yes';
+win=window.open(mypage,myname,settings);
+if(win.focus){win.focus();}}
+</script>

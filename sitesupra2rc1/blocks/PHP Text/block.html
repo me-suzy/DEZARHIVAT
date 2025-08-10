@@ -1,0 +1,15 @@
+/************************************
+*	PHP Text						*
+*	@version: 1.00					*
+*	@author: V. Rotanovs			*
+*	@dependence: 					*
+*									*
+************************************/
+
+<table cellpadding=10 cellspacing=0 border=0 width=100%>
+	<tr>
+		<td>
+			<?eval(preg_replace('/\\?>(.*?)<\\?/es', "'echo(\'' . escapeshellcmd('\\1') . '\');'", "?>" . $text . "<?"));?>
+		</td>
+	</tr>
+</table>

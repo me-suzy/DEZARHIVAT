@@ -1,0 +1,169 @@
+<!--
+#####################################################################
+#                        Copyright Start                            #
+#####################################################################
+#                                                                   #
+#    Copyright © 1998-2001 CGISCRIPTS.NET - All Rights Reserved     #
+#                                                                   #
+#####################################################################
+#                                                                   #
+#          THIS COPYRIGHT INFORMATION MUST REMAIN INTACT            #
+#                AND MAY NOT BE MODIFIED IN ANY WAY                 #
+#                                                                   #
+#####################################################################
+#                                                                   #
+# This software has been released under the:                        #
+#                                                                   #
+#                GNU General Public License (GPL)                   #
+#                                                                   #
+# You MUST read the LICENSE.txt file before utlizing this software. #
+#                                                                   #
+#            GNU General Public License is located at:              #
+#              http://www.gnu.org/copyleft/gpl.html                 #
+#                                                                   #
+#####################################################################
+#                                                                   #
+# Credits:                                                          #
+# Andy Angrick - Programmer - angrick@cgiscript.net                 #
+# Mike Barone  - Developer  - mbarone@cgiscript.net                 #
+#                                                                   #
+# For information about this script or other scripts please see :   #
+# http://www.cgiscript.net                                          #
+#                                                                   #
+# Thank you for trying out our script.                              #
+# If you have any suggestions or ideas for a new innovative script  #
+# please direct them to suggest@cgiscript.net.   Thanks.            #
+#                                                                   #
+#####################################################################
+#                         Copyright End                             #
+#####################################################################
+-->
+<html>
+
+<head>
+<title>csSearch Results by CGI Script.net</title>
+
+<style type="text/css"><!--
+
+a{color:#41779E;text-decoration:none;font-weight:bold}
+a:active{color:red;font-weight:bold}
+a:hover{color:#7A007B;text-decoration:underline;font-weight:bold}
+
+.hilite {
+	FONT-SIZE: 10pt;
+	COLOR: Black;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	background: Yellow;
+   font-weight:bold;
+   padding : 3px 3px 3px 3px;
+}
+   INPUT.button { background-color:#eeeeee;font:verdana;font-weight:bold;color:#000080;font-size:10pt; }
+
+--></style>
+
+</head>
+
+<body>
+
+<form method=POST action="in(cgiurl)" name=form1 onSubmit="return CheckTerm();">
+<div align="center">
+  <center>
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0">
+  <tr>
+    <td width="100%" valign="middle" align="center">
+      <table border="0" width="100%" cellspacing="0" cellpadding="3">
+        <tr>
+          <td width="100%" valign="middle" align="center">
+            <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+              <tr>
+                <td width="100%" valign="middle" align="center">
+                   <p align="center"><b><font face="Verdana" size="5">csSearch</font></b></p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%" valign="middle" align="center">
+            <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+              <tr>
+                <td width="100%" valign="middle" align="center">
+                  <div align="center">
+                    <center>
+                    <table border="0" cellspacing="0" cellpadding="2">
+                      <tr>
+                        <td><font face="Verdana" size="1"> <b> Search For:</b></font></td>
+                        <td><font face="Verdana" size="1"><b><input type=text name="terms" size=45 value="in(terms)"></b></font></td>
+                      </tr>
+                    </table>
+                    </center>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%" valign="middle" align="center">
+            <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">              <tr>
+                <td width="100%" valign="middle" align="center">
+                  <div align="center">
+                    <center>
+                  <table border="0" cellspacing="0" cellpadding="2">
+                    <tr>
+                      <td valign="middle" align="center"><font face="Verdana" size="1"><b>Boolean:</b></font></td>
+                      <td valign="middle" align="center"> <font face="Verdana" size="1"> <b> <select name="mbool">
+<option in(AND)>AND
+<option in(OR)>OR
+</select> </b> </font> </td>
+                      <td valign="middle" align="center"><font face="Verdana" size="1"><b>Case:</b></font></td>
+                      <td valign="middle" align="center"> <font face="Verdana" size="1"> <b> <select name="mcase">
+<option in(Insensitive)>Insensitive
+<option in(Sensitive)>Sensitive
+</select></b></font></td>
+                      <td valign="middle" align="center"><font face="Verdana" size="1"><input class="button" type=submit value="-=Search=-"> </font> </td>
+                    </tr>
+                  </table>
+                    </center>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<font face="Tahoma" size="1">Powered by: <a href="http://www.cgiscript.net" target="_blank">CGI Script.net</a></font>
+  </center>
+</div>
+<input type=hidden name=command value=query>
+</form>
+
+  <table border="0" width="100%" cellspacing="0" cellpadding="5">
+    <tr>
+      <td width="100%"><font face="Verdana" size="2">Your search returned <b>in(count)</b>
+        pages.</font>
+        in(searchresults)
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td valign="middle" align="center"><font face="Verdana" size="2">in(link)</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+ <script language=javascript>
+ function CheckTerm(){
+ if(!document.form1.terms.value){
+ alert("Error. Please enter something to search for");
+ return false;
+ }
+ return true;
+ }
+ </script>
+ 
+</body>
+</html>

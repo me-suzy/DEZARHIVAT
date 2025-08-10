@@ -1,0 +1,22 @@
+<?php
+if($image)
+	$image='<a href="'.suBASE.'"><img border="0" src="'.$image['src'].'" width="'.$image['x'].'" height="'.$image['y'].'" /></a>';
+
+if($about=intval($about))
+	$path=suBASE.$suSQL->queryValue('SELECT path FROM '.suPAGES.' WHERE id='.$about);
+else
+	$path='';
+
+$mainT='
+	<table border="0" cellpadding="4" cellspacing="0" width="100%">
+		<tr>
+			<td>{image}</td>
+			<td align="center" valign="middle"><a href="{path}">About this site</a></td>
+		</tr>
+	</table>
+';
+$html=suTemplate($mainT);
+$html->set('image',$image);
+$html->set('path',$path);
+echo $html->finish();
+?>

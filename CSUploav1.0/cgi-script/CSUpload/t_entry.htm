@@ -1,0 +1,15 @@
+  <tr>
+    <TD noWrap valign=top><img src="in(imageurl)in(icon)" align=middle alt="in(allinfo)"> <font size="1" color="#0000FF"><b><u><a href="javascript:ShowFile('in(filename)');">in(filename)</a></u></b></font> </TD>
+    <TD align="left" valign=top><font size="1"><a href="javascript:ShowDesc('in(efilename)');">in(description)</a></font> </TD>
+    <TD noWrap align="center" valign=top><font size="1">in(date)</font> </TD>
+    <TD noWrap align="center" valign=top>
+    <form method=POST action=in(cgiurl) enctype="multipart/form-data">
+    <input type=hidden name=command value=overwrite>
+    <input type=hidden name=filename value="in(filename)">
+    <input type=hidden name=database value="in(database)">
+    <FONT size=2><INPUT type=file name=file size=20></FONT> </TD>
+    <TD noWrap align="center" valign=top><FONT size=2><input type="submit" value="OVERWRITE"></FONT> 
+    
+    </TD>
+    <TD noWrap align="center" valign=top><FONT size=2><input type="button" value="Delete" onClick="Delete('in(efilename)');"></form></FONT> </TD>
+  </tr>

@@ -1,0 +1,13 @@
+Search Engine Ranker by Done-Right Scripts
+README
+Version 2.1
+WebSite:  http://www.done-right.net
+Nulled: InsaneGod
+Date: 17-05-2002
+
+
+All callhomes removed and all links corrected.. To install just change the path of your search engine ranker dir in the top part of all cgi scripts.. that is all.. run admin.cgi and enjoy... also htdocs_images should b placed under folder called images in your htdocs dir...
+
+Reg code: "drseranker"
+
+...Enjoy...

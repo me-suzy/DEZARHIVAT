@@ -1,0 +1,1 @@
+<p align=center class=Hint><b>You have reached the maximum of allowed MySQL databases. Fantastico can not proceed with installations until you upgrade your account or reduce the number of used databases (for example by uninstalling a script).</b></p>

@@ -1,0 +1,726 @@
+<html>
+
+<head>
+<title>CSGuestbook Advanced Settings - by CGIScript.net</title>
+</head>
+
+<body>
+<form name=form1 method=post action=in(cgiurl)>
+<input type=hidden name=command value=setstyles>
+<input type=hidden name=database value=in(database)>
+<input type=hidden name=format value=in(format)>
+<div align="center">
+  <center>
+<table border="0" width="100%" cellpadding="0" height="100%" cellspacing="0">
+  <tr>
+    <td width="100%" valign="middle" align="center">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                      
+        <tr>
+          <td width="100%">
+            <table border="0" width="100%" cellspacing="0" cellpadding="3">
+              <tr>
+                <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                      
+                    <tr>
+                      <td width="100%">
+                        <p align="center"><b><font face="Verdana" size="4">csGuestbook Advanced Settings</font></b></p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                      
+                    <tr>
+                      <td width="100%">
+                        
+<table border="1" cellpadding="2" cellspacing="0" width="100%" bordercolorlight="#FFFFFF" bordercolordark="#000000">
+  <tr bgColor=#b0bb9d>
+    <td width="100%" colspan="3" bgcolor="#B0B898"><b><font face="Verdana" size="2">csGuestbook
+      Listing
+      Format</font></b></td>
+  </tr>
+  <tr bgColor=#c7c6ba>
+    <td width="28%" align="right" bgcolor="#DEE4E0" rowspan="4" valign="top"><font face="Tahoma" size="2">Optional
+      Heading</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2"><font face="Tahoma"><input type="text" name="headingtext" size="33" value="in(headingtext)"></font></td>
+  </tr>
+  
+  <tr>
+    <td width="1%" bgcolor="#DEE4E0" align="right"><font face="Tahoma" size="2">Font
+      Color:</font></td>
+    <td width="94%" bgcolor="#DEE4E0">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="33%" valign="middle" align="center"><font face="Tahoma"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.OpTitleTableText);">
+            </font> </td>
+          <td width="33%" valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(OpTitleTableText)">
+              <tr>
+                <td width="33"><font face="Tahoma">&nbsp;</font></td>
+              </tr>
+            </table></td>
+          <td width="33%" valign="middle" align="center">
+            <font face="Tahoma">#<INPUT maxLength=7 name=OpTitleTableText size=7 value=in(OpTitleTableText)></font> 
+          </td>
+        </tr>
+      </table>
+ </td>
+  </tr>
+  <tr>
+    <td width="1%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Font
+      Size:</font></td>
+    <td width="75%" bgcolor="#DEE4E0"><font face="Tahoma"><input type="text" name="headingsize" size="3" value="in(headingsize)"></font></td>
+  </tr>
+  <tr>
+    <td width="1%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Font
+      Face:</font></td>
+    <td width="75%" bgcolor="#DEE4E0"><font face="Tahoma"><input type="text" name="headingface" size="35" value="in(headingface)"></font></td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" rowspan="4" valign="top"><font face="Tahoma" size="2">Sign
+      Guestbook Link</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2"><font face="Tahoma"><input type="text" name="signtext" size="33" value="in(signtext)">
+      <font size="1"><input type="radio" name="signtype" value="text" in(text) >Text <input type="radio" name="signtype" value="button" in(button) >Button</font></font></td>
+  </tr>
+  <tr>
+    <td width="1%" bgcolor="#DEE4E0" align="right"><font face="Tahoma" size="2">Font
+      Color:</font></td>
+    <td width="94%" bgcolor="#DEE4E0">      <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="33%" valign="middle" align="center"><font face="Tahoma"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.signcolortxt);">
+            </font> </td>
+          <td width="33%" valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(signcolortxt)">
+              <tr>
+                <td width="33"><font face="Tahoma">&nbsp;</font></td>
+              </tr>
+            </table></td>
+          <td width="33%" valign="middle" align="center">
+            <font face="Tahoma">#<INPUT maxLength=7 name=signcolortxt size=7 value=in(signcolortxt)></font> 
+          </td>
+        </tr>
+      </table>
+</td>
+  </tr>
+  <tr>
+    <td width="1%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Font
+      Size:</font></td>
+    <td width="75%" bgcolor="#DEE4E0"><font face="Tahoma"><input type="text" name="signsize" size="3" value="in(signsize)"></font></td>
+  </tr>
+  <tr>
+    <td width="1%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Font
+      Face:</font></td>
+    <td width="75%" bgcolor="#DEE4E0"><font face="Tahoma"><input type="text" name="signface" size="35" value="in(signface)"></font></td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" rowspan="5" valign="top"><font face="Tahoma" size="2">Column
+      Heading 1</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2"><font face="Tahoma"><input type="text" name="c1heading" size="33" value="in(c1heading)">&nbsp;</font></td>
+  </tr>
+  <tr>
+    <td width="11%" bgcolor="#DEE4E0" align="right"><font face="Tahoma" size="2">Cell
+      Color:</font></td>
+    <td width="61%" bgcolor="#DEE4E0"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="33%" valign="middle" align="center"><font face="Tahoma"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.c1headingcellcolortxt);">
+            </font> </td>
+          <td width="33%" valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(c1headingcellcolortxt)">
+              <tr>
+                <td width="33"><font face="Tahoma">&nbsp;</font></td>
+              </tr>
+            </table></td>
+          <td width="33%" valign="middle" align="center">
+            <font face="Tahoma">#<INPUT maxLength=7 name=c1headingcellcolortxt size=7 value=in(c1headingcellcolortxt)></font> 
+          </td>
+        </tr>
+      </table>
+ </td>
+  </tr>
+  <tr>
+    <td width="1%" bgcolor="#DEE4E0" align="right"><font face="Tahoma" size="2">Font
+      Color:</font></td>
+    <td width="94%" bgcolor="#DEE4E0">
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="33%" valign="middle" align="center"><font face="Tahoma"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.c1headingcolortxt);">
+            </font> </td>
+          <td width="33%" valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(c1headingcolortxt)">
+              <tr>
+                <td width="33"><font face="Tahoma">&nbsp;</font></td>
+              </tr>
+            </table></td>
+          <td width="33%" valign="middle" align="center">
+            <font face="Tahoma">#<INPUT maxLength=7 name=c1headingcolortxt size=7 value=in(c1headingcolortxt)></font> 
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td width="1%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Font
+      Size:</font></td>
+    <td width="75%" bgcolor="#DEE4E0"><font face="Tahoma"><input type="text" name="c1headingsize" size="3" value="in(c1headingsize)"></font></td>
+  </tr>
+  <tr>
+    <td width="1%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Font
+      Face:</font></td>
+    <td width="75%" bgcolor="#DEE4E0"><font face="Tahoma"><input type="text" name="c1headingface" size="35" value="in(c1headingface)"></font></td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" rowspan="5" valign="top"><font face="Tahoma" size="2">Column
+      Heading 2</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2"><font face="Tahoma"><input type="text" name="c2heading" size="33" value="in(c2heading)"></font></td>
+  </tr>
+  <tr>
+    <td width="11%" bgcolor="#DEE4E0" align="right"><font face="Tahoma" size="2">Cell
+      Color:</font></td>
+    <td width="61%" bgcolor="#DEE4E0">
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="33%" valign="middle" align="center"><font face="Tahoma"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.c2headingcellcolortxt);">
+            </font> </td>
+          <td width="33%" valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(c2headingcellcolortxt)">
+              <tr>
+                <td width="33"><font face="Tahoma">&nbsp;</font></td>
+              </tr>
+            </table></td>
+          <td width="33%" valign="middle" align="center">
+            <font face="Tahoma">#<INPUT maxLength=7 name=c2headingcellcolortxt size=7 value=in(c2headingcellcolortxt)></font> 
+          </td>
+        </tr>
+      </table>    
+ </td>
+  </tr>
+  <tr>
+    <td width="1%" bgcolor="#DEE4E0" align="right"><font face="Tahoma" size="2">Font
+      Color:</font></td>
+    <td width="94%" bgcolor="#DEE4E0">
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="33%" valign="middle" align="center"><font face="Tahoma"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.c2headingcolortxt);">
+            </font> </td>
+          <td width="33%" valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(c2headingcolortxt)">
+              <tr>
+                <td width="33"><font face="Tahoma">&nbsp;</font></td>
+              </tr>
+            </table></td>
+          <td width="33%" valign="middle" align="center">
+            <font face="Tahoma">#<INPUT maxLength=7 name=c2headingcolortxt size=7 value=in(c2headingcolortxt)></font> 
+          </td>
+        </tr>
+      </table> 
+    </td>
+  </tr>
+  <tr>
+    <td width="1%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Font
+      Size:</font></td>
+    <td width="75%" bgcolor="#DEE4E0"><font face="Tahoma"><input type="text" name="c2headingsize" size="3" value="in(c2headingsize)"></font></td>
+  </tr>
+  <tr>
+    <td width="1%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Font
+      Face:</font></td>
+    <td width="75%" bgcolor="#DEE4E0"><font face="Tahoma"><input type="text" name="c2headingface" size="35" value="in(c2headingface)"></font></td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" rowspan="5" valign="top"><font face="Tahoma" size="2">Column
+      Heading 3</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2"><font face="Tahoma"><input type="text" name="c3heading" size="33" value="in(c3heading)"></font></td>
+  </tr>
+  <tr>
+    <td width="11%" bgcolor="#DEE4E0" align="right"><font face="Tahoma" size="2">Cell
+      Color:</font></td>
+    <td width="61%" bgcolor="#DEE4E0">
+        <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="33%" valign="middle" align="center"><font face="Tahoma"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.c3headingcellcolortxt);">
+            </font> </td>
+          <td width="33%" valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(c3headingcellcolortxt)">
+              <tr>
+                <td width="33"><font face="Tahoma">&nbsp;</font></td>
+              </tr>
+            </table></td>
+          <td width="33%" valign="middle" align="center">
+            <font face="Tahoma">#<INPUT maxLength=7 name=c3headingcellcolortxt size=7 value=in(c3headingcellcolortxt)></font> 
+          </td>
+        </tr>
+      </table>    
+    </td>
+  </tr>
+  <tr>
+    <td width="1%" bgcolor="#DEE4E0" align="right"><font face="Tahoma" size="2">Font
+      Color:</font></td>
+    <td width="94%" bgcolor="#DEE4E0">
+        <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="33%" valign="middle" align="center"><font face="Tahoma"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.c3headingcolortxt);">
+            </font> </td>
+          <td width="33%" valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(c3headingcolortxt)">
+              <tr>
+                <td width="33"><font face="Tahoma">&nbsp;</font></td>
+              </tr>
+            </table></td>
+          <td width="33%" valign="middle" align="center">
+            <font face="Tahoma">#<INPUT maxLength=7 name=c3headingcolortxt size=7 value=in(c3headingcolortxt)></font> 
+          </td>
+        </tr>
+      </table> 
+    </td>
+  </tr>
+  <tr>
+    <td width="1%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Font
+      Size:</font></td>
+    <td width="75%" bgcolor="#DEE4E0"><font face="Tahoma"><input type="text" name="c3headingsize" size="3" value="in(c3headingsize)"></font></td>
+  </tr>
+  <tr>
+    <td width="1%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Font
+      Face:</font></td>
+    <td width="75%" bgcolor="#DEE4E0"><font face="Tahoma"><input type="text" name="c3headingface" size="35" value="in(c3headingface)"></font></td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" rowspan="5" valign="top"><font face="Tahoma" size="2">Column
+      Heading 4</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2"><font face="Tahoma"><input type="text" name="c4heading" size="33" value="in(c4heading)"></font></td>
+  </tr>
+  <tr>
+    <td width="11%" bgcolor="#DEE4E0" align="right"><font face="Tahoma" size="2">Cell
+      Color:</font></td>
+    <td width="61%" bgcolor="#DEE4E0">
+        <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="33%" valign="middle" align="center"><font face="Tahoma"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.c4headingcellcolortxt);">
+            </font> </td>
+          <td width="33%" valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(c4headingcellcolortxt)">
+              <tr>
+                <td width="33"><font face="Tahoma">&nbsp;</font></td>
+              </tr>
+            </table></td>
+          <td width="33%" valign="middle" align="center">
+            <font face="Tahoma">#<INPUT maxLength=7 name=c4headingcellcolortxt size=7 value=in(c4headingcellcolortxt)></font> 
+          </td>
+        </tr>
+      </table>       
+ </td>
+  </tr>
+  <tr>
+    <td width="1%" bgcolor="#DEE4E0" align="right"><font face="Tahoma" size="2">Font
+      Color:</font></td>
+    <td width="94%" bgcolor="#DEE4E0">
+        <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="33%" valign="middle" align="center"><font face="Tahoma"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.c4headingcolortxt);">
+            </font> </td>
+          <td width="33%" valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(c4headingcolortxt)">
+              <tr>
+                <td width="33"><font face="Tahoma">&nbsp;</font></td>
+              </tr>
+            </table></td>
+          <td width="33%" valign="middle" align="center">
+            <font face="Tahoma">#<INPUT maxLength=7 name=c4headingcolortxt size=7 value=in(c4headingcolortxt)></font> 
+          </td>
+        </tr>
+      </table>     
+ </td>
+  </tr>
+  <tr>
+    <td width="1%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Font
+      Size:</font></td>
+    <td width="75%" bgcolor="#DEE4E0"><font face="Tahoma"><input type="text" name="c4headingsize" size="3" value="in(c4headingsize)"></font></td>
+  </tr>
+  <tr>
+    <td width="1%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Font
+      Face:</font></td>
+    <td width="75%" bgcolor="#DEE4E0"><font face="Tahoma"><input type="text" name="c4headingface" size="35" value="in(c4headingface)"></font></td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" rowspan="4" valign="top"><font face="Tahoma" size="2">Even
+      Guestbook
+      Entries</font></td>
+    <td width="23%" bgcolor="#DEE4E0" align="right"><font face="Tahoma" size="2"> Cell Color:</font></td>
+    <td width="49%" bgcolor="#DEE4E0">
+        <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="33%" valign="middle" align="center"><font face="Tahoma"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.tEvenCellColorText);">
+            </font> </td>
+          <td width="33%" valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(tEvenCellColorText)">
+              <tr>
+                <td width="33"><font face="Tahoma">&nbsp;</font></td>
+              </tr>
+            </table></td>
+          <td width="33%" valign="middle" align="center">
+            <font face="Tahoma">#<INPUT maxLength=7 name=tEvenCellColorText size=7 value=in(tEvenCellColorText)></font> 
+          </td>
+        </tr>
+      </table>     
+ </td>
+  </tr>
+  <tr>
+    <td width="23%" bgcolor="#DEE4E0" align="right"><font face="Tahoma" size="2">Font
+      Color:</font></td>
+    <td width="49%" bgcolor="#DEE4E0">
+        <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="33%" valign="middle" align="center"><font face="Tahoma"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.evenentrycolortxt);">
+            </font> </td>
+          <td width="33%" valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(evenentrycolortxt)">
+              <tr>
+                <td width="33"><font face="Tahoma">&nbsp;</font></td>
+              </tr>
+            </table></td>
+          <td width="33%" valign="middle" align="center">
+            <font face="Tahoma">#<INPUT maxLength=7 name=evenentrycolortxt size=7 value=in(evenentrycolortxt)></font> 
+          </td>
+        </tr>
+      </table>     
+ </td>
+  </tr>
+  <tr>
+    <td width="1%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Font
+      Size:</font></td>
+    <td width="75%" bgcolor="#DEE4E0"><font face="Tahoma"><input type="text" name="evenentrysize" size="3" value="in(evenentrysize)"></font></td>
+  </tr>
+  <tr>
+    <td width="1%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Font
+      Face:</font></td>
+    <td width="75%" bgcolor="#DEE4E0"><font face="Tahoma"><input type="text" name="evenentryface" size="35" value="in(evenentryface)"></font></td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" rowspan="4" valign="top"><font face="Tahoma" size="2">Odd
+      Guestbook
+      Entries</font></td>
+    <td width="23%" bgcolor="#DEE4E0" align="right"><font face="Tahoma" size="2"> Cell Color:</font></td>
+    <td width="49%" bgcolor="#DEE4E0">
+        <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="33%" valign="middle" align="center"><font face="Tahoma"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.tOddCellColorText);">
+            </font> </td>
+          <td width="33%" valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(tOddCellColorText)">
+              <tr>
+                <td width="33"><font face="Tahoma">&nbsp;</font></td>
+              </tr>
+            </table></td>
+          <td width="33%" valign="middle" align="center">
+            <font face="Tahoma">#<INPUT maxLength=7 name=tOddCellColorText size=7 value=in(tOddCellColorText)></font> 
+          </td>
+        </tr>
+      </table>      
+ </td>
+  </tr>
+  <tr>
+    <td width="23%" bgcolor="#DEE4E0" align="right"><font face="Tahoma" size="2">Font
+      Color:</font></td>
+    <td width="49%" bgcolor="#DEE4E0">
+        <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="33%" valign="middle" align="center"><font face="Tahoma"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.oddentrycolortxt);">
+            </font> </td>
+          <td width="33%" valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(oddentrycolortxt)">
+              <tr>
+                <td width="33"><font face="Tahoma">&nbsp;</font></td>
+              </tr>
+            </table></td>
+          <td width="33%" valign="middle" align="center">
+            <font face="Tahoma">#<INPUT maxLength=7 name=oddentrycolortxt size=7 value=in(oddentrycolortxt)></font> 
+          </td>
+        </tr>
+      </table>      
+ </td>
+  </tr>
+  <tr>
+    <td width="1%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Font
+      Size:</font></td>
+    <td width="75%" bgcolor="#DEE4E0"><font face="Tahoma"><input type="text" name="oddentrysize" size="3" value="in(oddentrysize)"></font></td>
+  </tr>
+  <tr>
+    <td width="1%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Font
+      Face:</font></td>
+    <td width="75%" bgcolor="#DEE4E0"><font face="Tahoma"><input type="text" name="oddentryface" size="35" value="in(oddentryface)"></font></td>
+  </tr>
+  <tr bgColor=#c7c6ba>
+    <td width="28%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Border
+      Width</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2"><font face="Tahoma"><input type="text" name="tTableBorder" size="2" value="in(tTableBorder)"><font size="2">pixels</font></font></td>
+  </tr>
+  <tr bgColor=#c7c6ba>
+    <td width="28%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Table Width</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2"><font face="Tahoma"><input type="text" name="tTableWidth" size="8" value="in(tTableWidth)"><font size="2">pixels
+      or percentage (i.e.80%)</font></font></td>
+  </tr>
+  <tr bgColor=#c7c6ba>
+    <td width="28%" align="right" bgcolor="#DEE4E0"><font size="2" face="Tahoma">Cell
+      Padding</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2"><font face="Tahoma"><input type="text" name="cellpadding" size="3" value="in(cellpadding)">
+      <font size="2">pixels</font></font></td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0"><font size="2" face="Tahoma">Cell
+      Spacing</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2"><font face="Tahoma"><input type="text" name="cellspacing" size="3" value="in(cellspacing)">
+      <font size="2">pixels</font></font></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="3" bgcolor="#B0B898"><b><font face="Tahoma" size="2">Page Properties</font></b></td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Background
+      Color</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2">
+        <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="33%" valign="middle" align="center"><font face="Tahoma"><input type="button" value="Select Color" onClick="javascript:SelectCl(document.form1.BackgroundColorText);">
+            </font> </td>
+          <td width="33%" valign="middle" align="center"><table border="1" cellpadding="0" cellspacing="0" width="35" bordercolor="#000000" bgcolor="#in(BackgroundColorText)">
+              <tr>
+                <td width="33"><font face="Tahoma">&nbsp;</font></td>
+              </tr>
+            </table></td>
+          <td width="33%" valign="middle" align="center">
+            <font face="Tahoma">#<INPUT maxLength=7 name=BackgroundColorText size=7 value=in(BackgroundColorText)></font> 
+          </td>
+        </tr>
+      </table>     
+ </td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0"><font face="Tahoma" size="2">Background
+      Image URL</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2"><font face="Tahoma"><input type="text" name="BackgroundImage" size="23" value="in(BackgroundImage)"></font> </td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" valign="top"><font face="Tahoma" size="2">Optional
+      Header</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2"><font face="Tahoma"><input type="text" name="header" size="23" value="in(header)"><font size="1"><br>
+      (absolute path to file. Example: /www/htdocs/header.htm)</font></font> </td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" valign="top"><font face="Tahoma" size="2">Optional
+      Footer&nbsp;</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2"><font face="Tahoma"><input type="text" name="footer" size="23" value="in(footer)"><font size="1"><br>
+      (absolute path to file Example: /www/htdocs/footer.htm)</font></font> </td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" valign="top"><font face="Tahoma" size="2">Optional
+      Template</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2"><font face="Tahoma"><input type="text" name="template" size="23" value="in(template)"><font size="1"><br>
+      (absolute path to file Example: /www/htdocs/template.htm)<br>
+      Note: Add the following line of code to your template:<br>
+      &lt;!-- CGIScript Me --&gt;<br>
+      and the guestbook will replace that text. Also, make the URLs on this path
+      absolute. Example: http://www.yourside.com/images/image.gif</font></font> </td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="3" bgcolor="#B0B898"><b><font face="Tahoma" size="2">Guestbook
+      Options</font></b></td>
+  </tr>
+  <tr>
+    <td width="28%" align="left" bgcolor="#DEE4E0" valign="top"><font face="Tahoma" size="2">Approve
+      Submissions</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2" valign="top" align="left">
+      <div align="left">
+        <table border="0" cellpadding="3" cellspacing="0">
+          <tr>
+            <td valign="top" align="left"><font face="Tahoma" size="1"><input type="checkbox" name="approvesub" value="checked" in(approvesub)></font></td>
+            <td valign="top" align="left"><font face="Tahoma" size="1">If this option is checked, new
+              submissions will go to a holding area until you approve them. If
+              you select this option, you should also enable email notification
+              of new entries so you know when they have been posted.</font></td>
+          </tr>
+        </table>
+      </div>
+ </td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" valign="middle"><font face="Tahoma" size="2">Delete
+      Entries After</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2" valign="middle">
+      <div align="left">
+        <table border="0" cellpadding="3" cellspacing="0">
+          <tr>
+            <td><input type="text" name="dge" size="3" value="in(dge)"></td>
+            <td><font face="Tahoma" size="2">Days</font></td>
+            <td><font face="Tahoma" size="1">If this option is selected,
+              guestbook entries will be deleted after XX days since it was first
+              submitted to the guestbook. To disable, enter '0'.</font></td>
+          </tr>
+        </table>
+      </div>
+ </td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" valign="middle"><font face="Tahoma" size="2">Message
+      Limit&nbsp;</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2" valign="middle">
+      <div align="left">
+        <table border="0" cellpadding="3" cellspacing="0">
+          <tr>
+            <td><input type="text" name="mlength" size="5" value="in(mlength)"></td>
+            <td><font face="Tahoma" size="2">Characters</font></td>
+            <td><font face="Tahoma" size="1">If this option is selected,
+              guestbook entries will be limited to&nbsp; XX charcters. To disable, enter '0'.</font></td>
+          </tr>
+        </table>
+      </div>
+ </td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" valign="top"><font face="Tahoma" size="2">Hide
+      Image Column</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2">
+      <div align="left">
+        <table border="0" cellpadding="3" cellspacing="0">
+          <tr>
+            <td><font face="Tahoma"><input type="checkbox" name="dui" value="checked" in(dui)>
+      </font>
+            </td>
+            <td><font face="Tahoma" size="2">This will disable
+              the icons on this guestbook.</font></td>
+          </tr>
+        </table>
+      </div>
+ </td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" valign="top"><font face="Tahoma" size="2">Entry
+      Order</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2"><font face="Tahoma"><font size="1"><input type="radio" value="FIRST" name="entryorder" in(FIRST)>
+      Newest Entries <b>First</b><br>
+      <input type="radio" value="LAST" name="entryorder" in(LAST)> Newest Entries </font><b><font size="1">Last</font><font size="2">&nbsp;</font></b></font> </td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" valign="top"><font face="Tahoma" size="2">Catalog
+      Email addresses</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2" valign="top"><font face="Tahoma"><input type="checkbox" name="docatalog" value="checked" in(docatalog)>
+      <font size="2" face="Verdana">Save email address to file.<br>
+      </font></font> </td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" valign="top"><font face="Tahoma" size="2">Entries
+      Per Page</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2" valign="top"><font face="Tahoma"><input type="text" name="entriesperpage" size="5" value="in(entriesperpage)"></font> </td>
+  </tr>
+  <tr>
+    <td width="28%" align="right" bgcolor="#DEE4E0" valign="top"><font face="Tahoma" size="2">Email
+      Notification</font></td>
+    <td width="72%" bgcolor="#DEE4E0" colspan="2" valign="top">
+      <div align="left">
+        <table border="0" cellpadding="3" cellspacing="0">
+          <tr>
+            <td valign="top" align="left"><font face="Tahoma" size="2"><input type="checkbox" name="emailnotification" value="checked" in(emailnotification)>
+      </font>
+            </td>
+            <td valign="top" align="left"><font face="Tahoma" size="2">Send
+      notification of new guestbook entries with the following message:<br>
+              </font><font face="Tahoma" size="1">(note: FORM(name), FORM(email),
+              FORM(message) will be replaced with the submitters name, email
+              address, and message. Environment variables are also available.
+              For example, FORM(REMOTE_ADDR) will be replaced with the
+              submitters IP address.)<br>
+              </font></td>
+          </tr>
+        </table>
+      </div>
+      <div align="center">
+        <table border="1" cellpadding="0" cellspacing="0" width="80%" bordercolorlight="#000000" bordercolordark="#FFFFFF">
+          <tr>
+            <td width="26%" align="right"><font face="Tahoma" size="2">To:</font></td>
+            <td width="74%"><font face="Tahoma" size="2"><input type="text" name="emailnotificationemail" size="28" value="in(emailnotificationemail)"></font></td>
+          </tr>
+          <tr>
+            <td width="26%" align="right"><font face="Tahoma" size="2">Subject:</font></td>
+            <td width="74%"><font face="Tahoma" size="2"><input type="text" name="emailnotificationsubject" size="28" value="in(emailnotificationsubject)"></font></td>
+          </tr>
+          <tr>
+            <td width="100%" colspan="2" align="right"><font face="Tahoma"><textarea rows="2" name="emailnotificationmessage" cols="30">in(emailnotificationmessage)</textarea></font></td>
+          </tr>
+        </table>
+      </div>
+      <div align="left">
+        <table border="0" cellpadding="3" cellspacing="0">
+          <tr>
+            <td valign="top" align="left"><font face="Tahoma" size="2"><input type="checkbox" name="autoresponse" value="checked" in(autoresponse)></font></td>
+            <td valign="top" align="left"><font face="Tahoma" size="2">Send autoresponse to guestbook
+      submitters with the following message:<br>
+              </font><font face="Tahoma" size="1">(note: FORM(name), FORM(email),
+              FORM(message) will be replaced with the submitters name, email
+              address, and message. Environment variables are also available.
+              For example, FORM(REMOTE_ADDR) will be replaced with the
+              submitters IP address.)<br>
+              </font></td>
+          </tr>
+        </table>
+      </div>
+      <div align="center">
+        <table border="1" cellpadding="0" cellspacing="0" width="80%" bordercolorlight="#000000" bordercolordark="#FFFFFF">
+          <tr>
+            <td width="25%" align="right"><font face="Tahoma" size="2">From:</font></td>
+            <td width="75%"><font face="Tahoma" size="2"><input type="text" name="autoresponsefrom" size="28" value="in(autoresponsefrom)"></font></td>
+          </tr>
+          <tr>
+            <td width="25%" align="right"><font face="Tahoma" size="2">Subject:</font></td>
+            <td width="75%"><font face="Tahoma" size="2"><input type="text" name="autoresponsesubject" size="28" value="in(autoresponsesubject)"></font></td>
+          </tr>
+          <tr>
+            <td width="100%" colspan="2" align="right"><font face="Tahoma"><textarea rows="2" name="autoresponsemessage" cols="31">in(autoresponsemessage)</textarea></font></td>
+          </tr>
+        </table>
+      </div>
+ </td>
+  </tr>
+</table>                        
+                        
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                      
+                    <tr>
+                      <td width="100%">
+                        <p align="center">
+<input type=submit value='  Apply  '> <input type="button" value="Cancel" onClick="javascript:history.back()"> <input type=submit value='  Reset Defaults  ' name=rd></p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                      
+                    <tr>
+                      <td width="100%">
+                        <p align="center"><font size="2" face="Verdana">
+
+in(cinfo)</font>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+  </center>
+</div>
+
+
+</form>
+
+</body>
+<script language=javascript>
+function SelectCl(tf){
+var rndURL = (1000*Math.random());
+var fname = tf.name;
+var fcolor = tf.value;
+var windowURL = "in(cgiurl)?command=showcolor&database=in(database)&fieldname="+fname+"&cc="+fcolor+"&rnd="+rndURL;
+newWindow = window.open(windowURL,null,'width=600,height=300,location=0,directories=0,status=0,menuBar=0,scrollBars=yes,resizable=yes');
+newWindow.focus();
+}
+</script>
+</html>

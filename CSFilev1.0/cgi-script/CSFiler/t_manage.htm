@@ -1,0 +1,396 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>CSFiler</title>
+<style fprolloverstyle>A:hover {color: red}
+</style>
+
+</head>
+
+<body style="font-family: verdana, arial, helvetica; font-size: 10pt" bgcolor="#FFFFFF" text="#000080" link="#0000FF" vlink="#800000" alink="#FF0000" topmargin="0" leftmargin="0">
+<form name=form1 method=post action="in(cgiurl)">
+
+<TABLE border=1 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD align=center background="../images/top-filler.gif" vAlign="middle">
+      <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0">
+        <tr>
+          <td width="100%">
+            <table border="0" width="100%" cellspacing="0" cellpadding="3">
+              <tr>
+                <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                    <tr>
+                      <td width="100%" valign="middle" align="center"><b><font color="#000000" face="Verdana" size="5">csFiler
+                        by CGI Script.net</font></b></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                    <tr>
+                      <td width="100%">
+<b>
+<font size="2" color="#000000" face="Verdana">CSFileManager </font></b>  
+<font size="2" color="#000000" face="Verdana">  can perform many of the file operations needed to manage a web site. You can use it to navigate the directories of your server, viewing a list of files in each. You can also copy, create, delete, edit, move and upload files,
+change file permissions, as well as create and delete subdirectories. </font></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                    <tr>
+                      <td width="100%">
+                        <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                          <tr>
+                            <td width="100%">
+
+<p>
+  <b>
+  <font face="Verdana" size="2" color="#000000">Index of the current directory:
+  in(disdir)</font></b></p>
+
+    <font face="Verdana" size="2" color="#000000">Click on any name to view a file or move into a directory. Or select the button next to a
+      file or directory and then choose from the list of actions below.
+</font>
+
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="100%">
+
+<div align="center">
+  <center>
+  <table border="0" cellspacing="0" cellpadding="0" height="23">
+    <tr>
+      <td><b><font face="Verdana" size="2" color="#000000">Actions:</font></b></td>
+      <td><b><font size="2" face="Verdana"><select size="1" name="MyAction" onChange="DoForm(this[this.selectedIndex].value);this.selectedIndex=0;">
+          <option value="cancel">Select Action</option>
+          <option value="upload">Upload a File</option>
+          <option value="edit">Edit a File</option>
+          <option value="move">Move a File</option>
+          <option value="rename">Rename a File</option>
+          <option value="createfile">Create a File</option>
+          <option value="createdirectory">Create a Directory</option>
+          <option value="deletefile">Delete File/Directory</option>
+          <option value="copyfile">Copy File</option>
+          <option value="chmod">CHMOD</option>
+        </select></font></b></td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="100%">
+                            
+                                  <table cellspacing="0" cellpadding="3" width=100% bordercolor="#000000" border="1">
+
+          <tr align="middle">
+            <td align="center" valign="middle"><b><font face="Verdana" size="2" color="#000000">Select</font></b></td>
+            <td align=left>&nbsp;</td>
+            <td align=left><b><font face="Verdana" size="2" color="#000000">Name</font></b></td>
+            <td align=left><b><font face="Verdana" size="2" color="#000000">Size</font></b></td>
+            <td align=left><b><font face="Verdana" size="2" color="#000000">Created</font></b></td>
+            <td align="left"><b><font face="Verdana" size="2" color="#000000">Mode</font></b></td>
+          </tr>
+          <font color="#000000" size="2" face="Verdana">
+          in(line)</font>
+      </table>
+                            
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="100%">
+                            
+<div align="center">
+  <center>
+  <table border="0" cellspacing="0" cellpadding="0" height="23">
+    <tr>
+      <td><b><font face="Verdana" size="2" color="#000000">Actions:</font></b></td>
+      <td><b><font size="2" face="Verdana"><select size="1" name="MyAction2" onChange="DoForm(this[this.selectedIndex].value);this.selectedIndex=0;">
+          <option value="cancel">Select Action</option>
+          <option value="upload">Upload a File</option>
+          <option value="edit">Edit a File</option>
+          <option value="move">Move a File</option>
+          <option value="rename">Rename a File</option>
+          <option value="createfile">Create a File</option>
+          <option value="createdirectory">Create a Directory</option>
+          <option value="deletefile">Delete File/Directory</option>
+          <option value="copyfile">Copy File</option>
+          <option value="chmod">CHMOD</option>
+        </select></font></b></td>
+    </tr>
+  </table>
+  </center>
+</div>                            
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                    <tr>
+                      <td width="100%">
+                        <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                          <tr>
+                            <td width="100%">
+    <p><font face="Verdana" size="2" color="#000000">Action Instructions</font></p>
+    <p><font face="Verdana" size="2" color="#000000">Here is a list of actions
+    and details of what the action does.</font></p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="100%">
+                            
+                                <table cellspacing="0" cellpadding="3" bordercolor="#000000" border="1">
+
+          <tr>
+            <td align="right" valign="top"><font face="Verdana" size="2" color="#000000"><b>Upload
+              a File</b></font></td>
+            <td valign="top"><font face="Verdana" size="2" color="#000000">Add a new file. Click
+              'Upload' button and select a file on your local hard
+              drive.</font></td>
+          </tr>
+
+          <tr>
+            <td align="right" valign="top"><font face="Verdana" size="2" color="#000000"><b>Edit
+              a File</b></font></td>
+            <td valign="top"><font face="Verdana" size="2" color="#000000">Edit an existing file.
+              Select file from Index above and click the 'Edit' button.</font></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><font face="Verdana" size="2" color="#000000"><b>Move
+              a File</b></font></td>
+            <td valign="top"><font face="Verdana" size="2" color="#000000">Move a file or
+              directory to a new location. Select a file or directory from the
+              Index above then click the 'Move' button and type the new location
+              in the popup window.</font></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><font face="Verdana" size="2" color="#000000"><b>Rename
+              a File</b></font></td>
+            <td valign="top"><font face="Verdana" size="2" color="#000000">Rename a file or
+              directory. Select a file or directory from the Index above then
+              click 'Rename' button and type the new name for the file/directory
+              in the popup window.</font></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><font face="Verdana" size="2" color="#000000"><b>Create
+              a File</b></font></td>
+            <td valign="top"><font face="Verdana" size="2" color="#000000">Create and begin editing a new
+              file. Click the 'Create' button to launch text editor.</font></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><font face="Verdana" size="2" color="#000000"><b>Create
+              a Directory</b></font></td>
+            <td valign="top"><font face="Verdana" size="2" color="#000000">Create a new
+              directory. Click the 'Create' button and type the name of the new
+              directory in the popup window.</font></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><font face="Verdana" size="2" color="#000000"><b>Delete
+              a File/Directory</b></font></td>
+            <td valign="top"><font face="Verdana" size="2" color="#000000">Delete an existing file
+              or directory. Select a file or directory from the Index above then
+              click 'Delete' button. Warning, if
+              you delete a directory you will lose all of the contents as well.</font></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><font face="Verdana" size="2" color="#000000"><b>Copy
+              a File</b></font></td>
+            <td valign="top"><font face="Verdana" size="2" color="#000000">Copy an existing file to a new
+              location. Select a file or directory from the Index above then
+              click the 'Copy' button and type the new location and file name in
+              the popup window.</font></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><font face="Verdana" size="2" color="#000000"><b>CHMOD</b></font></td>
+            <td valign="top"><font face="Verdana" size="2" color="#000000">Change the file
+              permissions of a file or directory. Select a file or directory from the
+              Index above then click the 'CHMOD' button and set the new file
+              permissions in the popup window.</font></td>
+          </tr>
+      </table>
+                            
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+<table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">                    <tr>
+                      <td width="100%">
+                        <p align="center"><font face="verdana,arial,helvetica" size="2" color="#000000">&nbsp;in(cinfo)</font></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <p align="center">&nbsp;
+</td></tr></table>
+
+
+<input type=hidden name=dir value="in(dir)">
+<input type=hidden name=Rad value="">
+     </form>
+</body>
+<script language=javascript>
+
+function DoForm(i){
+
+if(i=="upload"){
+ShowUpload();
+}
+if(i=="edit"){
+ShowEdit();
+}
+if(i=="move"){
+ShowMove();
+}
+if(i=="rename"){
+ShowRename();
+}
+if(i=="createfile"){
+ShowCreateFile();
+}
+if(i=="createdirectory"){
+ShowCreateDir();
+}
+if(i=="copyfile"){
+ShowCopy();
+}
+if(i=="chmod"){
+ShowPermissions();
+}
+if(i=="deletefile"){
+Delete();
+}
+if(i=="cancel"){
+return;
+}
+
+}
+
+function SetRad(Val){
+document.form1.Rad.value=Val;
+return true;
+}
+
+function Delete(){
+var rndURL = (1000*Math.random());
+var File=document.form1.Rad.value;
+if(!File){
+alert("Error. Please select a file to delete.");
+return false;
+}
+if(confirm("Are you sure you want to delete "+unescape(File))){
+var CDir = escape(document.form1.dir.value);
+  window.location="in(cgiurl)?command=delete&dir="+CDir+"&file="+File+"&rnd="+rndURL;
+  return true;
+  }
+else{
+return true;
+}
+}
+
+function ShowUpload(){
+var windowURL = "in(cgiurl)?command=supload&dir="+escape(document.form1.dir.value);
+newWindow = window.open(windowURL,'ShowImg','width=550,height=350,location=0,directories=0,status=0,menuBar=0,scrollBars=no,resizable=yes');
+newWindow.focus();
+return true;
+}
+
+function ShowCreateDir(){
+var windowURL = "in(cgiurl)?command=sdir&dir="+escape(document.form1.dir.value);
+newWindow = window.open(windowURL,'ShowCD','width=425,height=250,location=0,directories=0,status=0,menuBar=0,scrollBars=no,resizable=yes');
+newWindow.focus();
+return true;
+}
+
+function ShowCreateFile(){
+var windowURL = "in(cgiurl)?command=screatefile&dir="+escape(document.form1.dir.value);
+newWindow = window.open(windowURL,'ShowCD','width=600,height=450,location=0,directories=0,status=0,menuBar=0,scrollBars=no,resizable=yes');
+newWindow.focus();
+return true;
+}
+
+function ShowMove(){
+var File=document.form1.Rad.value;
+if(!File){
+alert("Error. Please select a file to move.");
+return false;
+}
+var windowURL = "in(cgiurl)?command=smove&dir="+escape(document.form1.dir.value)+"&file="+File;
+newWindow = window.open(windowURL,'ShowMv','width=425,height=250,location=0,directories=0,status=0,menuBar=0,scrollBars=no,resizable=yes');
+newWindow.focus();
+return true;
+}
+
+function ShowRename(){
+var File=document.form1.Rad.value;
+if(!File){
+alert("Error. Please select a file to rename.");
+return false;
+}
+var windowURL = "in(cgiurl)?command=srename&dir="+escape(document.form1.dir.value)+"&file="+File;
+newWindow = window.open(windowURL,'ShowMv','width=425,height=250,location=0,directories=0,status=0,menuBar=0,scrollBars=no,resizable=yes');
+newWindow.focus();
+return true;
+}
+
+function ShowCopy(){
+var File=document.form1.Rad.value;
+if(!File){
+alert("Error. Please select a file to copy.");
+return false;
+}
+var windowURL = "in(cgiurl)?command=scopy&dir="+escape(document.form1.dir.value)+"&file="+File;
+newWindow = window.open(windowURL,'ShowMv','width=425,height=250,location=0,directories=0,status=0,menuBar=0,scrollBars=no,resizable=yes');
+newWindow.focus();
+return true;
+}
+
+function ShowPermissions(){
+var File=document.form1.Rad.value;
+if(!File){
+alert("Error. Please select a file to Chmod.");
+return false;
+}
+var windowURL = "in(cgiurl)?command=spermissions&dir="+escape(document.form1.dir.value)+"&file="+File;
+newWindow = window.open(windowURL,'ShowMv','width=425,height=450,location=0,directories=0,status=0,menuBar=0,scrollBars=no,resizable=yes');
+newWindow.focus();
+return true;
+}
+
+function ShowEdit(){
+var File=document.form1.Rad.value;
+if(!File){
+alert("Error. Please select a file to edit.");
+return false;
+}
+var windowURL = "in(cgiurl)?command=sedit&dir="+escape(document.form1.dir.value)+"&file="+File;
+newWindow = window.open(windowURL,'ShowMv','width=600,height=450,location=0,directories=0,status=0,menuBar=0,scrollBars=yes,resizable=yes');
+newWindow.focus();
+return true;
+}
+</script>
+</html>

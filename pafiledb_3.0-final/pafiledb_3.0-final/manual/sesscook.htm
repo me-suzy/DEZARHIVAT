@@ -1,0 +1,78 @@
+<html>
+
+<head>
+<style type="text/css">
+BODY, TABLE, P {
+	font-family: Tahoma;
+	font-size: 10pt;
+	color: #000000; 
+}
+A:LINK, A:VISITED, A:ACTIVE {
+	font-family : Tahoma;
+	font-size : 12px;
+	color : #0080C0;
+}
+A:HOVER {
+	font-family : Tahoma;
+	font-size : 12px;
+	color : #000000;
+	text-decoration : none;
+}
+</style>
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>New Page 1</title>
+</head>
+
+<body>
+
+<p>Sessions or cookies?</p>
+
+<p>In order for paFileDB to keep track of who's logged into the admin center, it 
+has to use either sessions or cookies to store data. Ever since paFileDB 2.0, 
+sessions have been used, however they are not always supported on every server. 
+Cookies are more widely supported on servers, however, some users with older 
+browsers, or users behind a firewall might have problems using cookies. Some 
+people just completely disable them.</p>
+
+<p>In order to reduce compatibility problems, paFileDB 3.0 Final can use either 
+sessions or cookies. Cookies are recommended and enabled by default, because 
+there's less compatibility issues and unlike sessions, cookies don't require any 
+data to be stored on the server.</p>
+
+<p>If you're having problems with 3.0 final not logging you into the admin 
+center or quickly logging you out, then cookies aren't working properly for you, 
+and you will need to try sessions. Before you make the switch to sessions, make 
+a directory called &quot;sessions&quot; in your paFileDB folder (same folder as 
+pafiledb.php) and CHMOD the directory 777. If you are using a Windows server, 
+you will <b>not</b> need to CHMOD the directory. If you've used paFileDB 2.x or 
+a v3 beta before on this same server without problems, you shouldn't have a problem with 
+sessions.</p>
+<p>To switch between sessions and cookies, open up pafiledb.php and look for the 
+text:</p>
+<p><blockquote>$authmethod = &quot;cookies&quot;;</blockquote>
+<p>OR:</p>
+<p><blockquote>$authmethod = "sessions";
+</blockquote>(That line of text will be different depending on what it's set to)</p>
+
+<p></p>
+<p>To set it to cookies, change the text in the quotes (&quot; &quot;) to &quot;cookies&quot; 
+(without quotes)<br>
+To set it to sessions, change the text in the quotes (&quot; &quot;) to &quot;sessions&quot; 
+(without quotes)</p>
+<p>Save and re-upload the file to your server.</p>
+<p></p>
+<p>Notes:<br>
+--Cookies are enabled by default and are the recommended method. Only switch to 
+sessions if you're having problems logging into the admin center. If you're not 
+having problems, don't change anything<br>
+--If you're using cookies, you <b>can</b> delete the &quot;sessions&quot; directory and 
+all the files in it. However, if you ever need to go back to sessions, you will 
+need to recreate the directory and CHMOD it 777 (on *NIX servers)</p>
+
+</body>
+
+</html>

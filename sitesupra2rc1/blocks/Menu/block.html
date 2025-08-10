@@ -1,0 +1,15 @@
+<?php
+$html='';
+$query='SELECT path,title FROM '.suPAGES.' WHERE parent=1 AND userbit&1 AND active=1';
+if($d=$suSQL->queryData($query))
+{
+	$menu=Array();	
+	for($i=0,$l=count($d);$i<$l;$i++)
+		$menu[]='<td><a class="mainMenuLink" href="'.suBASE.$d[$i]['path'].'">'.$d[$i]['title'].'</a></td>';
+	$html='<table border="0" cellpadding="4" cellspacing="0"><tr><td>&nbsp;</td>';
+	$html .=join('<td class="mainMenu">|</td>',$menu);
+	$html .= '</tr></table>';
+}
+echo $html;
+
+?>

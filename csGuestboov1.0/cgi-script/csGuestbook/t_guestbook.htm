@@ -1,0 +1,71 @@
+<html>
+
+<head>
+<title>CSGuestbook by CGIScript.net</title>
+<style fprolloverstyle>A:hover {color: red}
+</style>
+<script language=javascript>
+var Then = new Date();
+Then.setTime(Then.getTime() + 60 * 60 * 1000 * 24 * 30 * 12);
+document.cookie="lastread=in(lastread);expires="+Then.toGMTString();
+</script>
+</head>
+
+<body bgcolor="#in(BackgroundColorText)" background="in(BackgroundImage)" style="font-family: verdana, helvitica, arial; font-size: 10pt">
+<form>
+<table border="0" cellPadding="0" cellSpacing="0" width="in(tTableWidth)"><tr><td>
+<p><b><font color="#in(OpTitleTableText)" face="Verdana" size="2">in(headingtext)</font></b></p>
+<font color="#000000" face="Verdana" size="2"><br>
+in(preview) in(managebuttons)
+</font>
+</p>
+
+</td></tr>
+</table>
+<table border="0" cellPadding="0" cellSpacing="0" width="in(tTableWidth)">
+  <tbody>
+    <tr>
+      <td>
+        <table border="in(tTableBorder)" cellpadding="in(cellpadding)" cellspacing="in(cellspacing)" width="in(tTableWidth)">
+          <tbody>
+            <tr>
+              <td colspan="5">
+                <table border="0" width="100%" cellspacing="0" cellpadding="3">
+                  <tr>
+                    <td width=33%><a href="in(cgiurl)?command=sign&database=in(database)&format=in(format)"><font color="#in(signcolortxt)" face="Tahoma" size="2">in(nos1)in(sign)in(nos2)</font></a></td>
+                    <td width=33% align=center><font color="#000000" face="Tahoma" size="2">in(count)
+                      total entries.</font></td>
+                    <td align=right width=33%>
+<b>
+<font face="Tahoma" size="2">
+<font color="#000000">Bold</font>
+</font>
+</b> 
+<font color="#000000" size="2" face="Tahoma"> entries are new since your last visit.</font>
+                    </td>
+                  </tr>
+                </table>
+            </tr>
+            <tr bgColor="#e18a20">
+              <font size="2" face="Verdana">in(duis)</font><td align="center" valign="middle" bgcolor="#in(c1headingcellcolortxt)"><b><font color="#in(c1headingcolortxt)" size="2" face="Verdana">in(c1heading)</font></b></td><font size="2" face="Verdana">in(duie)</font>
+              <td valign="middle" align="center" bgcolor="#in(c2headingcellcolortxt)"><b><font color="#in(c2headingcolortxt)" size="2" face="Verdana">in(c2heading)</font></b></td>
+              <td valign="top" align="center" nowrap bgcolor="#in(c3headingcellcolortxt)"><b><font color="#in(c4headingcolortxt)" size="2" face="Verdana">in(c4heading)/</font><font color="#in(c3headingcolortxt)" size="2" face="Verdana">in(c3heading)</font></b></td>
+            </tr>
+<font color="#000000" face="Verdana" size="2">
+in(line)
+
+</font>
+<tr bgColor="#FFFFFF"><td noWrap valign="middle" align="center" colspan=4><font size="2" face="Verdana" color="#000000">in(link)</font></td></tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</form>
+<table border="0" cellPadding="0" cellSpacing="0" width="in(tTableWidth)"><tr><td>
+<font size="2" face="Verdana">in(managebuttons) in(cinfo)</font>
+</td></tr>
+</table>
+</body>
+</html>

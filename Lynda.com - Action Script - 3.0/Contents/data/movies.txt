@@ -1,0 +1,111 @@
+c*Welcome*1*2
+m*Introduction*1*00_01_Intro.mov
+m*How to use the exercise files*1*00_02_Exercise_Files.mov
+c*1. Introduction to ActionScript 3.0*2*3
+m*Why you should learn 	ActionScript 3.0*2*01_01_Why_AS3.mov
+m*Differences from ActionScript 	2.0*2*01_02_AS2_vs_AS3.mov
+m*Moving beyond Script Assist*2*01_03_Beyond_Script_Assist.mov
+c*2. Communicating to MovieClips, Variables, and People*3*6
+m*Communicating to 	MovieClips*3*02_01_Communicating.mov
+m*Modifying MovieClips 	properties*3*02_02_MC_Properties.mov
+m*Understanding variables*3*02_03_Variables.mov
+m*Setting variable data types*3*02_04_Variable_Types.mov
+m*Using trace statements*3*02_05_Trace_Statements.mov
+m*Using comments*3*02_06_Comments.mov
+c*3. Using and Writing Functions*4*5
+m*Understanding functions*4*03_01_Functions.mov
+m*Using functions*4*03_02_Using_Functions.mov
+m*Writing custom functions*4*03_03_Writing_Functions.mov
+m*Making a function modular*4*03_04_Modular_Functions.mov
+m*Making a function return a 	value*4*03_05_Return_Functions.mov
+c*4. Responding to Events*5*8
+m*Understanding event types*5*04_01_Understanding_Events.mov
+m*Using a listener to catch an 	event*5*04_02_Listeners.mov
+m*Writing event handlers*5*04_03_Handlers.mov
+m*Responding to mouse events*5*04_04_Mouse.mov
+m*Responding to keyboard 	events*5*04_05_Keyboard.mov
+m*Creating a link to a website*5*04_06_Links.mov
+m*Using the interframe to 	create animation*5*04_07_EnterFrame.mov
+m*Using the timer event to 	control animation*5*04_08_Timer.mov
+c*5. Understanding Classes*6*9
+m*Understanding classes*6*05_01_Classes.mov
+m*Writing a custom class*6*05_02_Creating_Classes.mov
+m*Extending an existing class*6*05_03_Extending_Classes.mov
+m*Understanding methods*6*05_04_Methods.mov
+m*Public vs. private properties 	and methods*6*05_05_Public_Private.mov
+m*Bringing a class object to the 	timeline*6*05_06_Class_Timeline.mov
+m*Defining a document class*6*05_07_Doc_Class.mov
+m*Setting up a classpath*6*05_08_Class_Path.mov
+m*Creating useful classes*6*05_09_Useful.mov
+c*6. Decision-Making and Repetition*7*10
+m*Understanding conditional 	statements*7*06_01_UndrstdgCndtnl.mov
+m*Writing a conditional 	statement*7*06_02_Writing_Conditional.mov
+m*Understanding conditional 	operators*7*06_03_Operators.mov
+m*Using conditional operators*7*06_04_Using_Operators.mov
+m*Setting up alternate 	conditions*7*06_05_Alternate_Conditions.mov
+m*Writing compound 	conditions*7*06_06_Compound.mov
+m*Understanding loops*7*06_07_Understanding_Loops.mov
+m*Creating a code loop*7*06_08_Writing_Loops2.mov
+m*Using a loop to generate 	instances of a class*7*06_09_Generating_Instances.mov
+m*Placing loop-created 	instances*7*06_10_Placing_Instances.mov
+c*7. Using Math...and Loving It!*8*4
+m*Understanding the math 	class*8*07_01_Math_Class.mov
+m*Using basic math operators*8*07_02_Math_Operations.mov
+m*Generating random 	numbers*8*07_03_Random.mov
+m*Using different techniques to 	round numbers*8*07_04_Rounding2.mov
+c*8. Using Text and Arrays*9*8
+m*Creating a text field*9*08_01_Creating_TextField.mov
+m*Styling a text field*9*08_02_Styling_TextField.mov
+m*Capturing data from a text 	field*9*08_03_Capturing_TextField.mov
+m*Loading external text*9*08_04_External.mov
+m*Scrolling a text field*9*08_05_Scroll.mov
+m*Understanding arrays*9*08_06_Arrays.mov
+m*Using text and arrays to 	create a game*9*08_07_Text_Game.mov
+m*Finishing the text game*9*08_08_Finishing_Text_Game.mov
+c*9. Creating a Memory Game with What You Already Know*10*11
+m*Storyboarding your 	application effectively*10*09_01_Planning.mov
+m*Writing a memory card class*10*09_02_Card_Class.mov
+m*Writing a memory game 	class*10*09_03_Memory_Class.mov
+m*Adding graphics to cards*10*09_04_Graphics.mov
+m*Placing cards*10*09_05_Placing.mov
+m*Deleting matches*10*09_06_Checking2.mov
+m*Resetting cards*10*09_07_Resetting.mov
+m*Handling incorrect matches*10*09_08_Incorrect_Matches.mov
+m*Determining a win*10*09_09_Winning.mov
+m*Adding additional cards*10*09_10_More_Cards.mov
+m*Randomizing cards*10*09_11_Randomizing.mov
+c*10. Using Advanced Graphic and Animation Tools*11*7
+m*Drawing with code*11*10_01_Drawing.mov
+m*Creating a color change*11*10_02_Color.mov
+m*Generating a random color 	change*11*10_03_Random_Color.mov
+m*Animating a color change*11*10_04_Animate_Color.mov
+m*Using filters*11*10_05_Filters.mov
+m*Modifying filter properties*11*10_06_Filter_Properties.mov
+m*Animating filters*11*10_07_Animating_Filters.mov
+c*11. Working with Multimedia*12*9
+m*Loading external images 	and Flash movies*12*11_01_Loading_Images.mov
+m*Communicating to loaded 	movies*12*11_02_Communicating_swf.mov
+m*Loading sound*12*11_03_Sound.mov
+m*Starting and stopping sound*12*11_04_Play_Stop.mov
+m*Pausing and resuming sound*12*11_05_Pause_Resume.mov
+m*Managing the volume of 	sound*12*11_06_Volume_Control.mov
+m*Understanding Flash video 	connections*12*11_07_Understanding_Video.mov
+m*Loading video*12*11_08_Loading_Video.mov
+m*Controlling video playback*12*11_09_Video_Playback.mov
+c*12. Adding Advanced Interactivity*13*7
+m*Overview of creating a drag-	and-drop game*13*12_01_Drag_Overview.mov
+m*Creating drag-and-drop 	class*13*12_02_Drag_Drop.mov
+m*Detecting collisions*13*12_03_Collisions.mov
+m*Responding to collisions*13*12_04_Responding_Collisions.mov
+m*Detecting a win*13*12_05_Detecting_Win.mov
+m*Adding drop shadows*13*12_06_Shadow.mov
+m*Randomly placing objects*13*12_07_Random.mov
+c*13. Wrapping It Up*14*1
+m*Closing*14*13_01_Outro.mov
+n*0*0
+n*0*0
+n*0*0
+n*0*0
+n*0*0
+n*0*0
+n*0*0

@@ -1,0 +1,86 @@
+LICENSE:
+=======
+Please see invoice.cgi.
+
+
+INSTALLATION:
+============
+
+invoice.cgi and listinvoice.cgi:
+1) Change the first line (path to Perl) of the script.
+2) Configure STEP 2 in both the scripts. Read the instruction there and configure accordingly. The configuration parts "STEP 2" are identical for both scripts. So you may just configure once, then cut and paste the complete "STEP 2" into the second script.
+3) Upload these 2 scripts to your cgi bin. Chmod to 755. You may also rename the scripts or upload them to somewhere outside the cgi bin provided that you configure them according under STEP 2 and that your ISP allows you to run scripts outside cgi bin.
+4) The two scripts must be located in the SAME directory.
+
+noticeinvoice.cgi:
+1) Change the "mailprogram" at the beginning part of the script.
+2) Upload to the SAME directory as the two scripts above.
+3) Chmod to 755.
+
+generateinvoice.cgi
+1) In Part B1 of the script, set the path to the template. This is normally the general layout for your site. If you delete this section or have the wrong path set, a white background will be used.
+2) Upload this script to the SAME folder as the scripts above.
+3) Chmod to 755.
+
+admin-AddNewInvoice.htm:
+1) Cut everything and paste into your existing web page (to suit your own layout).
+2) Modify the form action URL. Point it to invoice.cgi (NOT listinvoice.cgi).
+3) Make sure the Javascripts in the input boxes for AmountX, Tax, Discount and Payment are not corrupted.
+
+admin-EditDeleteInvoice.htm:
+1) Cut everything and paste into your existing web page (to suit your own layout).
+2) Modify the form action URL. Point it to listinvoice.cgi.
+
+users.htm:
+1) Cut everything and paste into your existing web page (to suit your own layout).
+2) Modify the form action URL. Point it to listinvoice.cgi.
+
+template.htm (general layout) and templates2.htm (print mode layout):
+1) Create your own templates and place +++ (three plus signs) at the location where you want the script results to be printed. See STEP 2 in the script for details.
+
+Images: print.gif, iinvoice.gif, ipaid.gif, ipartlypaid.gif and ioverpaid.gif"
+1) Upload these images to a folder outside your cgi bin. DO NOT place it under the cgi bin or its sub folder.
+2) The URLs to these images are configured under STEP 2.
+
+Sorting:
+1) By default, invoices with latest "Invoice Number" are displayed on top. To reverse this, change section J1 in the script from
+@keepers=reverse(sort(@keepers));   to
+@keepers=sort(@keepers);
+
+ADD-ON SCRIPT: AUTO-REMINDER
+============================
+Please note that this is a stand-alone script. You can choose not to install it (although we see no reason for excluding it).
+
+1) Create a sub-folder "reminder". Chmod to 777.
+2) Create a sub-sub-folder "data" under the sub-folder "reminder". Chmod to 777.
+3) Upload the file "reminder.cgi" to the folder "reminder" and chmod to 755.
+4) Upload the "checker.txt" and "deactivated.txt" files to the sub-sub-folder "data" and chmod both files to 666 or 777.
+
+Tips: There is no password protection for this script due to the self-chekc feature. Please rename the script and hide it somewhere. The folders' names above are only for example. You may rename them.
+
+Each time the script is activated/run, an internal (background) self-check will be performed. The script checks to see if it has been activated/run for that current day. If not, it will search and send the reminders. If the reminders have been sent for that day (ie., the script has been activated once for that day), no reminder will be sent again.
+
+As such, to enable the auto reminder, you need to run the script at least once a day. It can be done by either:
+- Pointing to "reminder.cgi" from a browser. The self-check is performed once the page is loaded (NO NEED to click any button).
+- Using crontab. Some servers do not allow crontab by default. If that is the case, please contact your ISP and ask them to activate it for you. Learn how to setup crontab at http://tlc.perlarchive.com/0001/04.shtml
+
+ADD-ON SCRIPT: AUTO-MAILING
+===========================
+1) The installation is similar (but not exactly) to AUTO-REMINDER above except that the files in the "data" directory is different. Also, there is an additional file "first.htm".
+2) Use a separate folder "newsletter" and "newsletter/data".
+
+PROBLEMS?
+========
+Please sent an email to help@upoint.net describing
+- the problems
+- error message generated
+- URL to the script and/or result page
+- other things that you think might be helpful
+* We usually response in less than 12 hours (average is about 4 hours). But before that, you will receive an auto-responded email describing the most common CGI installation mistakes.
+
+The Management,
+UPDN Network Sdn Bhd
+www.upoint.net
+General: mail@upoint.net
+Technical help: help@upoint.net
+

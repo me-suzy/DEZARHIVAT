@@ -1,0 +1,58 @@
+Beta 1
+------
+-First beta release
+-Search working
+-All of admin center (except Utilities) working
+-Several Bug Fixes
+
+Beta 2
+------
+-Language Files added
+-View All Files option
+-20 files shown per-page
+-Uncompleted options hidden in admin center to avoid confusion
+-More bug fixes
+
+Beta 2.1
+--------
+-Re-designed admin center
+-More bug fixes
+
+Beta 3
+------
+-Changed Download/Rate/Email file images and the logo
+-Added Backup/Restore database option in admin center
+-Added Sort By: feature on View File pages
+-Changes to the HTML: Added gradient on tables
+-Added some more language files
+
+Beta 3.1
+--------
+-Fixed rate bug (finally!)
+-Fixed Search & Posticon bug
+-Code improvements
+
+Final (see UPGRADING.TXT for instructions)
+-----
+PHP Files Changed:
+---pafiledb.php
+---includes/main.php
+---includes/viewall.php
+---includes/rate.php
+---includes/download.php
+---includes/functions.php
+---includes/category.php
+---includes/search.php
+---includes/admin.php
+---includes/admin/auth.php
+---includes/admin/login.php
+---includes/admin/logout.php
+PHP Files added:
+---toplist.php
+
+-Sub Category file counting bug FINALLY FIXED!!!!!!!!! Thanks to Kron from the forums!
+-Changed some code in pafiledb.php to hopefully improve performance a little (and should make it compatible with PHP 4.0.0, before it was 4.0.3 and above)
+-New images
+-Fixed another rating bug
+-Toplists!!! Now you can include the top X popular files (based on downloads OR rating) and the top X newest files!
+-Fixed a possible security bug involving using Javascript as a search string.

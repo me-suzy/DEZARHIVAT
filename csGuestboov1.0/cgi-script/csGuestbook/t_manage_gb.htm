@@ -1,0 +1,63 @@
+
+<script language=javascript>
+function ShowAdd(){
+var rndURL = (1000*Math.random());
+var windowURL = "in(cgiurl)?database=in(database)&command=showadddb&rnd="+rndURL;
+newWindow = window.open(windowURL,null,'width=500,height=300,location=0,directories=0,status=0,menuBar=0,scrollBars=yes,resizable=yes');
+newWindow.focus();
+}
+function CheckDelete(){
+var rndURL = (1000*Math.random());
+if (document.form1.database.selectedIndex < 0){
+alert("Error. Please select a list to delete.");
+return;
+}
+var list = document.form1.database.options[document.form1.database.selectedIndex].value;
+if(confirm("Are you sure you want to delete "+list+"?")){
+window.location = "in(cgiurl)?command=deletedb&database="+list+"&rnd="+rndURL;
+return;
+}
+else{
+return false;
+}
+}
+function Delete(id){
+if(confirm("Are you sure you want to delete this item?")){
+var rndURL = (1000*Math.random());
+window.location = "in(cgiurl)?command=delete&database=in(database)&format=in(format)&id="+id+"&rnd="+rndURL;
+}
+}
+function Modify(id){
+var rndURL = (1000*Math.random());
+var windowURL = "in(cgiurl)?command=showmodify&database=in(database)&format=in(format)&id="+id+"&rnd="+rndURL;
+newWindow = window.open(windowURL,null,'width=550,height=300,location=0,directories=0,status=0,menuBar=0,scrollBars=yes,resizable=yes');
+newWindow.focus();
+}
+function ShowAdv(){
+var rndURL = (1000*Math.random());
+window.location = "in(cgiurl)?command=showadv&database=in(database)&format=in(format)&rnd="+rndURL;
+}
+function ShowView(){
+var rndURL = (1000*Math.random());
+var windowURL = "in(cgiurl)?command=view&database=in(database)&format=in(format)&rnd="+rndURL;
+newWindow = window.open(windowURL,null,'width=640,height=300,location=0,directories=0,status=0,menuBar=0,scrollBars=yes,resizable=yes');
+newWindow.focus();
+}
+function ShowCat(){
+var windowURL = "in(exporturl)";
+newWindow = window.open(windowURL,null,'width=640,height=300,location=0,directories=0,status=0,menuBar=yes,scrollBars=yes,resizable=yes');
+newWindow.focus();
+}
+function ShowText(){
+var rndURL = (1000*Math.random());
+var windowURL = "in(cgiurl)?command=showtext&database=in(database)&format=in(format)&rnd="+rndURL;
+newWindow = window.open(windowURL,null,'width=640,height=300,location=0,directories=0,status=0,menuBar=yes,scrollBars=yes,resizable=yes');
+newWindow.focus();
+}
+function ShowPre(){
+var rndURL = (1000*Math.random());
+var windowURL = "in(cgiurl)?database=in(database)&command=view";
+newWindow = window.open(windowURL,'preview','width=500,height=300,location=yes,directories=0,status=0,menuBar=0,scrollBars=yes,resizable=yes');
+newWindow.focus();
+}
+</script>

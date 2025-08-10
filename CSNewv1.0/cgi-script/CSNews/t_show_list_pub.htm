@@ -1,0 +1,205 @@
+<html>
+
+<head>
+<title>News Management</title>
+<style type="text/css"><!--
+body,p,div,span,th,td{font-family:verdana,arial,sans-serif;font-size:10pt}
+
+a{color:#3366FF;text-decoration:none}
+a:active{color:red}
+a:hover{color:maroon;text-decoration:underline}
+INPUT.button { background-color:#eeeeee;font:verdana;font-weight:bold;color:#000080;font-size:10pt; }
+
+--></style>
+</head>
+<body>
+<form name="form1" action="in(cgiurl)">
+<input type=hidden name=command value=manage>
+
+<div align="center">
+  <center>
+<table border="0" width="100%" cellpadding="0" height="100%" cellspacing="0">
+  <tr>
+    <td width="100%" valign="top" align="center">
+      <div align="center">
+        <center>
+      <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0">
+        <tr>
+          <td width="100%">
+            <table border="0" width="100%" cellspacing="0" cellpadding="3">
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                    <tr>
+                      <td width="100%">
+                        <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                          <tr>
+                            <td nowrap align="left"><font face="Verdana" size="5"><b>csNews Management</b></font></td>
+                          </center></center>
+                        <td align="right">
+                          <p align="right"><input class="button" type="button" value="-=Logout=-" onClick="window.location='in(cgiurl)?command=login';"></td>
+                      </tr>
+                    </table>
+                  </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+          <center><center>
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                    <tr>
+                      <td width="100%">
+                        <!-- database placeholder -->
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+</form>
+<form method="post" action="in(cgiurl)" name="lowform">
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                    <tr>
+                      <td width="100%">
+                        <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                          <tr>
+                            <td valign="middle" align="center">
+                              <table border="1" width="100%" bordercolor="#000000" cellspacing="0" cellpadding="5">
+                                <tr>
+                                  <td width="100%" valign="middle" align="center">
+                                    <p align="center"><b><font size="3">News Item Management</font></b>
+
+
+
+                                    </p>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="center" nowrap valign="middle">
+                              <p align="center"><input class="button" type="button" value="Add News" onClick="javascript:window.location='in(cgiurl)?database=in(database)&command=showadd';"><input class="button" type="button" value="Advanced Settings/Security" onClick="javascript:ShowAdv();"><input class="button" type="button" value="Preview" onClick="javascript:ShowPrev();"><input class="button" type="button" value="Master Links" onClick="javascript:ShowLinks('in(database)',null);"><input class="button" type="button" value="'First' Links" onClick="javascript:ShowLinks('in(database)','f');">
+                              </p>
+                            </td>
+          <center><center>
+              </center></center>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+          <center><center>
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+						in(line)
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="100%">
+                  <table border="1" cellpadding="5" cellspacing="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#C0C0C0" width="100%">
+                    <tr>
+                      <td width="100%">
+                        <p align="center">in(cinfo)</p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+              </center></center>
+          </td>
+        </tr>
+      </table>
+      
+      </div>
+    </td>
+  </tr>
+</table>
+</div>
+
+<input type=hidden name=database value="in(database)"><input type=hidden name=command value="reorder">
+</form>
+<a name="lowform">
+
+
+</body>
+<script language=javascript>
+window.location="#in(w)";
+function CheckDelete(){
+var rndURL = (1000*Math.random());
+if (document.form1.database.selectedIndex < 0){
+alert("Error. Please select a list to delete.");
+return true;
+}
+var list = document.form1.database.options[document.form1.database.selectedIndex].text;
+if(confirm("Are you sure you want to delete "+list+"?")){
+window.location = "in(cgiurl)?command=deletedb&database="+list+"&rnd="+rndURL;
+return true;
+}
+else{
+return false;
+}
+}
+
+function Delete(id){
+if(confirm("Are you sure you want to delete this news item?")){
+var rndURL = (1000*Math.random());
+window.location = "in(cgiurl)?database=in(database)&command=delete&id="+id+"&rnd="+rndURL;
+}
+return true;
+}
+function Edit(id){
+var rndURL = (1000*Math.random());
+window.location = "in(cgiurl)?database=in(database)&command=showedit&id="+id+"&rnd="+rndURL;
+return true;
+}
+function View(id){
+var rndURL = (1000*Math.random());
+var windowURL = "in(cgiurl)?database=in(database)&command=viewone&id="+id+"&rnd="+rndURL;
+newWindow = window.open(windowURL,null,'location=0,directories=0,status=0,menuBar=1,scrollBars=yes,resizable=yes');
+newWindow.focus();
+}
+function ShowAdd(){
+var rndURL = (1000*Math.random());
+var windowURL = "in(cgiurl)?database=in(database)&command=showadddb&rnd="+rndURL;
+newWindow = window.open(windowURL,null,'width=500,height=300,location=0,directories=0,status=0,menuBar=1,scrollBars=yes,resizable=yes');
+newWindow.focus();
+return true;
+}
+function ShowPrev(){
+var rndURL = (1000*Math.random());
+var windowURL = "in(cgiurl)?database=in(database)&command=viewnews&rnd="+rndURL;
+newWindow = window.open(windowURL,null,'width=500,height=300,location=0,directories=0,status=0,menuBar=1,scrollBars=yes,resizable=yes');
+newWindow.focus();
+return true;
+}
+function ShowAdv(){
+var rndURL = (1000*Math.random());
+window.location = "in(cgiurl)?database=in(database)&command=showadv&rnd="+rndURL;
+return true;
+}
+function ShowLinks(d,i){
+var rndURL = (1000*Math.random());
+var windowURL = "in(cgiurl)?database=in(database)&command=showlinks&d="+d+"&i="+i+"&rnd="+rndURL;
+if(i=="f"){
+var height=400;
+var width=700;
+}
+else{
+var height=350;
+var width=700;
+}
+newWindow = window.open(windowURL,null,'width='+width+',height='+height+',location=0,directories=0,status=0,menuBar=0,scrollBars=yes,resizable=yes');
+newWindow.focus();
+return true;
+}
+</script>
+</html>

@@ -1,0 +1,69 @@
+<?php
+
+$post = isset($GLOBALS['HTTP_POST_VARS']) ? $GLOBALS['HTTP_POST_VARS'] : array();
+
+if (isset($post['submitStat']) && ($post['submitStat'] == 1)) {
+
+	$os=null;
+	if (isset($GLOBALS['OS']))
+		$os = strpos($GLOBALS['OS'], 'Windows') === false ? 'other' : 'win32';
+	if (isset($GLOBALS['OSTYPE']))
+		$os = strpos($GLOBALS['OSTYPE'], 'linux') === false ? 'other' : 'linux';
+
+	if ($os == 'linux') {
+//		DEMO site used UTF-8 charset
+		$charset = 'utf-8';
+//		$code = Array ('en'=>2, 'lv'=>7, 'ru'=>1);
+//		$charset = 'windows-125' . $code[$supra['lang']];
+		$recipient = $block['email'];
+		$subject = "Feedback";
+		$message = $post['feedback'];
+		$mimeheader="MIME-Version: 1.0\nContent-Type:text/plain; charset={$charset}\nContent-Transfer-Encoding: 8bit\nFrom:SS DemoSite<demo@thecubecompany.com>\nX-Mailer: PHP/" . phpversion();
+		mail($recipient, $subject, $message, $mimeheader);
+
+	} else if ($os == 'win32') {
+		$tmp = new COM ('CDONTS.NewMail') or die ('Could not create object');
+		$tmp->from = 'demo@thecubecompany.com';
+		$tmp->to = $block['email'];
+		$tmp->subject = "Feedback";
+		$tmp->body = $post['feedback'];
+		$tmp->send();
+	}
+
+}
+
+$main = '
+		<form name="feedback" method="post">
+			<table border="0" cellspacing="0" cellpadding="5" width="95%">
+				<tr>
+					<td class="cTitle">{header}</td>
+				</tr>
+				<tr>
+					<td></td>
+				</tr>
+				<tr>
+					<td>{text}</td>
+				</tr>
+				<tr>
+					<td>
+						<textarea name="feedback" rows="5" style="width :{textfield}%"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><input type="submit" name="send" value="{button}" style="width: 50px"></td>
+				</tr>
+			</table>
+			<input type="hidden" name="submitStat" value="1">
+		</form>
+		';
+
+$html = new Template($main);
+
+$html -> set('header', $block['htext']);
+$html -> set('text', $block['text']);
+$html -> set('textfield', $block['txtWidth']);
+$html -> set('button', $block['button']);
+
+echo $html -> finish();
+
+?>

@@ -1,0 +1,53 @@
+#!/usr/bin/perl
+
+##########################################################################
+# PROTECTION CODES
+# This is a demo script showing you how to apply Secure Script.
+#
+##########################################################################
+if (($ENV{'HTTP_REFERER'} eq "http://www.upoint.net/myscripts/formsecure/form.html") ||
+    ($ENV{'HTTP_REFERER'} eq "http://upoint.net/myscripts/formsecure/form.html"))
+{
+}
+else {
+print "Content-type: text/html\n\n";
+print "<html><head><title>Error!</title></head>
+<body background=\"http://www.upoint.net/images/home-background.jpg\">
+<p></p><p><center><font face=\"Verdana, Arial\" color=red size=\"3\"><b>Invalid referer</b></font></center></p>
+</body></html>";
+exit;
+}
+
+##########################################################################
+# EXISTING SCRIPT
+##########################################################################
+read(STDIN, $buffer, $ENV{'CONTENT_LENGTH'});
+@pairs = split(/&/, $buffer);
+foreach $pair (@pairs) {
+        ($name, $value) = split(/=/, $pair);
+        $value =~ tr/+/ /;
+        $value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
+        $FORM{$name} = $value;
+}
+
+# Check for all required fields
+@required = ('Name');
+
+foreach $check(@required) {
+        unless ($FORM{$check}) {
+                print "Content-type: text/html\n\n";
+                print "<html><head><title>Missing Information</title></head>\n";
+                print "<body background=\"../images/home-background.jpg\"><center><br><br><font face=arial size=-1><b>Missing Information</b><br>\n";
+                print "I'm sorry, but it would appear that you've forgotten to\n";
+                print "fill out the <b><font color=#ff0000>$check</font></b> field.  Please click\n";
+                print "back and try again.\n";
+                print "</font></center></body></html>\n";
+                exit;
+        }
+}
+
+print "Content-type: text/html\n\n";
+print "<html><head><title>No Problem!</title></head>
+<body background=\"http://www.upoint.net/images/home-background.jpg\">
+<p></p><p><center><font face=\"Verdana, Arial\" size=\"3\"><b>Dear <font color=blue>$FORM{'Name'}</font>,<br><br>The referer is valid. So your existing form executes as normal .... bla bla bla.</b></font></center></p>
+</body></html>";
